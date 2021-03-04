@@ -1,0 +1,122 @@
+.content_info {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.info_resalt {
+    background: #f5f5f5;
+    padding: 70px 0;
+}
+
+.info_resalt.no-bottom {
+    padding-bottom: 0;
+}
+
+.style-dark .info_resalt,
+.style-dark .crumbs {
+    color: #dedede !important;
+    background: #161616;
+    background-color: #161616;
+}
+
+.borders {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.style-dark .borders {
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+}
+
+.portfolioFilter {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #cdcdcd;
+    border-top: 1px solid #cdcdcd;
+    padding: 10px 0;
+}
+
+.portfolioFilter a {
+    list-style: none;
+    float: left;
+    padding: 0 35px;
+    display: inline-block;
+    text-align: center;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.sf-menu li.current,
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+    text-decoration: none;
+}
+
+.item-work img {
+    width: 100%;
+}
+
+.item-work {
+    padding: 5px;
+    background: #fff;
+    border: solid 1px #cdcdcd;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.item-work .hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.item-work .info {
+    padding: 12px 2px 6px 2px;
+    font-size: 14px;
+}
+
+.item-work .info i {
+    float: right;
+    padding: 5px 2px 5px 10px;
+    color: #333;
+    font-size: 15px;
+}
+
+.item-work:hover .overlay {
+    top: 0;
+    cursor: pointer;
+    -webkit-transition: 0.3s all ease;
+    -moz-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -ms-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+.carousel-portfolio li .hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.style-dark .info,
+.style-dark .info a,
+.style-dark .service-process h2,
+.style-dark .service-process em,
+.style-dark .opacy_bg_01,
+.style-dark .item_table ul,
+.style-dark .accordion-trigger {
+    color: #666 !important;
+}
+
+.carousel-portfolio li .info {
+    padding: 5px 2px;
+    font-size: 14px;
+}
+
+.carousel-portfolio li .info i {
+    float: right;
+    padding: 5px 2px;
+    color: #333;
+    font-size: 15px;
+}
