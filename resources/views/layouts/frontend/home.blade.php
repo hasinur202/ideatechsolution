@@ -1,4 +1,6 @@
 @extends('layouts.frontend.app')
+
+@section('css')
 <style>
     .counter {
         color: #25af73 !important;
@@ -11,7 +13,6 @@
     }
     .counters-wrapper:before {
         background:none !important;
-        {{--  border: 10px solid #25af73;  --}}
         opacity: 0.2 !important;
     }
 
@@ -19,11 +20,11 @@
         padding-bottom: 20px !important;
     }
 </style>
+
 <link href="particles/css/style.css" rel="stylesheet">
+@endsection
 
 @section('content')
-
-
 
 <div class="banner-wrapper" id="particles-js">
 
@@ -151,7 +152,7 @@
                             </div>
                             <div class="col-md-6">
                                 <figure>
-                                    <img class="tab-figure" src="{{asset('/images/Analysis.png')}}" alt=" ">
+                                    <img class="tab-figure" src="{{ asset('/images/Analysis.png') }}" alt=" ">
                                 </figure>
                             </div>
                         </div>
@@ -164,7 +165,7 @@
                             </div>
                             <div class="col-md-6">
                                 <figure>
-                                    <img class="tab-figure" src="{{asset('/images/system-design.png')}}" alt=" ">
+                                    <img class="tab-figure" src="{{ asset('/images/system-design.png') }}" alt=" ">
                                 </figure>
                             </div>
                         </div>
@@ -177,7 +178,7 @@
                             </div>
                             <div class="col-md-6">
                                 <figure>
-                                    <img class="tab-figure" src="{{asset('/images/implement.jpg')}}" alt=" ">
+                                    <img class="tab-figure" src="{{ asset('/images/implement.jpg') }}" alt=" ">
                                 </figure>
                             </div>
                         </div>
@@ -190,7 +191,7 @@
                             </div>
                             <div class="col-md-6">
                                 <figure>
-                                    <img class="tab-figure" src="{{asset('/images/software.png')}}" alt=" ">
+                                    <img class="tab-figure" src="{{ asset('/images/software.png') }}" alt=" ">
                                 </figure>
                             </div>
                         </div>
@@ -203,7 +204,7 @@
                             </div>
                             <div class="col-md-6">
                                 <figure>
-                                    <img class="tab-figure" src="{{asset('/images/testing.png')}}" alt=" ">
+                                    <img class="tab-figure" src="{{ asset('/images/testing.png') }}" alt=" ">
                                 </figure>
                             </div>
                         </div>
@@ -218,7 +219,7 @@
                             </div>
                             <div class="col-md-6">
                                 <figure>
-                                    <img class="tab-figure" src="{{asset('/images/maintenance.png')}}" alt=" ">
+                                    <img class="tab-figure" src="{{ asset('/images/maintenance.png') }}" alt=" ">
                                 </figure>
                             </div>
                         </div>
@@ -228,6 +229,7 @@
         </div>
     </div>
 </section>
+
 {{-- <section>
     <div class="container">
         <div class="title">
@@ -385,6 +387,8 @@
 
 
 
+@section('js')
+
 <script src="particles/js/particles.min.js"></script>
 <script src="particles/js/app.js"></script>
 <!-- stats.js -->
@@ -411,4 +415,5 @@
 
 </script>
 
+@endsection
 @endsection

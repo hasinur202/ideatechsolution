@@ -1,18 +1,13 @@
 @extends('layouts.frontend.app')
-
+@section('css')
 <link href="{{ asset('product-demo/css/new.css') }}" rel="stylesheet" media="screen">
 <style>
-
-
     .hover{
-
         margin:0px auto;
         position: relative;
         overflow: hidden;
     }
-
     .hover:hover .shadow{top: 0px;}
-
     .shadow{
         background: rgba(0, 0, 0, 0.6);
         width: 100%;
@@ -21,19 +16,17 @@
         top: -100%;
         transition: .6s;
     }
-
-
     .myitem {
         color: #fff;
         border: 1px solid #fff;
         margin: 60px;
         padding: 10px;
         line-height: 26px;
-        margin-top: 45px;
+        margin-top: 80px;
+        text-align:center;
     }
-
 </style>
-
+@endsection
 @section('content')
 
     <div class="breadcromb-wrapper">
@@ -67,27 +60,23 @@
                 <!-- Nav Filters -->
                 <div class="portfolioFilter">
                     <a href="#" data-filter="*" class="current">Show All</a>
-                    <a href="#desing" data-filter=".desing">Desing</a>
-                    <a href="#development" data-filter=".development">Development</a>
-                    <a href="#mobile" data-filter=".mobile">Mobile</a>
-                    <a href="#retina" data-filter=".retina">Retina Desing</a>
+                    <a href="#website" data-filter=".website">Website</a>
+                    <a href="#software" data-filter=".software">Software</a>
                 </div>
                 <!-- End Nav Filters -->
 
                 <!-- Items Works filters-->
                 <div class="row portfolioContainer">
                     <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 desing">
+                    <div class="col-sm-6 col-md-4 software">
                         <div class="item-work">
                             <div class="hover">
                                 <img src="{{ asset('product-demo/img/gallery/1.jpg') }}" alt="Image"/>
                                 <div class="shadow">
                                     <dir class="myitem">
-                                    <h2>Java Programmer</h2>
-                                    <p>Expert in java & PHP</p>
+                                        <a href="{{ route('product.details') }}" target="_blank" class="btn btn-success btn-sm" style="margin:auto">View Demo</a>
                                     </dir>
                                 </div>
-
                             </div>
                             <div class="info">
                                 <a href="single-work.html">Jekas - Creative Template</a>
@@ -99,11 +88,15 @@
                     <!-- End Item Work-->
 
                     <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 development">
+                    <div class="col-sm-6 col-md-4 website">
                         <div class="item-work">
                             <div class="hover">
                                 <img src="{{ asset('product-demo/img/gallery/2.jpg') }}" alt="Image"/>
-                                <a href="{{ asset('product-demo/img/gallery/2.jpg') }}" class="ligbox-image" title="Image"><div class="overlay"></div></a>
+                                <div class="shadow">
+                                    <dir class="myitem">
+                                        <a href="javascript:void(0)" class="btn btn-success btn-sm" style="margin:auto">View Demo</a>
+                                    </dir>
+                                </div>
                             </div>
                             <div class="info">
                                 <a href="single-work.html">Mycv - One Resume Page</a>
@@ -115,27 +108,15 @@
                     <!-- End Item Work-->
 
                     <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 mobile">
-                        <div class="item-work">
-                            <div class="hover">
-                                <img src="{{ asset('product-demo/img/gallery/3.jpg') }}" alt="Image"/>
-                                <a href="{{ asset('product-demo/img/gallery/3.jpg') }}" class="ligbox-image" title="Image"><div class="overlay"></div></a>
-                            </div>
-                            <div class="info">
-                                <a href="single-work.html">Megahost - Hosting Template</a>
-                                <i class="fa fa-tablet"></i>
-                                <i class="fa fa-desktop"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Item Work-->
-
-                    <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 development">
+                    <div class="col-sm-6 col-md-4 website">
                         <div class="item-work">
                             <div class="hover">
                                 <img src="{{ asset('product-demo/img/gallery/4.jpg') }}" alt="Image"/>
-                                <a href="{{ asset('product-demo/img/gallery/4.jpg') }}" class="ligbox-image" title="Image"><div class="overlay"></div></a>
+                                <div class="shadow">
+                                    <dir class="myitem">
+                                        <a href="javascript:void(0)" class="btn btn-success btn-sm" style="margin:auto">View Demo</a>
+                                    </dir>
+                                </div>
                             </div>
                             <div class="info">
                                 <a href="single-work.html">Studio - Landing Page</a>
@@ -147,27 +128,15 @@
                     <!-- End Item Work-->
 
                     <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 retina">
-                        <div class="item-work">
-                            <div class="hover">
-                                <img src="{{ asset('product-demo/img/gallery/5.jpg') }}" alt="Image"/>
-                                <a href="{{ asset('product-demo/img/gallery/5.jpg') }}" class="ligbox-image" title="Image"><div class="overlay"></div></a>
-                            </div>
-                            <div class="info">
-                                <a href="single-work.html">Ebook - Landing Page</a>
-                                <i class="fa fa-tablet"></i>
-                                <i class="fa fa-desktop"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Item Work-->
-
-                    <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 desing">
+                    <div class="col-sm-6 col-md-4 software">
                         <div class="item-work">
                             <div class="hover">
                                 <img src="{{ asset('product-demo/img/gallery/6.jpg') }}" alt="Image"/>
-                                <a href="{{ asset('product-demo/img/gallery/6.jpg') }}" class="ligbox-image" title="Image"><div class="overlay"></div></a>
+                                <div class="shadow">
+                                    <dir class="myitem">
+                                        <a href="javascript:void(0)" class="btn btn-success btn-sm" style="margin:auto;">View Demo</a>
+                                    </dir>
+                                </div>
                             </div>
                             <div class="info">
                                 <a href="single-work.html">Gotten - Landing Page</a>

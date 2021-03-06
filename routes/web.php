@@ -9,7 +9,7 @@ use App\Http\Controllers\Backend\LoginController;
 
 //frontend controller...
 Route::get('/',[HomeController::Class,'index'])->name('home');
-Route::get('/all-product',[HomeController::Class,'all_product'])->name('all.product');
+Route::get('/all-demos',[HomeController::Class,'all_product'])->name('all.product');
 Route::get('/product-details',[HomeController::Class,'details'])->name('product.details');
 Route::post('/show-product',[HomeController::Class,'show'])->name('show.product');
 
@@ -21,7 +21,7 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    //dashboard routes... 
+    //dashboard routes...
     Route::get('/dashboard',[DashboardController::Class,'index'])->name('dashboard');
 
     //category routes...

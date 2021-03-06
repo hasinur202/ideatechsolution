@@ -40,15 +40,15 @@ $(function() {
         scrollSpeed: 900,
         animation: 'fade'
     });
-	/*------------------------------------------------------------------
+    /*------------------------------------------------------------------
         Year
     ------------------------------------------------------------------*/
-	$(function(){
-    var theYear = new Date().getFullYear();
-    $('#year').html(theYear);
-	});
-	
-	 /*------------------------------------------------------------------
+    $(function() {
+        var theYear = new Date().getFullYear();
+        $('#year').html(theYear);
+    });
+
+    /*------------------------------------------------------------------
         Coming Soon Cout Down
     ------------------------------------------------------------------*/
     $('[data-countdown]').each(function() {
@@ -121,19 +121,19 @@ $(function() {
                 items: 2
             },
             700: {
-                items: 3
+                items: 4
             },
             1000: {
-                items: 3
+                items: 5
             },
             1200: {
-                items: 4
+                items: 6
             },
             1400: {
-                items: 4
+                items: 9
             },
             1600: {
-                items: 5
+                items: 12
             }
         }
     });
@@ -154,7 +154,7 @@ $(function() {
         });
     }
     /*---------------------------------------------------------------------
-    		Magnific Popup 
+    		Magnific Popup
         ------------------------------------------------------------------------*/
     if ($('.front-gallery, .gallery-section').length) {
 
@@ -211,7 +211,7 @@ $(function() {
     }
     gallery_hover();
     /*---------------------------------------------------------------------
-    Image Filter Script 
+    Image Filter Script
     ------------------------------------------------------------------------*/
     var $container = $('.portfolioContainer');
 
@@ -251,18 +251,18 @@ wow = new WOW({
 });
 wow.init();
 /*------------------------------------------------------------------
- Loader 
+ Loader
 ------------------------------------------------------------------*/
 jQuery(window).on("load scroll", function() {
     'use strict'; // Start of use strict
-    // Loader 
+    // Loader
     $("#dvLoading").fadeOut("fast");
-    // map zooming 	 
+    // map zooming
     $('.google-map').on('click', function() {
         $('.google-map').find('iframe').css("pointer-events", "auto");
     });
 
-    //Animation Numbers	 
+    //Animation Numbers
     jQuery('.animateNumber').each(function() {
         var num = jQuery(this).attr('data-num');
         var top = jQuery(document).scrollTop() + (jQuery(window).height());
@@ -279,7 +279,7 @@ $.stellar({
     horizontalScrolling: false
 });
 /*----------------------------------
-    COUNTUP JS ACTIVE 
+    COUNTUP JS ACTIVE
     ------------------------------------*/
 $('.counter').counterUp({
     delay: 10,

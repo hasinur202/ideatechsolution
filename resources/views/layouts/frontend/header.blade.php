@@ -23,6 +23,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 
+    @yield('css')
+
     <style>
         html,
         body {
@@ -224,12 +226,16 @@
         }
 
         .our-gallery-wrapper .owl-carousel .owl-item img {
-            height: 125px !important;
+            height: 135px !important;
             width: 100% !important;
         }
 
         .our-gallery-wrapper .owl-nav {
             top: 70% !important;
+        }
+
+        .owl-item{
+            width: 190.25px !important;
         }
 
         #first-slider .slide1,
@@ -269,9 +275,6 @@
             padding-left: 25px;
             background: #fff !important;
         }
-        .owl-item{
-            width: 130px !important;
-        }
         .our-services-icon {
             margin-right: 10px !important;
         }
@@ -296,24 +299,17 @@
             color: #25af73 !important;
             font-weight: 700;
         }
+
         .counters-wrapper {
             padding: 0px 0 18px !important;
         }
-        .navbar-header{
-            width:12% !important;
-        }
-        .navbar-brand{
-            padding: 3px !important;
-            width:100% !important;
-        }
-        .navbar-brand img{
-            width: 100%;
-            height: 55px;
-        }
+
     </style>
 
 
 </head>
+<body>
+    <div id="dvLoading"></div>
 
 <header>
     <div class="top-wrapper hidden-xs">
@@ -326,72 +322,57 @@
     <nav class="navbar navbar-default main-navigation affix-top" data-offset-top="197" data-spy="affix">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('/idea-logo.png')}}" alt=""></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('/idea-logo.png') }}" alt="logo" style="width: 55%;height: 50px;"></a>
             </div>
 
-            <!-- <div class="header-search pull-right">
+            {{--  <div class="header-search pull-right">
                 <a class="open-search"> <i class="fa fa-search"></i> </a>
-            </div> -->
+            </div>
+            <form class="full-search">
+                <div class="container">
+                  <div class="row">
+                    <input class="form-control" placeholder="Search" type="text">
+                    <a class="close-search"> <span class="fa fa-times"> </span> </a> </div>
+                </div>
+              </form>  --}}
 
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{{route('home')}}">Home</a></li>
-                    <li class="dropdown dropdown-toggle"> <a href="{{route('all.product')}}">Products <i class="fa fa-angle-down"></i></a>
+                    <li class="active"><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('all.product') }}">Demos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                    {{--  <li class="dropdown dropdown-toggle"> <a href="#" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{route('product.details')}}">Hospital Management</a></li>
-                            <li><a href="{{route('product.details')}}">School Management</a></li>
-                            <li><a href="{{route('product.details')}}">Inventory</a></li>
-                            <li><a href="{{route('product.details')}}">POS</a></li>
+                          <li><a href="about-us.html">About Us</a></li>
                         </ul>
-                    </li>
-                    <li> <a href="services.html">Services</a></li>
-                    <li> <a href="about-us.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    </li>  --}}
                 </ul>
             </div>
+
             <ul class="wpb-mobile-menu">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li> <a href="#">Courses</a>
+                <li><a class="active" href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('all.product') }}">Demos</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+
+                {{--  <li> <a href="#">Courses</a>
                     <ul>
                         <li><a href="courses-list.html">Courses List</a></li>
-                        <li><a href="courses-grid.html">Courses Grid</a></li>
-                        <li><a href="courses-single.html">Single Course</a></li>
                     </ul>
-                </li>
-                <li> <a href="#">Pages</a>
-                    <ul>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="our-team.html">Our Team</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="clients-testimonials.html">Clients Testimonials</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                    </ul>
-                </li>
-                <li> <a href="#">Events</a>
-                    <ul>
-                        <li><a href="event-grid.html">Events Grid</a></li>
-                        <li><a href="event.html">Single Event</a></li>
-                    </ul>
-                </li>
-                <li> <a href="#">Blog</a>
-                    <ul>
-                        <li><a href="blog-right-sidebar.html">Blog - Right Sidebar</a></li>
-                        <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                        <li><a href="blog-full-width.html">Blog - Full Width</a></li>
-                        <li><a href="single-post.html">Blog Single Post</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
+                </li>  --}}
+
             </ul>
         </div>
     </nav>
 
-</header>
 
-<body>
+</header>
 

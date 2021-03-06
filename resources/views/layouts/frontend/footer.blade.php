@@ -1,58 +1,40 @@
-<section class="our-gallery-wrapper ">
+
+<section class="our-gallery-wrapper">
     <div class="container">
         <div class="title">
             <h2>Technologies We Use</h2>
             <div><span></span></div>
         </div>
     </div>
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <div id="home-gallery" class="owl-carousel">
-            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/code.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/js.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/code.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/js.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/code.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/js.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/code.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
-            <div class="item"><img src="{{ asset('/images/lang/js.png') }}"
-                    alt="Edugrowth - Best Template for Education "> </div>
+            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/code.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/js.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/code.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/js.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/code.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/js.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/php.jpg') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/vue.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/code.png') }}" alt=""> </div>
+            <div class="item"><img src="{{ asset('/images/lang/js.png') }}" alt=""> </div>
         </div>
     </div>
 </section>
 
-<div class="footer-wrapper ">
-    <div class="footer-top-area ">
+
+<div class="footer-wrapper">
+    <div class="footer-top-area">
         <div class="container ">
             <div class="row ">
                 <div class="col-md-4 col-sm-6 ">
@@ -168,19 +150,18 @@
 </div>  --}}
 
 
-<!-- Footer Wrapper End -->
-<!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
-<script src="assets/jquery/jquery-1.12.0.min.js "></script>
-<script src="assets/bootstrap/js/bootstrap.min.js "></script>
-<script src="assets/jquery/plugin.js "></script>
-<script src="assets/jquery/plugins.js "></script>
-<script src="assets/jquery/slider.js "></script>
-<script src="assets/owl-carousel/js/owl.carousel.js "></script>
+<script src="assets/jquery/jquery-1.12.0.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/jquery/plugin.js"></script>
+<script src="assets/jquery/plugins.js"></script>
+<script src="assets/jquery/slider.js"></script>
+<script src="assets/owl-carousel/js/owl.carousel.js"></script>
 <script src="assets/wow/wow.min.js "></script>
-<script src="assets/jquery/jquery.slicknav.js "></script>
-<script src="js/custom.js "></script>
+<script src="assets/jquery/jquery.slicknav.js"></script>
+<script src="js/custom.js"></script>
 
 @yield('js')
+
 </body>
 
 </html>
