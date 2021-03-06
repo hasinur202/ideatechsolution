@@ -112,28 +112,28 @@ $(function() {
         loop: true,
         responsive: {
             0: {
-                items: 2
+                items: 1
             },
             450: {
-                items: 2
+                items: 1
             },
             600: {
-                items: 3
+                items: 2
             },
             700: {
-                items: 4
+                items: 3
             },
             1000: {
-                items: 5
+                items: 3
             },
             1200: {
-                items: 6
+                items: 4
             },
             1400: {
-                items: 9
+                items: 5
             },
             1600: {
-                items: 12
+                items: 6
             }
         }
     });

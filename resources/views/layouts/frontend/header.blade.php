@@ -229,7 +229,7 @@
         }
 
         .our-gallery-wrapper .owl-carousel .owl-item img {
-            height: 135px !important;
+            height: 145px !important;
             width: 100% !important;
         }
 
@@ -238,7 +238,7 @@
         }
 
         .owl-item{
-            width: 190.25px !important;
+            width: 322.25px !important;
         }
 
         #first-slider .slide1,
@@ -348,8 +348,8 @@
                     <li class="active"><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('all.product') }}">Demos</a></li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
 
                     {{--  <li class="dropdown dropdown-toggle"> <a href="#" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -363,8 +363,8 @@
                 <li><a class="active" href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('all.product') }}">Demos</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ route('about') }}">About Us</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
 
                 {{--  <li> <a href="#">Courses</a>
                     <ul>
