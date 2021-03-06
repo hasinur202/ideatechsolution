@@ -155,13 +155,7 @@
         }
 
 
-        .banner-content {
-            text-align: center;
-            color: #fff;
-            margin-top: 10% !important;
-            position: absolute;
-            left: 15%;
-        }
+
 
         .fa-chevron-left{
             margin-top: 15px !important;
@@ -190,14 +184,23 @@
             background: #25af73 !important;
         }
 
+        .banner-content {
+            text-align: center;
+            color: #fff;
+            margin-top: 5% !important;
+            position: absolute;
+            width: 100%;
+        }
+
         .banner-content h1 {
-            font-size: 60px !important;
-            margin-bottom: 15px !important;
+            font-size: 40px !important;
+            {{--  margin-bottom: 10px !important;  --}}
         }
 
         .banner-content p {
             font-size: 20px !important;
-            line-height: 25px !important;
+            line-height: 30px !important;
+            margin-top:2rem;
         }
 
         .common-features {
