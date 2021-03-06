@@ -30,9 +30,15 @@
 
 <div class="banner-wrapper" id="particles-js"></div>
 <div class="banner-content">
-    <h1 class="ml13">Welcome To</h1>
+    <h1 class="">Welcome To</h1>
 
-    <svg viewBox="0 0 960 100">
+    <h1 class="ml15">
+        <span class="word">IDEA</span>
+        <span class="word">TECH</span>
+        <span class="word">SOLUTION</span>
+    </h1>
+
+    {{--  <svg viewBox="0 0 960 100">
         <symbol id="s-text">
             <text text-anchor="middle" x="50%" y="80%">IDEA TECH SOLUTION </text>
         </symbol>
@@ -43,12 +49,12 @@
             <use xlink:href="#s-text" class="text-copy"></use>
             <use xlink:href="#s-text" class="text-copy"></use>
         </g>
-    </svg>
+    </svg>  --}}
 
     <p class="ml11" style="width:960px; margin:auto; margin-top:4rem">
         <span class="text-wrapper">
           {{--  <span class="line line1"></span>  --}}
-          <span class="letters">IDEA TECH SOLUTION Solutions is a best website design company in DHAKA,
+          <span class="letters">Idea Tech Solution is a best website design company in DHAKA,
               Bangladesh. We also deal in Software Development, website Development,Graphic Design & SEO services
               and provide top quality results within limited time bounds to make your brand visibility
               to your online portal.</span>

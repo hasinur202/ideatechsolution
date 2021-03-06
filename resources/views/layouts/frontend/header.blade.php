@@ -194,7 +194,7 @@
 
         .banner-content h1 {
             font-size: 30px !important;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             {{--  margin-bottom: 10px !important;  --}}
         }
 
@@ -284,7 +284,7 @@
         .our-services-icon img{
             width: 40px;
             height: 40px;
-            margin-top: 10px;
+            margin-top: -34px;
         }
         .our-services-icon{
             width: 60px;

@@ -78,6 +78,8 @@ svg {
     line-height: 1em;
 }
 
+
+/*
 .ml13 {
     font-size: 1.9em;
     text-transform: uppercase;
@@ -88,4 +90,17 @@ svg {
 .ml13 .letter {
     display: inline-block;
     line-height: 1em;
+} */
+
+.ml15 {
+    font-weight: 800;
+    font-size: 3.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+}
+
+.ml15 .word {
+    display: inline-block;
+    line-height: 1em;
+}    line-height: 1em;
 }
