@@ -2,7 +2,6 @@
 
 @section('css')
 <link href="{{ asset('product-demo/css/text_animate.css') }}" rel="stylesheet" media="screen">
-<link href="particles/css/style.css" rel="stylesheet">
 
 <style>
     .counter {
@@ -29,11 +28,9 @@
 
 @section('content')
 
-<div class="banner-wrapper" id="particles-js">
-
-</div>
+<div class="banner-wrapper" id="particles-js"></div>
 <div class="banner-content">
-    <h1>Welcome To</h1>
+    <h1 class="ml13">Welcome To</h1>
 
     <svg viewBox="0 0 960 100">
         <symbol id="s-text">
@@ -48,14 +45,7 @@
         </g>
     </svg>
 
-
-    {{--  <p>IDEA TECH SOLUTION Solutions is a best website design company in DHAKA,<br>
-        Bangladesh. We also deal in Software Development, website Development,<br>
-        Graphic Design & SEO services and provide top quality results within <br>
-        limited time bounds to make your brand visibility to your online portal.
-    </p>  --}}
-
-    <p class="ml11" style="width:960px; margin:auto; margin-top:2rem">
+    <p class="ml11" style="width:960px; margin:auto; margin-top:4rem">
         <span class="text-wrapper">
           {{--  <span class="line line1"></span>  --}}
           <span class="letters">IDEA TECH SOLUTION Solutions is a best website design company in DHAKA,
@@ -66,7 +56,6 @@
     </p>
 
 </div>
-
 
 
 
@@ -418,8 +407,6 @@
 
 
 @section('js')
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <script src="particles/js/particles.min.js"></script>
 <script src="particles/js/app.js"></script>
 <!-- stats.js -->
@@ -446,40 +433,9 @@
 </script>
 
 
-<script>
-    // Wrap every letter in a span
-var textWrapper = document.querySelector('.ml11 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+<script src="product-demo/js/anime.min.js"></script>
+<script src="product-demo/js/text_animate.js"></script>
 
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml11 .line',
-    scaleY: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700
-  })
-  .add({
-    targets: '.ml11 .line',
-    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100
-  }).add({
-    targets: '.ml11 .letter',
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=775',
-    delay: (el, i) => 34 * (i+1)
-  }).add({
-    targets: '.ml11',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-</script>
 
 @endsection
 @endsection

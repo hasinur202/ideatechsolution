@@ -187,20 +187,20 @@
         .banner-content {
             text-align: center;
             color: #fff;
-            margin-top: 5% !important;
+            margin-top: 4% !important;
             position: absolute;
             width: 100%;
         }
 
         .banner-content h1 {
-            font-size: 40px !important;
+            font-size: 30px !important;
+            margin-bottom: 1rem;
             {{--  margin-bottom: 10px !important;  --}}
         }
 
         .banner-content p {
             font-size: 20px !important;
             line-height: 30px !important;
-            margin-top:2rem;
         }
 
         .common-features {
@@ -217,7 +217,7 @@
 
         .common-features p {
             font-size: 15px !important;
-            line-height: 15px !important;
+            line-height: 25px !important;
         }
 
         #stats {
