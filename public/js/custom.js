@@ -112,13 +112,13 @@ $(function() {
         loop: true,
         responsive: {
             0: {
-                items: 1
+                items: 2
             },
             450: {
-                items: 1
+                items: 2
             },
             600: {
-                items: 2
+                items: 3
             },
             700: {
                 items: 4
