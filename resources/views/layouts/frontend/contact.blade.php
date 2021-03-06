@@ -73,19 +73,19 @@
                     <ul class="contact-address">
                         <li>
                             <div class="contact-content">
-                                <p>Kingsland Rd. Bighouse London</p>
+                                <p>61/1 Anawara Vila Metro Housing Bosila.</p>
                             </div>
                         </li>
                         <li>
                             <div class="contact-content">
-                                <p>01-012-345-6789</p>
-                                <p>01-012-345-6789</p>
+                                <p>+88 01711431232</p>
+                                <p>+88 01716039170</p>
                             </div>
                         </li>
                         <li>
                             <div class="contact-content">
-                                <p>info@sbtechnosoft.com</p>
-                                <p>support@sbtechnosoft.com</p>
+                                <p>ideatechsolution.bd@gmail.com</p>
+                                {{--  <p>support@sbtechnosoft.com</p>  --}}
                             </div>
                         </li>
                     </ul>
@@ -103,8 +103,8 @@
     </div>
     <!-- Google Map Start -->
     <div class="google-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198710.35112897935!2d-98.51489117772236!3d38.904562823631146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1471865832140"
-            allowfullscreen=""></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14608.229077050284!2d90.3520185!3d23.7453371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc320411398d71db9!2sIdea%20Tech%20Solution!5e0!3m2!1sen!2sbd!4v1615027978087!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
     </div>
     <!-- Google Map End -->
 </div>

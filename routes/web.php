@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Backend\DashboardController;
 
 //frontend controller...
@@ -17,6 +18,7 @@ Route::post('/show-product',[HomeController::Class,'show'])->name('show.product'
 
 Route::get('/contact-us',[ContactController::Class,'index'])->name('contact');
 Route::get('/about-us',[AboutController::Class,'index'])->name('about');
+Route::get('/services',[ServiceController::Class,'index'])->name('service');
 
 
 

@@ -43,7 +43,7 @@
                             <h3>About Us</h3>
                         </div>
                         <div class="footer-widget-content ">
-                            <p>IDEA TECH SOLUTION Solutions is a best website design company in DHAKA, Bangladesh. We
+                            <p>Idea Tech Solution is a best website design and development company in DHAKA, Bangladesh. We
                                 also deal in Software Development, website Development, Graphic Design & SEO services
                                 and provide top quality results within limited time bounds to make your brand visibility
                                 to your online portal.</p>
