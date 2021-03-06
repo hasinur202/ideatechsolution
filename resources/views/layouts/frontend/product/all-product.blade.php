@@ -59,93 +59,41 @@
 
                 <!-- Nav Filters -->
                 <div class="portfolioFilter">
-                    <a href="#" data-filter="*" class="current">Show All</a>
-                    <a href="#website" data-filter=".website">Website</a>
-                    <a href="#software" data-filter=".software">Software</a>
+                    <a onclick="myFFF()" href="#" data-filter="*" class="current">Show All</a>
+                    @foreach ($categories as $cat)
+                        <input type="hidden" id="cat" value="{{ $cat->id }}">
+                        <a onclick="showProduct({{ $cat->id }},`{{ $cat->title }}`)" href="#{{ $cat->title }}" data-filter=".{{ $cat->title }}">{{ $cat->title }}</a>
+                    @endforeach
+                    {{--  <a href="#software" data-filter=".software">Software</a>  --}}
                 </div>
-                <!-- End Nav Filters -->
 
-                <!-- Items Works filters-->
-                <div class="row portfolioContainer">
-                    <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 software">
-                        <div class="item-work">
-                            <div class="hover">
-                                <img src="{{ asset('product-demo/img/gallery/1.jpg') }}" alt="Image"/>
-                                <div class="shadow">
-                                    <dir class="myitem">
-                                        <a href="{{ route('product.details') }}" target="_blank" class="btn btn-success btn-sm" style="margin:auto">View Demo</a>
-                                    </dir>
+                <div class="row portfolioContainer" id="pro-section">
+
+                        @foreach ($demos as $demo)
+                        <div class="col-sm-6 col-md-4" id="classAdd">
+                            <div class="item-work">
+                                <div class="hover">
+                                    <img src="{{ asset('/images/'.$demo->image) }}" alt="Image" style="height: 23rem"/>
+                                    <div class="shadow">
+                                        <dir class="myitem">
+                                            <a href="{{ route('product.details') }}" target="_blank" class="btn btn-success btn-sm" style="margin:auto">Details</a>
+                                        </dir>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <a href="single-work.html">{{ $demo->title }}</a>
+                                    <i class="fa fa-tablet"></i>
+                                    <i class="fa fa-desktop"></i>
                                 </div>
                             </div>
-                            <div class="info">
-                                <a href="single-work.html">Jekas - Creative Template</a>
-                                <i class="fa fa-tablet"></i>
-                                <i class="fa fa-desktop"></i>
-                            </div>
                         </div>
-                    </div>
-                    <!-- End Item Work-->
+                        @endforeach
 
-                    <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 website">
-                        <div class="item-work">
-                            <div class="hover">
-                                <img src="{{ asset('product-demo/img/gallery/2.jpg') }}" alt="Image"/>
-                                <div class="shadow">
-                                    <dir class="myitem">
-                                        <a href="javascript:void(0)" class="btn btn-success btn-sm" style="margin:auto">View Demo</a>
-                                    </dir>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <a href="single-work.html">Mycv - One Resume Page</a>
-                                <i class="fa fa-tablet"></i>
-                                <i class="fa fa-desktop"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Item Work-->
 
-                    <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 website">
-                        <div class="item-work">
-                            <div class="hover">
-                                <img src="{{ asset('product-demo/img/gallery/4.jpg') }}" alt="Image"/>
-                                <div class="shadow">
-                                    <dir class="myitem">
-                                        <a href="javascript:void(0)" class="btn btn-success btn-sm" style="margin:auto">View Demo</a>
-                                    </dir>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <a href="single-work.html">Studio - Landing Page</a>
-                                <i class="fa fa-tablet"></i>
-                                <i class="fa fa-desktop"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Item Work-->
+                     {{--  @include('layouts.frontend.product.product-section')  --}}
 
-                    <!-- Item Work-->
-                    <div class="col-sm-6 col-md-4 software">
-                        <div class="item-work">
-                            <div class="hover">
-                                <img src="{{ asset('product-demo/img/gallery/6.jpg') }}" alt="Image"/>
-                                <div class="shadow">
-                                    <dir class="myitem">
-                                        <a href="javascript:void(0)" class="btn btn-success btn-sm" style="margin:auto;">View Demo</a>
-                                    </dir>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <a href="single-work.html">Gotten - Landing Page</a>
-                                <i class="fa fa-tablet"></i>
-                                <i class="fa fa-desktop"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Item Work-->
+
+
                 </div>
                 <!-- End Items Works filters-->
             </div>
@@ -157,10 +105,15 @@
 
     <script>
 
-        function showProduct(id){
-            $(".active").removeClass('active');
-            $("#nav-li"+id).addClass('active');
-            $("#spin").show();
+        function myFFF(){
+            $("#default").show();
+        }
+
+
+        function showProduct(id,title){
+            //$("#spin").show();
+            {{--  $("#default").hide();
+            $("dynamic").show();
             $.ajax({
                 url: "{{route('show.product')}}",
                 method: "POST",
@@ -170,13 +123,20 @@
                 },
                 dataType:"html",
                 success: function(res) {
-                    $("#spin").hide();
+                    //$("#spin").hide();
                     $("#pro-section").html(res);
+                    $("#classAdd").addClass(title);
+
+
+
+
                 },
                 error: function() {
 
                 }
-            })
+            })  --}}
+
+            $("#classAdd").addClass(title);
         }
     </script>
 @endsection

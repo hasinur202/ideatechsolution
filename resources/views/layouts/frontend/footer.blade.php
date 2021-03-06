@@ -48,13 +48,16 @@
                                 and provide top quality results within limited time bounds to make your brand visibility
                                 to your online portal.</p>
                             {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p> --}}
+
                             <ul class="footer-social-menu list-inline ">
                                 <li><a href="https://www.facebook.com/Ideatech.Solution"><i
-                                            class="fa fa-facebook "></i></a></li>
+                                            class="fa fa-facebook"></i></a></li>
                                 <li><a href="https://twitter.com/IdeaTech_BD"><i class="fa fa-twitter "></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/idea-tech-solution-a86303199/"><i
-                                            class="fa fa-linkedin-square "></i></a></li>
-                                <li><a href="javascript:void(0) "><i class="fa fa-skype "></i></a></li>
+                                            class="fa fa-linkedin-square"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-whatsapp "></i></a></li>
+                                <li><a href="javascript:void(0) "><i class="fa fa-skype"></i></a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -87,13 +90,13 @@
                         </div>
                         <div class="footer-widget-content ">
                             <ul class="footer-conatct-menu ">
-                                <li> <a href="javascript:void(0) "><i class="fa fa-envelope "></i><span>Email :</span>
+                                <li> <a href="javascript:void(0) "><i class="fa fa-envelope"></i><span>Email :</span>
                                         ideatechsolution.bd@gmail.com</a> </li>
-                                <li> <a href="javascript:void(0) "><i class="fa fa-phone "></i> <span>Phone : </span>
+                                <li> <a href="javascript:void(0) "><i class="fa fa-phone"></i> <span>Phone : </span>
                                         +8801711431232</a> </li>
-                                <li> <a href="javascript:void(0) "><i class="fa fa-phone "></i> <span>Phone : </span>
+                                <li> <a href="javascript:void(0) "><i class="fa fa-phone"></i> <span>Phone : </span>
                                         +8801716039170</a> </li>
-                                <li> <a href="javascript:void(0) "><i class="fa fa-map-o "></i><span>Address :</span>
+                                <li> <a href="javascript:void(0) "><i class="fa fa-map-o"></i><span>Address :</span>
                                         61/1 Anawara Vila Metro Housing Bosila.</a> </li>
                             </ul>
                         </div>
