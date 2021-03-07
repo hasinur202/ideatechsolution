@@ -346,8 +346,8 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('all.product') }}">Demos</a></li>
                     <li><a href="{{ route('service') }}">Services</a></li>
+                    <li><a href="{{ route('all.product') }}">Demos</a></li>
                     <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
 
@@ -361,8 +361,8 @@
 
             <ul class="wpb-mobile-menu">
                 <li><a class="active" href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{ route('all.product') }}">Demos</a></li>
                 <li><a href="{{ route('service') }}">Services</a></li>
+                <li><a href="{{ route('all.product') }}">Demos</a></li>
                 <li><a href="{{ route('about') }}">About Us</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
 
