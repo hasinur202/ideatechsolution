@@ -19,12 +19,12 @@ class HomeController extends Controller
         $demos = Demo::with('get_category')->get();
         $categories = Category::all();
 
-        $data = Category::with('get_demos')->get();
+        $datas = Category::with('get_demos')->get();
 
         return view('layouts.frontend.product.all-product',[
             'categories'=>$categories,
             'demos'=>$demos,
-            'data'=>$data,
+            'datas'=>$datas,
         ]);
     }
 

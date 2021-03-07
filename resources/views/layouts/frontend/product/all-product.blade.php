@@ -8,6 +8,9 @@
         overflow: hidden;
     }
     .hover:hover .shadow{top: 0px;}
+    .hover img{
+        height: 23rem;
+    }
     .shadow{
         background: rgba(0, 0, 0, 0.6);
         width: 100%;
@@ -24,6 +27,9 @@
         line-height: 26px;
         margin-top: 80px;
         text-align:center;
+    }
+    .myitem a{
+        margin:auto !important;
     }
 </style>
 @endsection
@@ -50,8 +56,6 @@
         </div>
     </div>
 
-
-
     <section class="content_info">
         <!-- Info Resalt-->
         <div class="info_resalt borders">
@@ -59,21 +63,20 @@
 
                 <!-- Nav Filters -->
                 <div class="portfolioFilter">
-                    <a onclick="myFFF()" href="#" data-filter="*" class="current">Show All</a>
-                    @foreach ($categories as $cat)
+                    <a href="#" data-filter="*" class="current">Show All</a>
+                    @foreach ($datas as $cat)
                         <input type="hidden" id="cat" value="{{ $cat->id }}">
-                        <a onclick="showProduct({{ $cat->id }},`{{ $cat->title }}`)" href="#{{ $cat->title }}" data-filter=".{{ $cat->title }}">{{ $cat->title }}</a>
+                        <a href="#" data-filter=".{{ $cat->title }}">{{ $cat->title }}</a>
                     @endforeach
-                    {{--  <a href="#software" data-filter=".software">Software</a>  --}}
                 </div>
 
-                <div class="row portfolioContainer" id="pro-section">
-
-                        @foreach ($demos as $demo)
-                        <div class="col-sm-6 col-md-4" id="classAdd">
+                <div class="row portfolioContainer">
+                    @foreach ($datas as $cat)
+                    @foreach ($cat->get_demos as $demo)
+                        <div class="col-sm-6 col-md-4 {{ $cat->title }}">
                             <div class="item-work">
                                 <div class="hover">
-                                    <img src="{{ asset('/images/'.$demo->image) }}" alt="Image" style="height: 23rem"/>
+                                    <img src="{{ asset('/images/'.$demo->image) }}" alt="Image"/>
                                     <div class="shadow">
                                         <dir class="myitem">
                                             <a href="{{ route('product.details') }}" target="_blank" class="btn btn-success btn-sm" style="margin:auto">Details</a>
@@ -81,63 +84,25 @@
                                     </div>
                                 </div>
                                 <div class="info">
-                                    <a href="single-work.html">{{ $demo->title }}</a>
+                                    <a href="#">{{ $demo->title }}</a>
                                     <i class="fa fa-tablet"></i>
                                     <i class="fa fa-desktop"></i>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-
-
-                     {{--  @include('layouts.frontend.product.product-section')  --}}
-
-
-
+                    @endforeach
+                    @endforeach
                 </div>
-                <!-- End Items Works filters-->
             </div>
         </div>
         <!-- End Info Resalt-->
     </section>
 
-@section('js')
 
+@section('js')
     <script>
 
-        function myFFF(){
-            $("#default").show();
-        }
 
-
-        function showProduct(id,title){
-            //$("#spin").show();
-            {{--  $("#default").hide();
-            $("dynamic").show();
-            $.ajax({
-                url: "{{route('show.product')}}",
-                method: "POST",
-                data: {
-                    '_token':"{{csrf_token()}}",
-                    id:id
-                },
-                dataType:"html",
-                success: function(res) {
-                    //$("#spin").hide();
-                    $("#pro-section").html(res);
-                    $("#classAdd").addClass(title);
-
-
-
-
-                },
-                error: function() {
-
-                }
-            })  --}}
-
-            $("#classAdd").addClass(title);
-        }
     </script>
 @endsection
 @endsection
