@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="info">
-                                    <a href="#">{{ $demo->title }}</a>
+                                    <a href="{{ route('product.details') }}">{{ $demo->title }}</a>
                                     <i class="fa fa-tablet"></i>
                                     <i class="fa fa-desktop"></i>
                                 </div>

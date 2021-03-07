@@ -16,14 +16,9 @@ class HomeController extends Controller
 
     public function all_product()
     {
-        $demos = Demo::with('get_category')->get();
-        $categories = Category::all();
-
         $datas = Category::with('get_demos')->get();
 
         return view('layouts.frontend.product.all-product',[
-            'categories'=>$categories,
-            'demos'=>$demos,
             'datas'=>$datas,
         ]);
     }
@@ -32,18 +27,5 @@ class HomeController extends Controller
     {
         return view('layouts.frontend.product.details');
     }
-
-    public function show(Request $request)
-    {
-        if (is_null($request->id)) {
-            $demos = Demo::all();
-        }else{
-            $demos = Demo::where('category_id',$request->id)->get();
-        }
-        return view('layouts.frontend.product.product-section',[
-            'demos'=>$demos
-        ]);
-    }
-
 
 }
