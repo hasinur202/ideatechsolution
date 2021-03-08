@@ -38,22 +38,10 @@
         <span class="word">SOLUTION</span>
     </h1>
 
-    {{--  <svg viewBox="0 0 960 100">
-        <symbol id="s-text">
-            <text text-anchor="middle" x="50%" y="80%">IDEA TECH SOLUTION </text>
-        </symbol>
-        <g class = "g-ants">
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-        </g>
-    </svg>  --}}
+
 
     <p class="ml11" style="width:960px; margin:auto; margin-top:4rem">
         <span class="text-wrapper">
-          {{--  <span class="line line1"></span>  --}}
           <span class="letters">Idea Tech Solution is a best website design and development company in DHAKA,
               Bangladesh. We also deal in Software Development, Website Development, Graphic Design and SEO services
               and provide top quality results within limited time bounds to make your brand visibility

@@ -187,20 +187,20 @@
         .banner-content {
             text-align: center;
             color: #fff;
-            margin-top: 4% !important;
+            margin-top: 6% !important;
             position: absolute;
             width: 100%;
         }
 
         .banner-content h1 {
             font-size: 30px !important;
-            margin-bottom: 1.5rem;
-            {{--  margin-bottom: 10px !important;  --}}
+            margin-bottom: 2.5rem !important;
         }
 
         .banner-content p {
             font-size: 20px !important;
             line-height: 30px !important;
+            font-weight: 300;
         }
 
         .common-features {
@@ -238,7 +238,7 @@
         }
 
         .owl-item{
-            width: 322.25px !important;
+            width: 250.25px !important;
         }
 
         #first-slider .slide1,
