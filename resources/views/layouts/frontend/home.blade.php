@@ -38,15 +38,10 @@
         <span class="word">SOLUTION</span>
     </h1>
 
-
-
-    <p class="ml11" style="width:960px; margin:auto; margin-top:4rem">
-        <span class="text-wrapper">
-          <span class="letters">Idea Tech Solution is a best website design and development company in DHAKA,
+    <p style="width:960px; margin:auto; margin-top:4rem">Idea Tech Solution is a best website design and development company in DHAKA,
               Bangladesh. We also deal in Software Development, Website Development, Graphic Design and SEO services
               and provide top quality results within limited time bounds to make your brand visibility
-              to your online portal.</span>
-        </span>
+              to your online portal.
     </p>
 
 </div>

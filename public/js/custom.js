@@ -124,10 +124,10 @@ $(function() {
                 items: 3
             },
             1000: {
-                items: 3
+                items: 5
             },
             1200: {
-                items: 4
+                items: 5
             },
             1400: {
                 items: 5
