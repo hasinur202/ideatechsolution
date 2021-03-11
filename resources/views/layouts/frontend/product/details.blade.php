@@ -48,7 +48,8 @@
                             </div>
                         </div>
                     </div>
-                    <a onclick="modalOpen(`{{ $details->link }}`)" href="javascript:void(0)" class="btn demo-btn">View Demo</a>
+                    <a onclick="modalOpen(`{{ $details->link }}`,`{{ $details->username }}`,`{{ $details->password }}`)"
+                        href="javascript:void(0)" class="btn demo-btn">View Demo</a>
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <div class="about-main">
@@ -77,11 +78,11 @@
                 <div style="width: 48%;float: left;">
                     <div>
                         <label>Username: </label>
-                        <span>ideatech</span>
+                        <span id="username"></span>
                     </div>
                     <div>
                         <label>Password: </label>
-                        <span>1234568</span>
+                        <span id="password"></span>
                     </div>
                 </div>
           </div>
@@ -91,10 +92,12 @@
 
 @section('js')
     <script>
-        function modalOpen(link){
+        function modalOpen(link, username, password){
             $("#myModal").modal('show');
 
             $('#livePreview').attr('href',link);
+            $('#username').text(username);
+            $('#password').text(password);
         }
 
 

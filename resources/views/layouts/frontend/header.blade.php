@@ -21,7 +21,8 @@
     <link href="/css/style.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    {{--  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">  --}}
+
     <link rel="stylesheet" href="{{asset('backend/plugins/sweetalert2/sweetalert2.min.css')}}">
 
     @yield('css')
@@ -154,9 +155,6 @@
         .top-wrapper {
             background: #25af73 !important;
         }
-
-
-
 
         .fa-chevron-left{
             margin-top: 15px !important;
@@ -314,15 +312,13 @@
 </head>
 <body>
     <div id="dvLoading"></div>
-
 <header>
     <div class="top-wrapper hidden-xs">
         <div class="container">
-            {{-- <div class="pull-left"> <i class="fa fa-map-o" aria-hidden="true"></i> Sydney NSW 2052, Australia </div> --}}
             <div class="quick-contacts pull-right"> <span><i class="fa fa-phone"></i> +8801711431232</span> <span><i class="fa fa-envelope"></i><a href="mailto:ideatechsolution.bd@gmail.com">ideatechsolution.bd@gmail.com</a></span> </div>
         </div>
     </div>
-    <!-- Navigation Start -->
+
     <nav class="navbar navbar-default main-navigation affix-top" data-offset-top="197" data-spy="affix">
         <div class="container">
             <div class="navbar-header">
