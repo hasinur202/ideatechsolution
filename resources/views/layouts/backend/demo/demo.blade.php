@@ -237,6 +237,9 @@
                                         <th class="sorting" style="width: 204px;">
                                             Image
                                         </th>
+                                        <th class="sorting" style="width: 204px;">
+                                            Status
+                                        </th>
                                         <th class="sorting" style="width: 99px;">
                                             Action
                                         </th>
@@ -252,6 +255,13 @@
                                             <td class="sorting_1">{{ $demo->password }}</td>
                                             <td class="sorting_1">
                                                 <img width="50px" height="30px" src="{{asset('/images/'.$demo->image)}}" alt="">
+                                            </td>
+                                            <td>
+                                                @if($demo->status == 1)
+                                                    <a href="javascript:void(0)" onclick="changeActivity({{ $demo->id }})" class="badge badge-success">Active</a>
+                                                @else
+                                                    <a href="javascript:void(0)" onclick="changeActivity({{ $demo->id }})" class="badge badge-warning">Deactive</a>
+                                                @endif
                                             </td>
                                             <td>
                                                 <button style="margin-right: 5px;" href="#"
@@ -284,6 +294,34 @@
                 "autoWidth": false,
             });
         });
+
+        function changeActivity(id){
+            $("#spin").show();
+            $.ajax({
+                url:"{{ route('demo.activity') }}",
+                method:"POST",
+                dataType:"json",
+                data:{
+                    "_token": "{{ csrf_token() }}",
+                    'id':id,
+                },
+                success: function(response) {
+                    $("#spin").hide();
+                    window.location.reload();
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Status Changes Successfully...'
+                    })
+                },
+                error: function() {
+                    $("#spin").hide();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something Wrong'
+                    })
+                }
+            })
+        }
 
         function closeForm(){
             $("#updateDemo").hide();

@@ -47,5 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/demos',[DemoController::Class,'index'])->name('demos');
     Route::post('/demo-store',[DemoController::Class,'store'])->name('demo.add');
     Route::post('/demo-update',[DemoController::Class,'update'])->name('demo.update');
+    Route::post('/demo-activity',[DemoController::Class,'demoActivity'])->name('demo.activity');
 
 });
