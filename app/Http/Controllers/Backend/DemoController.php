@@ -39,7 +39,8 @@ class DemoController extends Controller
                 'username'=>$request->username,
                 'password'=>$request->password,
                 'image'=>$new_name,
-                'description'=>$request->description
+                'description'=>$request->description,
+                'status'=>1
             ]);
 
             $image->move($upload_path, $new_name);

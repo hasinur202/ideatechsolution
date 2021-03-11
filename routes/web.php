@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/categories',[CategoryController::Class,'index'])->name('categories');
     Route::post('/category-store',[CategoryController::Class,'store'])->name('category.add');
     Route::post('/category-update',[CategoryController::Class,'update'])->name('category.update');
+    Route::post('/change-status',[CategoryController::Class,'change_status'])->name('status.change');
 
     //demo routes...
     Route::get('/demos',[DemoController::Class,'index'])->name('demos');

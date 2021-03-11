@@ -16,7 +16,9 @@ class HomeController extends Controller
 
     public function all_product()
     {
-        $datas = Category::with('get_demos')->get();
+        $datas = Category::with(['get_demos'=>function($q){
+            $q->where('status',1);
+        }])->where('status',1)->get();
 
         return view('layouts.frontend.product.all-product',[
             'datas'=>$datas,

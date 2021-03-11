@@ -20,7 +20,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -28,14 +28,15 @@ class CategoryController extends Controller
 
         ]);
 
-        
+
         if ($validator->fails()) {
             return response()->json([
                 'errors'=>"match"
             ],500);
         }else{
             $user = Category::create([
-                'title' => $request->title
+                'title' => $request->title,
+                'status'=>1
             ]);
 
             return response()->json([
@@ -44,26 +45,30 @@ class CategoryController extends Controller
         }
     }
 
+
     public function change_status(Request $request)
     {
         $data = Category::where('id',$request->id)->first();
-        
-        if ($data->status == null) {
+
+        if ($data->status == 0) {
             Category::where('id',$request->id)->update([
                 'status'=>1
             ]);
+
             return response()->json([
                 'message'=>'success'
             ],200);
         }else{
             Category::where('id',$request->id)->update([
-                'status'=>null
+                'status'=>0
             ]);
+
             return response()->json([
                 'message'=>'success'
-            ],401);
+            ],200);
         }
     }
+
 
     public function update(Request $request)
     {

@@ -124,7 +124,11 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{ $cat->title }}</td>
                                         <td>
-                                            <span class="badge badge-success">Active</span>
+                                            @if($cat->status == 1)
+                                                <a href="javascript:void(0)" onclick="statusChange({{ $cat->id }})" class="badge badge-success">Active</a>
+                                            @else
+                                                <a href="javascript:void(0)" onclick="statusChange({{ $cat->id }})" class="badge badge-warning">Deactive</a>
+                                            @endif
                                         </td>
                                         <td>
                                             <button style="margin-right: 5px;" href="#"
@@ -146,16 +150,44 @@
 @section('js')
     <script>
         $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+            });
         });
-        });
+
+        function statusChange(id){
+            $("#spin").show();
+            $.ajax({
+                url:"{{ route('status.change') }}",
+                method:"POST",
+                dataType:"json",
+                data:{
+                    "_token": "{{ csrf_token() }}",
+                    'id':id,
+                },
+                success: function(response) {
+                    $("#spin").hide();
+                    window.location.reload();
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Status Changes Successfully...'
+                    })
+                },
+                error: function() {
+                    $("#spin").hide();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something Wrong'
+                    })
+                }
+            })
+        }
 
         function editCat(cat) {
             $("#addCat").hide();
