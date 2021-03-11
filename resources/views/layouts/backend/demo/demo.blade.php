@@ -464,6 +464,9 @@
                     title: {
                         required: true
                     },
+                    slug: {
+                        required: true
+                    },
                     link: {
                         required: true
                     },
@@ -514,7 +517,7 @@
                             $("#spin").hide();
                             Swal.fire({
                                 icon: 'error',
-                                title: 'Field required'
+                                title: 'Slug should be unique'
                             })
                         }
                     })

@@ -22,7 +22,7 @@
                 <ul>
                     <li><a href="{{ route('home') }}"><i class="fa fa-home"></i>Home</a></li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                    <li>{{ $category }}</li>
+                    <li><a href="{{ route('all.product') }}">{{ $category }}</a></li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
                     <li>{{ $details->title }}</li>
                 </ul>

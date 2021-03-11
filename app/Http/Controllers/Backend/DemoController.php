@@ -64,39 +64,45 @@ class DemoController extends Controller
 
     public function update(Request $request)
     {
-        $request->validate([
-            'slug'  =>  'required|unique:demos',
-        ]);
 
         $data = Demo::where('id',$request->id)->first();
+
         if ($request->file('image') !=null) {
             $image = $request->file('image');
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
             $upload_path = public_path()."/images/";
-
-            Demo::where('id',$request->id)->update([
-                'category_id'=>$request->category_id,
-                'title'=>$request->title,
-                'slug'=>$request->slug,
-                'link'=>$request->link,
-                'username'=>$request->username,
-                'password'=>$request->password,
-                'image'=>$new_name,
-                'description'=>$request->description
-            ]);
-
-            $image->move($upload_path, $new_name);
         }else{
-            Demo::where('id',$request->id)->update([
-                'category_id'=>$request->category_id,
-                'title'=>$request->title,
-                'slug'=>$request->slug,
-                'link'=>$request->link,
-                'username'=>$request->username,
-                'password'=>$request->password,
-                'description'=>$request->description
-            ]);
+            $new_name=$data->image;
         }
+
+        if($data->slug == $request->slug){
+            $slugg = $request->slug;
+        }else{
+            $checkslug = Demo::where('slug',$request->slug)->count();
+            if($checkslug > 0){
+                return response()->json([
+                    'error'=>'error'
+                ],500);
+            }else{
+                $slugg = $request->slug;
+            }
+        }
+
+        Demo::where('id',$request->id)->update([
+            'category_id'=>$request->category_id,
+            'title'=>$request->title,
+            'slug'=>$slugg,
+            'link'=>$request->link,
+            'username'=>$request->username,
+            'password'=>$request->password,
+            'image'=>$new_name,
+            'description'=>$request->description
+        ]);
+
+        if ($request->file('image') !=null){
+            $image->move($upload_path, $new_name);
+        }
+
         return response()->json([
             'message'=>'success'
         ],200);
