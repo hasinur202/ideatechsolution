@@ -17,9 +17,12 @@ Route::get('/all-demos',[HomeController::Class,'all_product'])->name('all.produc
 Route::get('/{cat}/{slug}',[HomeController::Class,'details']);
 
 Route::post('/show-product',[HomeController::Class,'show'])->name('show.product');
-Route::get('/contact-us',[ContactController::Class,'index'])->name('contact');
 Route::get('/about-us',[AboutController::Class,'index'])->name('about');
 Route::get('/services',[ServiceController::Class,'index'])->name('service');
+
+Route::get('/contact-us',[ContactController::Class,'index'])->name('contact');
+Route::post('/store-message',[ContactController::Class,'store'])->name('message.store');
+
 
 
 

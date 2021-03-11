@@ -39,7 +39,7 @@
 <script src="{{ asset('backend/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{ asset('backend/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
-<script src="{{ asset('backend/dist/js/validate.js')}}"></script>
+<script src="{{ asset('/backend/dist/js/validate.js') }}"></script>
 
 <script>
   const Toast = Swal.mixin({

@@ -151,6 +151,20 @@
 <script src="/assets/wow/wow.min.js "></script>
 <script src="/assets/jquery/jquery.slicknav.js"></script>
 <script src="/js/custom.js"></script>
+<script src="{{ asset('backend/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<script>
+    const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+      })
+  </script>
 
 @yield('js')
 

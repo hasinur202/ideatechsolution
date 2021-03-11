@@ -43,27 +43,39 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="contact-form">
-                    <h3>Get in Touch</h3>
-                    <form action="#">
+                    <h3>Get in Touch  <span id="spin" style="display: none"><i class="fa fa-spinner fa-pulse"></i></span></h3>
+                    <form id="formStore">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" id="nameId" required name="name" placeholder="Full Name" type="text">
+                                    <input class="form-control" id="nameId" required name="name" placeholder="Full Name *" type="text">
                                 </div>
                             </div>
                             <!-- .col-md-6 -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" id="emailId" required name="email" placeholder="Email Address" type="email">
+                                    <input class="form-control" id="emailId" required name="email" placeholder="Email Address *" type="email">
                                 </div>
                             </div>
                             <!-- .col-md-6 -->
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" id="subjectId" required name="subject" placeholder="Subject" type="text">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="subjectId" required name="subject" placeholder="Subject *" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" required id="mobileId" name="mobile" placeholder="Mobile" type="text">
+                                </div>
+                            </div>
                         </div>
-                        <textarea class="form-control text-area" rows="3" placeholder="Message"></textarea>
-                        <button type="submit" class="btn btn-default">Submit</button>
+
+                        <textarea class="form-control text-area" rows="3" id="messageId" placeholder="Message *"></textarea>
+
+                        <button type="button" onclick="submitForm()" class="btn btn-default">Submit</button>
                     </form>
                 </div>
             </div>
@@ -110,4 +122,43 @@
 </div>
 
 
+@section('js')
+<script>
+
+    function submitForm(){
+        $("#spin").show();
+        $.ajax({
+            url:"{{ route('message.store') }}",
+            method:"POST",
+            dataType:"json",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                'name':$("#nameId").val(),
+                'email':$("#emailId").val(),
+                'subject':$("#subjectId").val(),
+                'mobile':$("#mobileId").val(),
+                'description':$("#messageId").val(),
+            },
+            success: function(response) {
+                $("#spin").hide();
+                window.location.reload();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Send Successfully'
+                })
+            },
+            error: function() {
+                $("#spin").hide();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Something Wrong'
+                })
+            }
+        })
+    }
+
+</script>
+
+
+@endsection
 @endsection
