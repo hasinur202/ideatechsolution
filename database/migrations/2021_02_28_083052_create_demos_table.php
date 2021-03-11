@@ -17,6 +17,7 @@ class CreateDemosTable extends Migration
             $table->id();
             $table->foreignId('category_id')->nullable()->constrained('categories');
             $table->string('title');
+            $table->string('slug');
             $table->string('image');
             $table->string('link');
             $table->string('username');

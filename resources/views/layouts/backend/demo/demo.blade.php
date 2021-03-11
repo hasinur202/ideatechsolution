@@ -12,20 +12,20 @@
         width: 100px;
     }
     .demo_img_wrap{
-        height: 7.5rem; 
+        height: 7.5rem;
         border: dashed 1.5px blue;
         background-image: repeating-linear-gradient(45deg, black, transparent 100px);
         width: 60% !important; cursor: pointer;
     }
     .demo_img_wrap input{
-        opacity: 0; 
-        height: 7.5rem; 
-        cursor: pointer; 
+        opacity: 0;
+        height: 7.5rem;
+        cursor: pointer;
         padding: 0px;
     }
     .demo_img_wrap img{
-        height: 7.5rem; 
-        width: 100% !important; 
+        height: 7.5rem;
+        width: 100% !important;
         cursor: pointer;
         margin-top: -121px;
     }
@@ -61,210 +61,208 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-     
+
         <section class="content">
             <div class="row">
                 <div class="loading-spin" id="spin">
                     <img src="{{ asset('/loading.gif') }}" alt="">
                 </div>
-                <div id="demo_info" class="card card-primary col-md-12" style="
-                        display: none;
-                        position: relative;
-                    ">
-                    <div class="card-header" id="cardHeader" style="background-color: #007bff;
-                    color: #fff;">
-                        <h3 class="card-title" id="cardTitle-add">Add New Demo</h3>
-                        <button type="button" onclick="closeForm()" class="close" aria-label="Close">
-                            <span style="color: #fff" aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form class="row" role="form" id="addDemo">
-                        @csrf
-                        <div class="form-group col-md-6">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Select Category</label>
-                            <select class="form-control" name="category_id">
-                                <option value="" selected="selected" hidden>Select Category</option>
-                                @foreach ($categories as $cat)
-                                <option value="{{$cat->id}}">{{$cat->title}}</option>
-                                @endforeach
-                            </select>
 
+                <div class="col-md-12">
+                    <div id="demo_info" class="card card-primary" style="
+                            display: none;
+                            position: relative;
+                        ">
+                        <div class="card-header" id="cardHeader" style="background-color: #007bff; color: #fff;">
+                            <h3 class="card-title" id="cardTitle-add">Add New Demo</h3>
+                            <button type="button" onclick="closeForm()" class="close" aria-label="Close">
+                                <span style="color: #fff" aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Title</label>
-                            <input name="title" type="text" class="form-control"
-                                placeholder="Enter demo title" />
+                        <form class="card-body" role="form" id="addDemo">
+                            @csrf
+                            <div class="col-md-5 float-left">
+                                <div class="form-group">
+                                    <select class="form-control" name="category_id">
+                                        <option value="" selected="selected" hidden>Select Category</option>
+                                        @foreach ($categories as $cat)
+                                        <option value="{{$cat->id}}">{{$cat->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Link</label>
-                            <input name="link" type="text" class="form-control"
-                                placeholder="Enter demo link" />
+                                <div class="form-group">
+                                    <input name="title" type="text" class="form-control"
+                                        placeholder="Enter demo title *" />
+                                </div>
+                                <div class="form-group">
+                                    <input name="slug" type="text" class="form-control"
+                                        placeholder="Slug *" />
+                                </div>
 
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Username</label>
-                            <input name="username" type="text" class="form-control"
-                                placeholder="Enter demo username" />
-
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Password</label>
-                            <input name="password" type="text" class="form-control"
-                                placeholder="Enter demo password" />
-
-                        </div>
-                        <div class="form-group col-md-8">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Description</label>
-                            <textarea name="description" type="text" class="form-control"
-                                placeholder="Enter demo description"></textarea>
-
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="image" class="col-form-label">Banar Image</label>
-                                <div class="demo_img_wrap">
-                                    <input id="image" type="file" class="form-control" name="image">
-                                    <img src="" id="image-img"/>
+                                <div class="form-group">
+                                    <input name="link" type="text" class="form-control"
+                                        placeholder="Enter demo link *" />
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="col-md-12">
-                            <button id="submit" style="width: 100%" class="btn btn-primary">
-                                Submit
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                            <div class="col-md-6 float-right">
+                                <div class="form-group">
+                                    <input name="username" type="text" class="form-control"
+                                        placeholder="Enter demo username *" />
+                                </div>
 
-                <div id="updateDemo" class="card card-primary col-md-12" style="margin-left: 15px;
-                        padding-top: 8px;
-                        height:230px;
-                        display: none;
-                    ">
-                    <div class="card-header" id="cardHeader" style="background-color: #28a745;
-                    color: #fff;">
-                        <h3 class="card-title" id="cardTitle-update">Update Demo</h3>
-                        <button type="button" onclick="closeForm()" class="close" aria-label="Close">
-                            <span style="color: #fff" aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form class="row" role="form" id="edit_demo">
-                        @csrf
-                        <div class="form-group col-md-6">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Select Category</label>
-                            <select class="form-control" name="category_id">
-                                <option id="cat_val" value="" selected="selected" hidden></option>
-                                @foreach ($categories as $cat)
-                                <option value="{{$cat->id}}">{{$cat->title}}</option>
-                                @endforeach
-                            </select>
-
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Title</label>
-                            <input id="title" name="title" type="text" class="form-control"
-                                placeholder="Enter demo title" />
-
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Link</label>
-                            <input id="link" name="link" type="text" class="form-control"
-                                placeholder="Enter demo link" />
-
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Username</label>
-                            <input id="username" name="username" type="text" class="form-control"
-                                placeholder="Enter demo username" />
-
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Password</label>
-                            <input id="password" name="password" type="text" class="form-control"
-                                placeholder="Enter demo password" />
-
-                        </div>
-                        <div class="form-group col-md-8">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Description</label>
-                            <textarea id="description" name="description" type="text" class="form-control"
-                                placeholder="Enter demo description"></textarea>
-
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="image" class="col-form-label">Banar Image</label>
-                                <div class="demo_img_wrap">
-                                    <input id="e_image" type="file" class="form-control" name="image">
-                                    <img src="" id="edit_img"/>
+                                <div class="form-group">
+                                    <input name="password" type="text" class="form-control"
+                                        placeholder="Enter demo password *" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Demo Image</label>
+                                    <div class="demo_img_wrap">
+                                        <input id="image" type="file" class="form-control" name="image">
+                                        <img src="" id="image-img"/>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="row col-md-12">
+                                <div class="form-group" style="width:100%">
+                                    <textarea name="description" type="text" class="form-control"
+                                        placeholder="Enter demo description"></textarea>
+                                </div>
+                                <button id="submit" style="width: 100%" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
 
-                        </div>
-                        <input type="hidden" id="demo_id" name="id">
-                        <div class="col-md-12">
-                            <button id="submit" style="width: 100%" class="btn btn-success">
-                                Submit
+
+                    <div id="updateDemo" class="card card-primary" style="margin-left: 15px;
+                            padding-top: 8px;
+                            height:230px;
+                            display: none;
+                        ">
+                        <div class="card-header" id="cardHeader" style="background-color: #28a745;
+                        color: #fff;">
+                            <h3 class="card-title" id="cardTitle-update">Update Demo</h3>
+                            <button type="button" onclick="closeForm()" class="close" aria-label="Close">
+                                <span style="color: #fff" aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                    </form>
-                </div>
+                        <form class="row" role="form" id="edit_demo">
+                            @csrf
+                            <div class="form-group col-md-6">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Select Category</label>
+                                <select class="form-control" name="category_id">
+                                    <option id="cat_val" value="" selected="selected" hidden></option>
+                                    @foreach ($categories as $cat)
+                                    <option value="{{$cat->id}}">{{$cat->title}}</option>
+                                    @endforeach
+                                </select>
 
-                <div class="card col-12" id="demo_table">
-                    <div class="card-header">
-                        <h3 class="card-title">All Demo is here</h3>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Title</label>
+                                <input id="title" name="title" type="text" class="form-control"
+                                    placeholder="Enter demo title" />
+
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Link</label>
+                                <input id="link" name="link" type="text" class="form-control"
+                                    placeholder="Enter demo link" />
+
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Username</label>
+                                <input id="username" name="username" type="text" class="form-control"
+                                    placeholder="Enter demo username" />
+
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Password</label>
+                                <input id="password" name="password" type="text" class="form-control"
+                                    placeholder="Enter demo password" />
+
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Description</label>
+                                <textarea id="description" name="description" type="text" class="form-control"
+                                    placeholder="Enter demo description"></textarea>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="image" class="col-form-label">Banar Image</label>
+                                    <div class="demo_img_wrap">
+                                        <input id="e_image" type="file" class="form-control" name="image">
+                                        <img src="" id="edit_img"/>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="hidden" id="demo_id" name="id">
+                            <div class="col-md-12">
+                                <button id="submit" style="width: 100%" class="btn btn-success">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
 
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" style="width: 166px;">
-                                        Category Name
-                                    </th>
-                                    <th class="sorting" style="width: 204px;">
-                                        Title
-                                    </th>
-                                    <th class="sorting" style="width: 204px;">
-                                        Link
-                                    </th>
-                                    <th class="sorting" style="width: 204px;">
-                                        Username
-                                    </th>
-                                    <th class="sorting" style="width: 204px;">
-                                        Password
-                                    </th>
-                                    <th class="sorting" style="width: 204px;">
-                                        Image
-                                    </th>
-                                    <th class="sorting" style="width: 99px;">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($demos as $demo)
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">{{ $demo->get_category->title }}</td>
-                                        <td class="sorting_1">{{ Str::limit($demo->title,15,'...') }}</td>
-                                        <td class="sorting_1">{{ Str::limit($demo->link,15,'...') }}</td>
-                                        <td class="sorting_1">{{ $demo->username }}</td>
-                                        <td class="sorting_1">{{ $demo->password }}</td>
-                                        <td class="sorting_1">
-                                            <img width="50px" height="30px" src="{{asset('/images/'.$demo->image)}}" alt="">
-                                        </td>
-                                        <td>
-                                            <button style="margin-right: 5px;" href="#"
-                                                class="btn btn-primary btn-xs" onclick="editDemo({{ $demo }})">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                        </td>
+
+                    <div class="card" id="demo_table">
+                        <div class="card-header">
+                            <h3 class="card-title">All Demo is here</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" style="width: 166px;">
+                                            Category Name
+                                        </th>
+                                        <th class="sorting" style="width: 204px;">
+                                            Title
+                                        </th>
+                                        <th class="sorting" style="width: 204px;">
+                                            Link
+                                        </th>
+                                        <th class="sorting" style="width: 204px;">
+                                            Username
+                                        </th>
+                                        <th class="sorting" style="width: 204px;">
+                                            Password
+                                        </th>
+                                        <th class="sorting" style="width: 204px;">
+                                            Image
+                                        </th>
+                                        <th class="sorting" style="width: 99px;">
+                                            Action
+                                        </th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($demos as $demo)
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">{{ $demo->get_category->title }}</td>
+                                            <td class="sorting_1">{{ Str::limit($demo->title,15,'...') }}</td>
+                                            <td class="sorting_1">{{ Str::limit($demo->link,15,'...') }}</td>
+                                            <td class="sorting_1">{{ $demo->username }}</td>
+                                            <td class="sorting_1">{{ $demo->password }}</td>
+                                            <td class="sorting_1">
+                                                <img width="50px" height="30px" src="{{asset('/images/'.$demo->image)}}" alt="">
+                                            </td>
+                                            <td>
+                                                <button style="margin-right: 5px;" href="#"
+                                                    class="btn btn-primary btn-xs" onclick="editDemo({{ $demo }})">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -290,6 +288,7 @@
             $("#updateDemo").hide();
             $("#demo_table").show();
             $("#demo_info").hide();
+            $("#disableDiv").show();
         }
 
         function editDemo(demo){
@@ -311,6 +310,7 @@
             $("#demo_table").hide();
             $("#demo_info").show();
             $("#updateDemo").hide();
+            $("#disableDiv").hide();
         }
 
         function imageUrl(input) {

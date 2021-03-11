@@ -9,10 +9,10 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+       <i class="fa fa-envelope"></i> ideatechsolution.bd@gmail.com
     </div>
     <!-- Default to the left -->
-    <strong>Copyright © 2020 <a href="https://ideatechsolution.com">AdminPanel</a>.</strong> All rights reserved.
+    <strong>Copyright © 2021 <a href="https://ideatechsolution.com">Idea Tech Solution</a>.</strong> All rights reserved.
   </footer>
 
 </div>

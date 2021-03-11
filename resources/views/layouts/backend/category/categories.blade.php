@@ -18,27 +18,14 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-3">
-                        <div id="disableDiv" style="width: 70%;
-                            padding: 5px;
-                            background-color: white;
-                            border: 1px solid #ddd;
-                            box-shadow: 1px 1px #ddd;
-                            border-radius: 5px;display: inline-flex;">
-                            <a href="{{route('demos')}}" style="padding: 10px;" class="btn btn-primary">
-                                <i style="margin-right: 5px;font-size: 25px;margin-left: 5px;" class="fa fa-plus"
-                                style="margin-right: 5px;"></i>
-                            </a>
-                            <p style="margin-left: 5px;
-                            font-weight: 700;
-                            margin-bottom: 0px;">Add Demo
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                  <div class="col-sm-6">
+                    <h1 class="m-0">Categories</h1>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
             </div><!-- /.container-fluid -->
+
         </section>
-     
+
         <section class="content">
             <div class="row">
                 <div class="loading-spin" id="spin">
