@@ -79,7 +79,7 @@
                                     <img src="{{ asset('/images/'.$demo->image) }}" alt="Image"/>
                                     <div class="shadow">
                                         <dir class="myitem">
-                                            <a href="{{ url('/'.$cat->title.'/'.$demo->slug) }}" target="_blank" class="btn btn-success btn-sm" style="margin:auto">Details</a>
+                                            <a href="{{ url('/'.$cat->title.'/'.$demo->slug) }}" class="btn btn-success btn-sm" style="margin:auto">Details</a>
                                         </dir>
                                     </div>
                                 </div>
