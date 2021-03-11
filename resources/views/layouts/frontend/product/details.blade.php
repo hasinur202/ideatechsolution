@@ -30,6 +30,7 @@
         </div>
     </div>
     <!-- Breadcromb Wrapper End -->
+
     <!-- Inner Page Wrapper Start -->
     <div class="inner-page-wrapper about-wrapper">
         <div class="container">
@@ -47,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <a target="_blank" href="{{ $details->link }}" class="btn demo-btn">View Demo</a>
+                    <a onclick="modalOpen(`{{ $details->link }}`)" href="javascript:void(0)" class="btn demo-btn">View Demo</a>
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <div class="about-main">
@@ -60,10 +61,41 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="float: left" id="exampleModalLabel">Login Info.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="height: 125px;">
+                <a href="" id="livePreview" target="_blank" style="margin-top: 1rem; width:48%; float:right" class="btn btn-default">Live Preview</a>
 
+                <div style="width: 48%;float: left;">
+                    <div>
+                        <label>Username: </label>
+                        <span>ideatech</span>
+                    </div>
+                    <div>
+                        <label>Password: </label>
+                        <span>1234568</span>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 @section('js')
     <script>
+        function modalOpen(link){
+            $("#myModal").modal('show');
+
+            $('#livePreview').attr('href',link);
+        }
 
 
     </script>
