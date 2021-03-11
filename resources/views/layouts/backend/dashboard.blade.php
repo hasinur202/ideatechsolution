@@ -6,7 +6,7 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-12">
                 <h3>Welcome To Idea Tech Backend</h3>
             </div>
         </div>
@@ -15,56 +15,76 @@
 
     <!-- Main content -->
     <section class="content">
-            
         <div class="row">
-            {{-- <div class="card col-12" style="border: 1px solid #ddd;display:block;">
-                <div class="card-header">
-                    <h3 class="card-title">Message List</h3>
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>150</h3>
+
+                  <p>New Orders</p>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr role="row">
-                                <th>
-                                    Name
-                                </th>
-                                <th>
-                                    Email
-                                </th>
-                                <th>
-                                    Message
-                                </th>
-                                <th>
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="countRow">
-                            @foreach ($messages as $msg)
-                                <tr role="row" class="odd">
-                                    <td class="sorting_1">{{ optional($msg)->name }}</td>
-                                    <td class="sorting_1">{{ optional($msg)->email }}</td>
-                                    <td class="sorting_1">{{ optional($msg)->msg}}</td>
-                                    
-                                    <td style="display: inline-flex;">
-                                        <button class="btn btn-danger btn-xs" onclick="deleteMsg({{$msg->id}})">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
                 </div>
-            </div> --}}
-      </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                  <p>Bounce Rate</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3>44</h3>
+
+                  <p>User Registrations</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>65</h3>
+
+                  <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+
+
     </div>
   </section>
 
 @section('js')
     <script>
-        
+
 
     </script>
 @endsection
