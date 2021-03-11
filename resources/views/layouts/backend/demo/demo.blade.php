@@ -54,7 +54,7 @@
                             </button>
                             <p style="margin-left: 5px;
                             font-weight: 700;
-                            margin-bottom: 0px;">Add Demo
+                            margin-bottom: 0px; margin-top:10px;">Add Demo
                             </p>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
 
                 <div class="col-md-12">
                     <div id="demo_info" class="card card-primary" style="display: none; position: relative;">
-                        <div class="card-header bg-info" id="cardHeader">
+                        <div class="card-header bg-primary" id="cardHeader">
                             <h3 class="card-title" id="cardTitle-add">Add New Demo</h3>
                             <button type="button" onclick="closeForm()" class="close" aria-label="Close">
                                 <span style="color: #fff" aria-hidden="true">&times;</span>
@@ -132,77 +132,81 @@
                     </div>
 
 
-                    <div id="updateDemo" class="card card-primary" style="margin-left: 15px;
-                            padding-top: 8px;
-                            height:230px;
-                            display: none;
-                        ">
-                        <div class="card-header" id="cardHeader" style="background-color: #28a745;
-                        color: #fff;">
+                    <div id="updateDemo" class="card card-primary" style="display: none;">
+                        <div class="card-header" id="cardHeader" style="background-color: #28a745;color: #fff;">
                             <h3 class="card-title" id="cardTitle-update">Update Demo</h3>
                             <button type="button" onclick="closeForm()" class="close" aria-label="Close">
                                 <span style="color: #fff" aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form class="row" role="form" id="edit_demo">
-                            @csrf
-                            <div class="form-group col-md-6">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect">Select Category</label>
-                                <select class="form-control" name="category_id">
-                                    <option id="cat_val" value="" selected="selected" hidden></option>
-                                    @foreach ($categories as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->title}}</option>
-                                    @endforeach
-                                </select>
+                        <div class="card-body">
+                            <form class="row" role="form" id="edit_demo">
+                                @csrf
+                                <div class="form-group col-md-4">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Select Category</label>
+                                    <select class="form-control" name="category_id">
+                                        <option id="cat_val" value="" selected="selected" hidden></option>
+                                        @foreach ($categories as $cat)
+                                        <option value="{{$cat->id}}">{{$cat->title}}</option>
+                                        @endforeach
+                                    </select>
 
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect">Title</label>
-                                <input id="title" name="title" type="text" class="form-control"
-                                    placeholder="Enter demo title" />
-
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect">Link</label>
-                                <input id="link" name="link" type="text" class="form-control"
-                                    placeholder="Enter demo link" />
-
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect">Username</label>
-                                <input id="username" name="username" type="text" class="form-control"
-                                    placeholder="Enter demo username" />
-
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect">Password</label>
-                                <input id="password" name="password" type="text" class="form-control"
-                                    placeholder="Enter demo password" />
-
-                            </div>
-                            <div class="form-group col-md-8">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect">Description</label>
-                                <textarea id="description" name="description" type="text" class="form-control"
-                                    placeholder="Enter demo description"></textarea>
-
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="image" class="col-form-label">Banar Image</label>
-                                    <div class="demo_img_wrap">
-                                        <input id="e_image" type="file" class="form-control" name="image">
-                                        <img src="" id="edit_img"/>
-                                    </div>
                                 </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Title</label>
+                                    <input id="title" name="title" type="text" class="form-control"
+                                        placeholder="Enter demo title" />
 
-                            </div>
-                            <input type="hidden" id="demo_id" name="id">
-                            <div class="col-md-12">
-                                <button id="submit" style="width: 100%" class="btn btn-success">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Slug</label>
+                                    <input id="slug" name="slug" type="text" class="form-control"
+                                        placeholder="Enter demo title" />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Link</label>
+                                    <input id="link" name="link" type="text" class="form-control"
+                                        placeholder="Enter demo link" />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Username</label>
+                                    <input id="username" name="username" type="text" class="form-control"
+                                        placeholder="Enter demo username" />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Password</label>
+                                    <input id="password" name="password" type="text" class="form-control"
+                                        placeholder="Enter demo password" />
+
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Description</label>
+                                    <textarea id="description" name="description" type="text" class="form-control"
+                                        placeholder="Enter demo description"></textarea>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="image" class="col-form-label">Banar Image</label>
+                                        <div class="demo_img_wrap">
+                                            <input id="e_image" type="file" class="form-control" name="image">
+                                            <img src="" id="edit_img"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <input type="hidden" id="demo_id" name="id">
+                                <div class="col-md-12">
+                                    <button id="submit" style="width: 100%" class="btn btn-success">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
 
 
@@ -292,6 +296,7 @@
             $("#cat_val").val(demo.get_category.id);
             $("#cat_val").text(demo.get_category.title);
             $("#title").val(demo.title);
+            $("#slug").val(demo.slug);
             $("#link").val(demo.link);
             $("#username").val(demo.username);
             $("#password").val(demo.password);
