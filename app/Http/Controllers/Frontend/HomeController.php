@@ -25,8 +25,11 @@ class HomeController extends Controller
 
     public function details(Request $request, $cat, $slug)
     {
+        $details = Demo::where('slug',$slug)->first();
+
         return view('layouts.frontend.product.details',[
-            'slug'=>$slug
+            'details'=>$details,
+            'category'=>$cat
         ]);
     }
 

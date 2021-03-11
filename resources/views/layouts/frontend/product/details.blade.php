@@ -14,17 +14,17 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="breadcromb-left">
-                        <h3>Software Details</h3>
+                        <h3>{{ $details->title }} Details</h3>
                     </div>
                 </div>
             </div>
             <div class="breadcromb-text">
                 <ul>
-                    <li><a href="index.html"><i class="fa fa-home"></i>home</a></li>
+                    <li><a href="{{ route('home') }}"><i class="fa fa-home"></i>Home</a></li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                    <li>Pages</li>
+                    <li>{{ $category }}</li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                    <li>Demo</li>
+                    <li>{{ $details->title }}</li>
                 </ul>
             </div>
         </div>
@@ -39,21 +39,20 @@
                         <div class="about-text">
                             <div class="about-inner">
                                 <div class="since-year clearfix">
-                                    {{ $slug }}
-                                    <div class="work"><strong>MLM</strong><span>Multilevel Marketing E-commerce</span></div>
+                                    <div class="work"><strong style="font-size: 2.2rem">{{ $category }}</strong><span>{{ $details->title }}</span></div>
                                 </div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue justo scelerisque mattis iaculis. Maecenas vestibulum faucibus enim scelerisque egestas. Praesent facilisis, tortor vel vehicula imperdiet, felis
-                                    massa ultrices metus, sed consectetur massa ex vitae sem. Integer eu sodales augue. Suspendisse eget placerat lorem. Phasellus ac hendrerit leo. Morbi quis iaculis eros. Sed tincidunt augue ante
+                                <div class="text">
+                                    {{ $details->description }}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a target="_blank" href="#" class="btn demo-btn">View Demo</a>
+                    <a target="_blank" href="{{ $details->link }}" class="btn demo-btn">View Demo</a>
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <div class="about-main">
                         <div class="about-inner">
-                            <div class="image"> <img src="images/about-inner-1.jpg" alt=""> </div>
+                            <div class="image"> <img src="/images/{{ $details->image }}" alt=""> </div>
                         </div>
                     </div>
                 </div>
