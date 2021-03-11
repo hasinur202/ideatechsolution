@@ -23,9 +23,11 @@ class HomeController extends Controller
         ]);
     }
 
-    public function details()
+    public function details(Request $request, $cat, $slug)
     {
-        return view('layouts.frontend.product.details');
+        return view('layouts.frontend.product.details',[
+            'slug'=>$slug
+        ]);
     }
 
 }

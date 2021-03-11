@@ -79,12 +79,12 @@
                                     <img src="{{ asset('/images/'.$demo->image) }}" alt="Image"/>
                                     <div class="shadow">
                                         <dir class="myitem">
-                                            <a href="{{ route('product.details') }}" target="_blank" class="btn btn-success btn-sm" style="margin:auto">Details</a>
+                                            <a href="{{ url('/'.$cat->title.'/'.$demo->slug) }}" target="_blank" class="btn btn-success btn-sm" style="margin:auto">Details</a>
                                         </dir>
                                     </div>
                                 </div>
                                 <div class="info">
-                                    <a href="{{ route('product.details') }}">{{ $demo->title }}</a>
+                                    <a href="{{ url('/'.$cat->title.'/'.$demo->slug) }}">{{ $demo->title }}</a>
                                     <i class="fa fa-tablet"></i>
                                     <i class="fa fa-desktop"></i>
                                 </div>

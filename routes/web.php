@@ -13,9 +13,10 @@ use App\Http\Controllers\Backend\DashboardController;
 //frontend controller...
 Route::get('/',[HomeController::Class,'index'])->name('home');
 Route::get('/all-demos',[HomeController::Class,'all_product'])->name('all.product');
-Route::get('/product-details',[HomeController::Class,'details'])->name('product.details');
-Route::post('/show-product',[HomeController::Class,'show'])->name('show.product');
 
+Route::get('/{cat}/{slug}',[HomeController::Class,'details']);
+
+Route::post('/show-product',[HomeController::Class,'show'])->name('show.product');
 Route::get('/contact-us',[ContactController::Class,'index'])->name('contact');
 Route::get('/about-us',[AboutController::Class,'index'])->name('about');
 Route::get('/services',[ServiceController::Class,'index'])->name('service');

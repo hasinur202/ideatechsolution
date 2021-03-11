@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Idea Tech Solution</title>
     <!-- Bootstrap CSS -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS-->
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Animate CSS -->
-    <link href="assets/animate/animate.css" rel="stylesheet">
+    <link href="/assets/animate/animate.css" rel="stylesheet">
     <!-- Mobile Menu Css -->
-    <link href="assets/css/slicknav.css" rel="stylesheet">
+    <link href="/assets/css/slicknav.css" rel="stylesheet">
     <!-- Owl Carousel -->
-    <link href="assets/owl-carousel/css/owl.carousel.css" rel="stylesheet">
-    <link href="assets/owl-carousel/css/owl.theme.css" rel="stylesheet">
+    <link href="/assets/owl-carousel/css/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/owl-carousel/css/owl.theme.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
     @yield('css')
 

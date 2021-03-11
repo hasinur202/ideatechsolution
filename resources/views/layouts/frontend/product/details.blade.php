@@ -1,4 +1,9 @@
 @extends('layouts.frontend.app')
+@section('css')
+<style>
+
+</style>
+@endsection
 
 @section('content')
 
@@ -34,6 +39,7 @@
                         <div class="about-text">
                             <div class="about-inner">
                                 <div class="since-year clearfix">
+                                    {{ $slug }}
                                     <div class="work"><strong>MLM</strong><span>Multilevel Marketing E-commerce</span></div>
                                 </div>
                                 <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue justo scelerisque mattis iaculis. Maecenas vestibulum faucibus enim scelerisque egestas. Praesent facilisis, tortor vel vehicula imperdiet, felis
@@ -55,4 +61,12 @@
         </div>
     </div>
 
+
+
+@section('js')
+    <script>
+
+
+    </script>
+@endsection
 @endsection

@@ -22,7 +22,6 @@ class DemoController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'slug'  =>  'required|unique:demos',
         ]);
@@ -64,6 +63,10 @@ class DemoController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'slug'  =>  'required|unique:demos',
+        ]);
+
         $data = Demo::where('id',$request->id)->first();
         if ($request->file('image') !=null) {
             $image = $request->file('image');
@@ -73,6 +76,7 @@ class DemoController extends Controller
             Demo::where('id',$request->id)->update([
                 'category_id'=>$request->category_id,
                 'title'=>$request->title,
+                'slug'=>$request->slug,
                 'link'=>$request->link,
                 'username'=>$request->username,
                 'password'=>$request->password,
@@ -85,6 +89,7 @@ class DemoController extends Controller
             Demo::where('id',$request->id)->update([
                 'category_id'=>$request->category_id,
                 'title'=>$request->title,
+                'slug'=>$request->slug,
                 'link'=>$request->link,
                 'username'=>$request->username,
                 'password'=>$request->password,

@@ -142,15 +142,15 @@
 </div>  --}}
 
 
-<script src="assets/jquery/jquery-1.12.0.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/jquery/plugin.js"></script>
-<script src="assets/jquery/plugins.js"></script>
-<script src="assets/jquery/slider.js"></script>
-<script src="assets/owl-carousel/js/owl.carousel.js"></script>
-<script src="assets/wow/wow.min.js "></script>
-<script src="assets/jquery/jquery.slicknav.js"></script>
-<script src="js/custom.js"></script>
+<script src="/assets/jquery/jquery-1.12.0.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/jquery/plugin.js"></script>
+<script src="/assets/jquery/plugins.js"></script>
+<script src="/assets/jquery/slider.js"></script>
+<script src="/assets/owl-carousel/js/owl.carousel.js"></script>
+<script src="/assets/wow/wow.min.js "></script>
+<script src="/assets/jquery/jquery.slicknav.js"></script>
+<script src="/js/custom.js"></script>
 
 @yield('js')
 
