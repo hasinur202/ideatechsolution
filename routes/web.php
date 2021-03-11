@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\DemoController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ServiceController;
@@ -51,5 +52,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/demo-store',[DemoController::Class,'store'])->name('demo.add');
     Route::post('/demo-update',[DemoController::Class,'update'])->name('demo.update');
     Route::post('/demo-activity',[DemoController::Class,'demoActivity'])->name('demo.activity');
+
+    //contact route
+    Route::get('/contact-list',[MessageController::Class,'index'])->name('contact.list');
 
 });

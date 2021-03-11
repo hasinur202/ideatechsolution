@@ -42,7 +42,7 @@
                                             <td>{{ $contact->description }}</td>
 
                                             <td>
-                                                <button class="btn btn-danger btn-xs" <i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach

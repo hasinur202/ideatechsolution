@@ -67,7 +67,7 @@
 
           <li class="nav-item has-treeview">
             <a href="{{route('contact.list')}}" class="nav-link">
-              <i class="nav-icon fas fa-sitemap"></i>
+              <i class="nav-icon fas fa-phone"></i>
               <p>
                 Contacts
               </p>
