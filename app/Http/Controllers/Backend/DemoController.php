@@ -22,6 +22,11 @@ class DemoController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'slug'  =>  'required|unique:demos',
+        ]);
+
         if ($request->file('image')) {
             $image = $request->file('image');
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
@@ -30,20 +35,21 @@ class DemoController extends Controller
             Demo::create([
                 'category_id'=>$request->category_id,
                 'title'=>$request->title,
+                'slug'=>$request->slug,
                 'link'=>$request->link,
                 'username'=>$request->username,
                 'password'=>$request->password,
                 'image'=>$new_name,
                 'description'=>$request->description
             ]);
-    
+
             $image->move($upload_path, $new_name);
-    
+
             return response()->json([
                 'message'=>'success'
             ],200);
         }
-        
+
     }
 
     public function show($id)
@@ -73,7 +79,7 @@ class DemoController extends Controller
                 'image'=>$new_name,
                 'description'=>$request->description
             ]);
-    
+
             $image->move($upload_path, $new_name);
         }else{
             Demo::where('id',$request->id)->update([

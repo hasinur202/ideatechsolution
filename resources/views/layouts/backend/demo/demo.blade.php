@@ -36,7 +36,7 @@
 
 </style>
 @section('content')
-    <div class="content-wrapper" style="min-height: 1589.56px;">
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
@@ -69,11 +69,8 @@
                 </div>
 
                 <div class="col-md-12">
-                    <div id="demo_info" class="card card-primary" style="
-                            display: none;
-                            position: relative;
-                        ">
-                        <div class="card-header" id="cardHeader" style="background-color: #007bff; color: #fff;">
+                    <div id="demo_info" class="card card-primary" style="display: none; position: relative;">
+                        <div class="card-header bg-info" id="cardHeader">
                             <h3 class="card-title" id="cardTitle-add">Add New Demo</h3>
                             <button type="button" onclick="closeForm()" class="close" aria-label="Close">
                                 <span style="color: #fff" aria-hidden="true">&times;</span>
@@ -117,7 +114,7 @@
                                         placeholder="Enter demo password *" />
                                 </div>
                                 <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Demo Image</label>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Demo Image *</label>
                                     <div class="demo_img_wrap">
                                         <input id="image" type="file" class="form-control" name="image">
                                         <img src="" id="image-img"/>
@@ -129,7 +126,7 @@
                                     <textarea name="description" type="text" class="form-control"
                                         placeholder="Enter demo description"></textarea>
                                 </div>
-                                <button id="submit" style="width: 100%" class="btn btn-primary">Submit</button>
+                                <button type="submit" style="width: 100%" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -350,6 +347,9 @@
                     title: {
                         required: true
                     },
+                    slug: {
+                        required: true
+                    },
                     link: {
                         required: true
                     },
@@ -396,14 +396,14 @@
                             window.location.reload();
                             Toast.fire({
                                 icon: 'success',
-                                title: 'Demo upload successfull.'
+                                title: 'Demo uploaded successfully'
                             })
                         },
                         error: function() {
                             $("#spin").hide();
                             Swal.fire({
                                 icon: 'error',
-                                title: 'Field required'
+                                title: 'Slug should be unique'
                             })
                         }
                     })
