@@ -101,9 +101,6 @@
                                     <input name="link" type="text" class="form-control"
                                         placeholder="Enter demo link *" />
                                 </div>
-                            </div>
-
-                            <div class="col-md-6 float-right">
                                 <div class="form-group">
                                     <input name="username" type="text" class="form-control"
                                         placeholder="Enter demo username *" />
@@ -113,6 +110,10 @@
                                     <input name="password" type="text" class="form-control"
                                         placeholder="Enter demo password *" />
                                 </div>
+                            </div>
+
+                            <div class="col-md-6 float-right">
+
                                 <div class="form-group">
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Demo Image *</label>
                                     <div class="demo_img_wrap">
@@ -121,10 +122,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row col-md-12">
-                                <div class="form-group" style="width:100%">
-                                    <textarea name="description" type="text" class="form-control"
-                                        placeholder="Enter demo description"></textarea>
+
+                            <div class="col-md-12 row" style="margin: 0 !important">
+                                <div class="form-group" style="width: 100%">
+                                    <textarea style="width: 100%" id="summernote" name="description" type="text" class="form-control"
+                                    placeholder="Enter demo description"></textarea>
                                 </div>
                                 <button type="submit" style="width: 100%" class="btn btn-primary">Submit</button>
                             </div>
@@ -282,6 +284,12 @@
     </div>
 
 @section('js')
+<script>
+    $(function () {
+      // Summernote
+      $('#summernote').summernote()
+    })
+  </script>
     <script>
         $(function () {
             $("#example1").DataTable();
