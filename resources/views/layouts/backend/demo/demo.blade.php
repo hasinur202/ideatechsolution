@@ -12,22 +12,24 @@
         width: 100px;
     }
     .demo_img_wrap{
-        height: 7.5rem;
+        height: 6.5rem;
         border: dashed 1.5px blue;
-        background-image: repeating-linear-gradient(45deg, black, transparent 100px);
-        width: 60% !important; cursor: pointer;
+        background-image: repeating-linear-gradient(32deg, #b99dc714, transparent 100px);
+        width: 32.5% !important;
+        cursor: pointer;
     }
+
     .demo_img_wrap input{
         opacity: 0;
-        height: 7.5rem;
+        height: 6.5rem;
         cursor: pointer;
         padding: 0px;
     }
     .demo_img_wrap img{
-        height: 7.5rem;
+        height: 6.5rem;
         width: 100% !important;
         cursor: pointer;
-        margin-top: -121px;
+        margin-top: -106px;
     }
 
     textarea.form-control {
@@ -78,7 +80,7 @@
                         </div>
                         <form class="card-body" role="form" id="addDemo">
                             @csrf
-                            <div class="col-md-5 float-left">
+                            <div class="col-md-6 float-left">
                                 <div class="form-group">
                                     <select class="form-control" name="category_id">
                                         <option value="" selected="selected" hidden>Select Category</option>
@@ -101,30 +103,45 @@
                                     <input name="link" type="text" class="form-control"
                                         placeholder="Enter demo link *" />
                                 </div>
-                                <div class="form-group">
-                                    <input name="username" type="text" class="form-control"
-                                        placeholder="Enter demo username *" />
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <label class="mr-sm-2" for="inlineFormCustomSelect" style="width: 100%">Demos Photos *</label>
+                                        <div class="demo_img_wrap" style="margin-right: 5px;">
+                                            <input id="image" type="file" class="form-control" name="image">
+                                            <img src="" id="image-img"/>
+                                        </div>
+                                        <div class="demo_img_wrap" style="margin-right: 5px;">
+                                            <input id="image1" type="file" class="form-control" name="image">
+                                            <img src="" id="image-img1"/>
+                                        </div>
+                                        <div class="demo_img_wrap">
+                                            <input id="image2" type="file" class="form-control" name="image">
+                                            <img src="" id="image-img2"/>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <input name="password" type="text" class="form-control"
-                                        placeholder="Enter demo password *" />
-                                </div>
                             </div>
 
                             <div class="col-md-6 float-right">
+                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel *</label>
 
-                                <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Demo Image *</label>
-                                    <div class="demo_img_wrap">
-                                        <input id="image" type="file" class="form-control" name="image">
-                                        <img src="" id="image-img"/>
+                                <div class="row field_wrapper" style="margin-left: 2px">
+                                    <div class="form-group">
+                                        <input name="panel_name" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:0px"/>
+                                        <input name="username" type="text" placeholder="Username *" style="width: 31%;margin-right:0px"/>
+                                        <input name="password" type="text" placeholder="Password *" style="width: 31%"/>
+                                        <a href="javascript:void(0);" class="add_button" title="Add field" style="padding:6px;"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
+
+
                             </div>
 
-                            <div class="col-md-12 row" style="margin: 0 !important">
-                                <div class="form-group" style="width: 100%">
+                            <div class="col-md-12 row" style="margin-left: 0 !important">
+                                <div class="form-group mt-2" style="width: 100%">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Description *</label>
                                     <textarea style="width: 100%" id="summernote" name="description" type="text" class="form-control"
                                     placeholder="Enter demo description"></textarea>
                                 </div>
@@ -290,6 +307,36 @@
       $('#summernote').summernote()
     })
   </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+        var maxField = 10; //Input fields increment limitation
+        var addButton = $('.add_button'); //Add button selector
+        var wrapper = $('.field_wrapper'); //Input field wrapper
+        var fieldHTML = '<div class="form-group"><input name="panel_name" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:2px"/><input name="username" type="text" placeholder="Username *" style="width: 31%;margin-right:2px"/><input name="password" type="text" placeholder="Password *" style="width: 31%"/><a href="javascript:void(0);" class="remove_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
+        var x = 1; //Initial field counter is 1
+
+        //Once add button is clicked
+        $(addButton).click(function(){
+            //Check maximum number of input fields
+            if(x < maxField){
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+            }
+        });
+
+        //Once remove button is clicked
+        $(wrapper).on('click', '.remove_button', function(e){
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+        });
+    });
+    </script>
+
+
+
+
     <script>
         $(function () {
             $("#example1").DataTable();
@@ -371,6 +418,26 @@
             }
         }
 
+        function imageUrl1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image-img1').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function imageUrl2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image-img2').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
         function urlImage(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -383,6 +450,12 @@
 
         $("#image").change(function() {
             imageUrl(this);
+        });
+        $("#image1").change(function() {
+            imageUrl1(this);
+        });
+        $("#image2").change(function() {
+            imageUrl2(this);
         });
 
         $("#e_image").change(function() {
