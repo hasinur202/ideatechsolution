@@ -25,12 +25,10 @@ Route::get('/contact-us',[ContactController::Class,'index'])->name('contact');
 Route::post('/store-message',[ContactController::Class,'store'])->name('message.store');
 
 
-
-
-
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/login',[LoginController::Class,'index'])->name('login');
     Route::get('/register',[LoginController::Class,'register'])->name('register');
+
     Route::post('/user-login',[LoginController::Class,'login'])->name('user.login');
     Route::post('/user-store',[LoginController::Class,'store'])->name('user.store');
 });
@@ -38,6 +36,8 @@ Route::group(['middleware' => 'guest'], function () {
 
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout',[LoginController::Class,'logout'])->name('logout');
+
     //dashboard routes...
     Route::get('/dashboard',[DashboardController::Class,'index'])->name('dashboard');
 

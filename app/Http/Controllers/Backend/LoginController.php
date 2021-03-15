@@ -30,8 +30,6 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-
-
         if (Auth::attempt([
             'email'=>$request->email,
             'password'=>$request->password,
@@ -51,6 +49,16 @@ class LoginController extends Controller
 
     }
 
+    public function logout(Request $request)
+    {
+        if(Auth::check()){
+            Auth::logout();
+            $request->session()->flush();
+
+            return redirect()->route('home');
+        }
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -59,7 +67,7 @@ class LoginController extends Controller
 
         ]);
 
-        
+
         if ($validator->fails()) {
             return response()->json([
                 'errors'=>"match"

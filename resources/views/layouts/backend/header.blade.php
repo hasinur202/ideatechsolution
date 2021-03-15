@@ -55,7 +55,7 @@
               <i style="color:red;" class="fas fa-power-off"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-            <a href="#" class="dropdown-item">
+            <a href="{{ route('logout') }}" class="dropdown-item">
                Logout <i style="float: right; padding-top:5px;" class="fas fa-sign-out-alt"></i>
               </a>
             </div>
