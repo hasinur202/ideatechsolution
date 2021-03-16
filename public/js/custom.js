@@ -112,7 +112,7 @@ $(function() {
         loop: true,
         responsive: {
             0: {
-                items: 1
+                items: 2
             },
             450: {
                 items: 3
@@ -124,7 +124,7 @@ $(function() {
                 items: 3
             },
             1000: {
-                items: 5
+                items: 4
             },
             1200: {
                 items: 5

@@ -1,0 +1,93 @@
+/* Small devices (tablets, 768px and up) */
+
+@media (max-width: 768px) {
+    .banner-content p {
+        font-size: 15px !important;
+        line-height: 22px !important;
+        font-weight: 300;
+        width: 100% !important;
+        margin: auto;
+        margin-top: 0rem !important;
+        padding: 0px 20px;
+    }
+    .title h2 {
+        color: #01b1d7;
+        font-size: 30px !important;
+        font-weight: 400;
+        margin: 0;
+    }
+    .counters-wrapper {
+        padding: 0px 0 0px !important;
+    }
+    .nav-tabs {
+        border-bottom: none !important;
+        margin-left: -8px !important;
+        width: 349px !important;
+    }
+    .single-counter-item {
+        margin: 10px 0 -0px !important;
+    }
+    .nav-tabs li {
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        width: 31% !important;
+        margin-right: 5px;
+        margin-bottom: 2px !important;
+    }
+    .nav-tabs li a {
+        font-size: 12px !important;
+    }
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+        color: #555;
+        cursor: default;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        font-size: 12px !important;
+        /* border-bottom-color: transparent; */
+    }
+    .tab-content-part {
+        height: auto !important;
+        margin-bottom: 5px;
+        text-align: center;
+        margin-left: -35px !important;
+        margin-right: -35px !important;
+        border: none !important;
+        padding: 0px 10px !important;
+    }
+    .tab-figure {
+        width: 100% !important;
+        margin-left: 0px !important;
+        height: 160px !important;
+    }
+    .single-counter-item {
+        width: 25% !important;
+    }
+    .stats-item-heading img {
+        padding-bottom: 20px !important;
+        height: 50px !important;
+        width: 50% !important;
+        margin-bottom: -15px !important;
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+    .stats-item-heading h4 {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+    .counter {
+        color: #f47629;
+        font-size: 15px !important;
+        font-weight: 700;
+        line-height: 25px !important;
+    }
+    .counter-plus {
+        color: #25af73 !important;
+        font-size: 15px !important;
+        font-weight: 700;
+        line-height: 25px !important;
+    }
+}
