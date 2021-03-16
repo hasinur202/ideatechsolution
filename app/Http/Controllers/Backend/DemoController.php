@@ -100,12 +100,18 @@ class DemoController extends Controller
 
         $data = Demo::where('id',$request->id)->first();
 
-        if ($request->file('image') !=null) {
+        if ($request->file('image') && $request->file('image1') && $request->file('image2')) {
             $image = $request->file('image');
+            $image1 = $request->file('image1');
+            $image2 = $request->file('image2');
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $new_name1 = rand() . '.' . $image1->getClientOriginalExtension();
+            $new_name2 = rand() . '.' . $image2->getClientOriginalExtension();
             $upload_path = public_path()."/images/";
         }else{
             $new_name=$data->image;
+            $new_name1=$data->image1;
+            $new_name2=$data->image2;
         }
 
         if($data->slug == $request->slug){
@@ -126,20 +132,49 @@ class DemoController extends Controller
             'title'=>$request->title,
             'slug'=>$slugg,
             'link'=>$request->link,
-            'username'=>$request->username,
-            'password'=>$request->password,
             'image'=>$new_name,
-            'description'=>$request->description
+            'image1'=>$new_name1,
+            'image2'=>$new_name2,
+            'description'=>$request->edit_description
         ]);
 
-        if ($request->file('image') !=null){
+        if ($request->file('image') !=null && $request->file('image1') !=null && $request->file('image2') !=null){
             $image->move($upload_path, $new_name);
+            $image1->move($upload_path, $new_name1);
+            $image2->move($upload_path, $new_name2);
+        }
+
+        if($request->panel_name && $request->username && $request->password){
+            $mi = new MultipleIterator();
+            $mi->attachIterator(new ArrayIterator($request->panel_name));
+            $mi->attachIterator(new ArrayIterator($request->username));
+            $mi->attachIterator(new ArrayIterator($request->password));
+
+            Demo_panel::where('demo_id',$request->id)->delete();
+
+            foreach($mi as list($panel_name, $username, $password)) {
+                if($panel_name != null || $username != null || $password != null){
+                    Demo_panel::create([
+                        'demo_id'=>$request->id,
+                        'panel_name'=>$panel_name,
+                        'username'=>$username,
+                        'password'=>$password,
+                    ]);
+                }
+            }
         }
 
         return response()->json([
             'message'=>'success'
         ],200);
     }
+
+
+
+
+
+
+
 
     public function demoActivity(Request $request){
         $data = Demo::where('id',$request->id)->first();

@@ -440,9 +440,7 @@ function functin(){
 
 
         $(document).ready(function () {
-            {{--  for(var instanceName in CKEDITOR.instances){ CKEDITOR.instances[instanceName].updateElement();}  --}}
-
-            $('#addDemo').validate({
+             $('#addDemo').validate({
                 rules: {
                     category_id: {
                         required: true
@@ -485,6 +483,7 @@ function functin(){
                     $("#demo_info").css({
                         'opacity':'.4'
                     });
+                    for(var instanceName in CKEDITOR.instances){ CKEDITOR.instances[instanceName].updateElement();}
                     $.ajax({
                         url: "{{route('demo.add')}}",
                         method: "POST",
@@ -559,6 +558,7 @@ function functin(){
                     $("#updateDemo").css({
                         'opacity':'.4'
                     });
+                    for(var instanceName in CKEDITOR.instances){ CKEDITOR.instances[instanceName].updateElement();}
                     $.ajax({
                         url: "{{route('demo.update')}}",
                         method: "POST",
