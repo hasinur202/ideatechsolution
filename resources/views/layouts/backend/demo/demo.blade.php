@@ -125,13 +125,13 @@
                             </div>
 
                             <div class="col-md-6 float-right">
-                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel *</label>
+                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel</label>
 
                                 <div class="row field_wrapper" style="margin-left: 2px">
                                     <div class="form-group">
-                                        <input name="panel_name[]" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:0px"/>
-                                        <input name="username[]" type="text" placeholder="Username *" style="width: 31%;margin-right:0px"/>
-                                        <input name="password[]" type="text" placeholder="Password *" style="width: 31%"/>
+                                        <input name="panel_name[]" type="text" placeholder="Panel Name " style="width: 31%;margin-right:0px"/>
+                                        <input name="username[]" type="text" placeholder="Username " style="width: 31%;margin-right:0px"/>
+                                        <input name="password[]" type="text" placeholder="Password " style="width: 31%"/>
                                         <a href="javascript:void(0);" class="add_button" title="Add field" style="padding:6px;"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -205,7 +205,7 @@
                             </div>
 
                             <div class="col-md-6 float-right">
-                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel *</label>
+                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel</label>
 
                                 <div class="row field_wrap" style="margin-left: 2px" id="edit_p">
 
@@ -346,7 +346,7 @@ function functin(){
     var maxField = 10; //Input fields increment limitation
     var addButton = $('.add_edit_button'); //Add button selector
     var wrapper = $('.field_wrap'); //Input field wrapper
-    var fieldHTML = '<div class="form-group"><input name="panel_name[]" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:2px"/><input name="username[]" type="text" placeholder="Username *" style="width: 31%;margin-right:2px"/><input name="password[]" type="text" placeholder="Password *" style="width: 31%"/><a href="javascript:void(0);" class="remove_edit_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
+    var fieldHTML = '<div class="form-group"><input name="panel_name[]" type="text" placeholder="Panel Name" style="width: 31%;margin-right:2px"/><input name="username[]" type="text" placeholder="Username" style="width: 31%;margin-right:2px"/><input name="password[]" type="text" placeholder="Password" style="width: 31%"/><a href="javascript:void(0);" class="remove_edit_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
     var x = 1; //Initial field counter is 1
 
     //Check maximum number of input fields
@@ -370,7 +370,7 @@ function functin(){
         var maxField = 10; //Input fields increment limitation
         var addButton = $('.add_button'); //Add button selector
         var wrapper = $('.field_wrapper'); //Input field wrapper
-        var fieldHTML = '<div class="form-group"><input name="panel_name[]" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:2px"/><input name="username[]" type="text" placeholder="Username *" style="width: 31%;margin-right:2px"/><input name="password[]" type="text" placeholder="Password *" style="width: 31%"/><a href="javascript:void(0);" class="remove_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
+        var fieldHTML = '<div class="form-group"><input name="panel_name[]" type="text" placeholder="Panel Name " style="width: 31%;margin-right:2px"/><input name="username[]" type="text" placeholder="Username" style="width: 31%;margin-right:2px"/><input name="password[]" type="text" placeholder="Password" style="width: 31%"/><a href="javascript:void(0);" class="remove_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
         var x = 1; //Initial field counter is 1
 
         //Once add button is clicked

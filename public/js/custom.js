@@ -115,10 +115,10 @@ $(function() {
                 items: 1
             },
             450: {
-                items: 1
+                items: 3
             },
             600: {
-                items: 2
+                items: 4
             },
             700: {
                 items: 3

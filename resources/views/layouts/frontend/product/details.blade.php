@@ -50,13 +50,16 @@
                                     <div class="work"><strong style="font-size: 2.2rem">{{ $category }}</strong><span>{{ $details->title }}</span></div>
                                 </div>
                                 <div class="text">
-                                    {{ $details->description }}
+                                    {!! htmlspecialchars_decode(optional($details)->description) !!}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a onclick="modalOpen(`{{ $details->link }}`,`{{ $details->username }}`,`{{ $details->password }}`)"
-                        href="javascript:void(0)" class="btn demo-btn">View Demo</a>
+                    {{--  <a onclick="modalOpen(`{{ $details->link }}`,`{{ $details->username }}`,`{{ $details->password }}`)"
+                        href="javascript:void(0)" class="btn demo-btn">View Demo</a>  --}}
+
+                    <a onclick="modalOpen()"
+                            href="javascript:void(0)" class="btn demo-btn">View Demo</a>
                 </div>
                 <div class="col-md-6 col-sm-12">
 
@@ -65,15 +68,15 @@
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                   <div class="item active">
-                                    <img src="/images/ERP.jpg" alt="Los Angeles" style="width:100%;">
+                                    <img src="/images/{{ $details->image }}" alt="Los Angeles" style="width:100%;">
                                   </div>
 
                                   <div class="item">
-                                    <img src="/images/ecommerce.png" alt="Chicago" style="width:100%;">
+                                    <img src="/images/{{ $details->image1 }}" alt="Chicago" style="width:100%;">
                                   </div>
 
                                   <div class="item">
-                                    <img src="/images/maintenance.png" alt="New York" style="width:100%;">
+                                    <img src="/images/{{ $details->image2 }}" alt="New York" style="width:100%;">
                                   </div>
                                 </div>
 
@@ -105,18 +108,24 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" style="height: 125px;">
-                <a href="" id="livePreview" target="_blank" style="margin-top: 1rem; width:48%; float:right" class="btn btn-default">Live Preview</a>
+          <div class="modal-body">
+                <a href="{{ $details->link }}" target="_blank" style="margin-top: 1rem; width:48%; float:right" class="btn btn-default">Live Preview</a>
 
-                <div style="width: 48%;float: left;">
-                    <div>
-                        <label>Username: </label>
-                        <span id="username"></span>
-                    </div>
-                    <div>
-                        <label>Password: </label>
-                        <span id="password"></span>
-                    </div>
+                <div style="width: 48%;">
+                    @foreach ($details->get_panels as $panel)
+                        <div>
+                            <h4>{{ $panel->panel_name }} </h4>
+                        </div>
+                        <div>
+                            <label>Username: </label>
+                            <span>{{ $panel->username }}</span>
+                        </div>
+                        <div>
+                            <label>Password: </label>
+                            <span>{{ $panel->password }}</span>
+                        </div>
+                        <hr>
+                    @endforeach
                 </div>
           </div>
         </div>
@@ -125,12 +134,8 @@
 
 @section('js')
     <script>
-        function modalOpen(link, username, password){
+        function modalOpen(){
             $("#myModal").modal('show');
-
-            $('#livePreview').attr('href',link);
-            $('#username').text(username);
-            $('#password').text(password);
         }
 
 
