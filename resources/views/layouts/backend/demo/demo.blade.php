@@ -112,11 +112,11 @@
                                             <img src="" id="image-img"/>
                                         </div>
                                         <div class="demo_img_wrap" style="margin-right: 5px;">
-                                            <input id="image1" type="file" class="form-control" name="image">
+                                            <input id="image1" type="file" class="form-control" name="image1">
                                             <img src="" id="image-img1"/>
                                         </div>
                                         <div class="demo_img_wrap">
-                                            <input id="image2" type="file" class="form-control" name="image">
+                                            <input id="image2" type="file" class="form-control" name="image2">
                                             <img src="" id="image-img2"/>
                                         </div>
                                     </div>
@@ -129,9 +129,9 @@
 
                                 <div class="row field_wrapper" style="margin-left: 2px">
                                     <div class="form-group">
-                                        <input name="panel_name" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:0px"/>
-                                        <input name="username" type="text" placeholder="Username *" style="width: 31%;margin-right:0px"/>
-                                        <input name="password" type="text" placeholder="Password *" style="width: 31%"/>
+                                        <input name="panel_name[]" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:0px"/>
+                                        <input name="username[]" type="text" placeholder="Username *" style="width: 31%;margin-right:0px"/>
+                                        <input name="password[]" type="text" placeholder="Password *" style="width: 31%"/>
                                         <a href="javascript:void(0);" class="add_button" title="Add field" style="padding:6px;"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -313,7 +313,7 @@
         var maxField = 10; //Input fields increment limitation
         var addButton = $('.add_button'); //Add button selector
         var wrapper = $('.field_wrapper'); //Input field wrapper
-        var fieldHTML = '<div class="form-group"><input name="panel_name" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:2px"/><input name="username" type="text" placeholder="Username *" style="width: 31%;margin-right:2px"/><input name="password" type="text" placeholder="Password *" style="width: 31%"/><a href="javascript:void(0);" class="remove_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
+        var fieldHTML = '<div class="form-group"><input name="panel_name[]" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:2px"/><input name="username[]" type="text" placeholder="Username *" style="width: 31%;margin-right:2px"/><input name="password[]" type="text" placeholder="Password *" style="width: 31%"/><a href="javascript:void(0);" class="remove_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
         var x = 1; //Initial field counter is 1
 
         //Once add button is clicked
@@ -523,12 +523,15 @@
                                 title: 'Demo uploaded successfully'
                             })
                         },
-                        error: function() {
+                        error: function(err) {
                             $("#spin").hide();
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Slug should be unique'
-                            })
+
+                            if(err.status == 422){
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Slug should be unique'
+                                })
+                            }
                         }
                     })
                 }

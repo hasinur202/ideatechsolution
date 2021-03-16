@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use ArrayIterator;
 use App\Models\Demo;
+use MultipleIterator;
 use App\Models\Category;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Demo_panel;
+
 class DemoController extends Controller
 {
     public function index()
@@ -22,13 +26,19 @@ class DemoController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
+
         $request->validate([
             'slug'  =>  'required|unique:demos',
         ]);
 
-        if ($request->file('image')) {
+        if ($request->file('image') && $request->file('image1') && $request->file('image2')) {
             $image = $request->file('image');
+            $image1 = $request->file('image1');
+            $image2 = $request->file('image2');
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $new_name1 = rand() . '.' . $image1->getClientOriginalExtension();
+            $new_name2 = rand() . '.' . $image2->getClientOriginalExtension();
             $upload_path = public_path()."/images/";
 
             Demo::create([
@@ -36,14 +46,36 @@ class DemoController extends Controller
                 'title'=>$request->title,
                 'slug'=>$request->slug,
                 'link'=>$request->link,
-                'username'=>$request->username,
-                'password'=>$request->password,
                 'image'=>$new_name,
+                'image1'=>$new_name1,
+                'image2'=>$new_name2,
                 'description'=>$request->description,
                 'status'=>1
             ]);
 
             $image->move($upload_path, $new_name);
+            $image1->move($upload_path, $new_name1);
+            $image2->move($upload_path, $new_name2);
+
+
+            $lastDemo = Demo::latest()->first();
+            if($request->panel_name && $request->username && $request->password){
+                $mi = new MultipleIterator();
+                $mi->attachIterator(new ArrayIterator($request->panel_name));
+                $mi->attachIterator(new ArrayIterator($request->username));
+                $mi->attachIterator(new ArrayIterator($request->password));
+
+                foreach($mi as list($panel_name, $username, $password)) {
+                    if($panel_name != null || $username != null || $password != null){
+                        Demo_panel::create([
+                            'demo_id'=>$lastDemo->id,
+                            'panel_name'=>$panel_name,
+                            'username'=>$username,
+                            'password'=>$password,
+                        ]);
+                    }
+                }
+            }
 
             return response()->json([
                 'message'=>'success'
