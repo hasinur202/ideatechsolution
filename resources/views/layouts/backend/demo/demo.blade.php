@@ -142,7 +142,7 @@
                             <div class="col-md-12 row" style="margin-left: 0 !important">
                                 <div class="form-group mt-2" style="width: 100%">
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Description *</label>
-                                    <textarea style="width: 100%" id="summernote" name="description" type="text" class="form-control"
+                                    <textarea style="width: 100%" id="description" name="description" type="text" class="textarea"
                                     placeholder="Enter demo description"></textarea>
                                 </div>
                                 <button type="submit" style="width: 100%" class="btn btn-primary">Submit</button>
@@ -158,73 +158,71 @@
                                 <span style="color: #fff" aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="card-body">
-                            <form class="row" role="form" id="edit_demo">
-                                @csrf
-                                <div class="form-group col-md-4">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Select Category</label>
+                        <form class="card-body" role="form" id="edit_demo">
+                            @csrf
+                            <div class="col-md-6 float-left">
+                                <div class="form-group">
                                     <select class="form-control" name="category_id">
                                         <option id="cat_val" value="" selected="selected" hidden></option>
                                         @foreach ($categories as $cat)
                                         <option value="{{$cat->id}}">{{$cat->title}}</option>
                                         @endforeach
                                     </select>
-
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Title</label>
-                                    <input id="title" name="title" type="text" class="form-control"
-                                        placeholder="Enter demo title" />
 
+                                <div class="form-group">
+                                    <input name="title" id="title" type="text" class="form-control"
+                                        placeholder="Enter demo title *" />
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Slug</label>
-                                    <input id="slug" name="slug" type="text" class="form-control"
-                                        placeholder="Enter demo title" />
+                                <div class="form-group">
+                                    <input name="slug" id="slug" type="text" class="form-control"
+                                        placeholder="Slug *" />
+                                </div>
 
+                                <div class="form-group">
+                                    <input name="link" id="link" type="text" class="form-control"
+                                        placeholder="Enter demo link *" />
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Link</label>
-                                    <input id="link" name="link" type="text" class="form-control"
-                                        placeholder="Enter demo link" />
 
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Username</label>
-                                    <input id="username" name="username" type="text" class="form-control"
-                                        placeholder="Enter demo username" />
-
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Password</label>
-                                    <input id="password" name="password" type="text" class="form-control"
-                                        placeholder="Enter demo password" />
-
-                                </div>
-                                <div class="form-group col-md-8">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Description</label>
-                                    <textarea id="description" name="description" type="text" class="form-control"
-                                        placeholder="Enter demo description"></textarea>
-
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="image" class="col-form-label">Banar Image</label>
-                                        <div class="demo_img_wrap">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <label class="mr-sm-2" for="inlineFormCustomSelect" style="width: 100%">Demos Photos *</label>
+                                        <div class="demo_img_wrap" style="margin-right: 5px;">
                                             <input id="e_image" type="file" class="form-control" name="image">
                                             <img src="" id="edit_img"/>
                                         </div>
+                                        <div class="demo_img_wrap" style="margin-right: 5px;">
+                                            <input id="e_image1" type="file" class="form-control" name="image1">
+                                            <img src="" id="edit_img1"/>
+                                        </div>
+                                        <div class="demo_img_wrap">
+                                            <input id="e_image2" type="file" class="form-control" name="image2">
+                                            <img src="" id="edit_img2"/>
+                                        </div>
                                     </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 float-right">
+                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel *</label>
+
+                                <div class="row field_wrap" style="margin-left: 2px" id="edit_p">
 
                                 </div>
-                                <input type="hidden" id="demo_id" name="id">
-                                <div class="col-md-12">
-                                    <button id="submit" style="width: 100%" class="btn btn-success">
-                                        Submit
-                                    </button>
+
+
+                            </div>
+
+                            <div class="col-md-12 row" style="margin-left: 0 !important">
+                                <div class="form-group mt-2" style="width: 100%">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Description *</label>
+                                    <textarea style="width: 100%" id="edit_description" name="edit_description" type="text" class="form-control"></textarea>
                                 </div>
-                            </form>
-                        </div>
+                                <input type="hidden" id="demo_id" name="id">
+                                <button id="submit" style="width: 100%" class="btn btn-success">Submit</button>
+                            </div>
+                        </form>
 
                     </div>
 
@@ -248,12 +246,6 @@
                                             Link
                                         </th>
                                         <th class="sorting" style="width: 204px;">
-                                            Username
-                                        </th>
-                                        <th class="sorting" style="width: 204px;">
-                                            Password
-                                        </th>
-                                        <th class="sorting" style="width: 204px;">
                                             Image
                                         </th>
                                         <th class="sorting" style="width: 204px;">
@@ -270,8 +262,6 @@
                                             <td class="sorting_1">{{ $demo->get_category->title }}</td>
                                             <td class="sorting_1">{{ Str::limit($demo->title,15,'...') }}</td>
                                             <td class="sorting_1">{{ Str::limit($demo->link,15,'...') }}</td>
-                                            <td class="sorting_1">{{ $demo->username }}</td>
-                                            <td class="sorting_1">{{ $demo->password }}</td>
                                             <td class="sorting_1">
                                                 <img width="50px" height="30px" src="{{asset('/images/'.$demo->image)}}" alt="">
                                             </td>
@@ -301,12 +291,79 @@
     </div>
 
 @section('js')
+
 <script>
-    $(function () {
-      // Summernote
-      $('#summernote').summernote()
-    })
-  </script>
+    CKEDITOR.replace('description');
+    CKEDITOR.replace('edit_description');
+
+$(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+    });
+});
+
+
+    function editDemo(demo){
+        {{--  for(var instanceName in CKEDITOR.instances){ CKEDITOR.instances[instanceName].updateElement();}  --}}
+        CKEDITOR.instances['edit_description'].setData(demo.description);
+        $("#cat_val").val(demo.get_category.id);
+        $("#cat_val").text(demo.get_category.title);
+        $("#title").val(demo.title);
+        $("#slug").val(demo.slug);
+        $("#link").val(demo.link);
+        $("#username").val(demo.username);
+        $("#password").val(demo.password);
+        document.getElementById("edit_img").src = "{{ asset('/images/') }}/" + demo.image;
+        document.getElementById("edit_img1").src = "{{ asset('/images/') }}/" + demo.image1;
+        document.getElementById("edit_img2").src = "{{ asset('/images/') }}/" + demo.image2;
+        $("#updateDemo").show();
+        $("#demo_table").hide();
+        $("#demo_info").hide();
+        $("#demo_id").val(demo.id);
+
+
+        $('#edit_p').text('');
+        var i=0;
+        demo.get_panels.forEach(function (panel) {
+            i++;
+            if(i==1){
+                $('#edit_p').append('<div class="form-group"><input name="panel_name[]" type="text" value="'+panel.panel_name+'" placeholder="Panel Name *" style="width: 31%;margin-right:0px"/><input name="username[]" value="'+panel.username+'" type="text" placeholder="Username *" style="width: 31%;margin-right:0px"/><input name="password[]" value="'+panel.password+'" type="text" placeholder="Password *" style="width: 31%"/><a href="javascript:void(0);" onclick="functin()" class="add_edit_button" title="Add field" style="padding:6px;"><i class="fa fa-plus"></i></a></div>');
+            }else{
+                $('#edit_p').append('<div class="form-group"><input name="panel_name[]" type="text" value="'+panel.panel_name+'" placeholder="Panel Name *" style="width: 31%;margin-right:0px"/><input name="username[]" value="'+panel.username+'" type="text" placeholder="Username *" style="width: 31%;margin-right:0px"/><input name="password[]" value="'+panel.password+'" type="text" placeholder="Password *" style="width: 31%"/></div>');
+
+            }
+        });
+    }
+
+
+function functin(){
+    var maxField = 10; //Input fields increment limitation
+    var addButton = $('.add_edit_button'); //Add button selector
+    var wrapper = $('.field_wrap'); //Input field wrapper
+    var fieldHTML = '<div class="form-group"><input name="panel_name[]" type="text" placeholder="Panel Name *" style="width: 31%;margin-right:2px"/><input name="username[]" type="text" placeholder="Username *" style="width: 31%;margin-right:2px"/><input name="password[]" type="text" placeholder="Password *" style="width: 31%"/><a href="javascript:void(0);" class="remove_edit_button" title="Remove field" style="padding:6px;"><i class="fa fa-times"></i></a></div>';
+    var x = 1; //Initial field counter is 1
+
+    //Check maximum number of input fields
+    if(x < maxField){
+        x++; //Increment field counter
+        $(wrapper).append(fieldHTML); //Add field html
+    }
+
+    //Once remove button is clicked
+    $(wrapper).on('click', '.remove_edit_button', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
+}
+
+</script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -332,24 +389,11 @@
             x--; //Decrement field counter
         });
     });
-    </script>
 
 
-
+</script>
 
     <script>
-        $(function () {
-            $("#example1").DataTable();
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-            });
-        });
-
         function changeActivity(id){
             $("#spin").show();
             $.ajax({
@@ -385,21 +429,7 @@
             $("#disableDiv").show();
         }
 
-        function editDemo(demo){
-            $("#cat_val").val(demo.get_category.id);
-            $("#cat_val").text(demo.get_category.title);
-            $("#title").val(demo.title);
-            $("#slug").val(demo.slug);
-            $("#link").val(demo.link);
-            $("#username").val(demo.username);
-            $("#password").val(demo.password);
-            $("#description").text(demo.description);
-            document.getElementById("edit_img").src = "{{ asset('/images/') }}/" + demo.image;
-            $("#updateDemo").show();
-            $("#demo_table").hide();
-            $("#demo_info").hide();
-            $("#demo_id").val(demo.id);
-        }
+
 
         function demoForm(){
             $("#demo_table").hide();
@@ -408,61 +438,10 @@
             $("#disableDiv").hide();
         }
 
-        function imageUrl(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#image-img').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function imageUrl1(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#image-img1').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function imageUrl2(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#image-img2').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function urlImage(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#edit_img').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $("#image").change(function() {
-            imageUrl(this);
-        });
-        $("#image1").change(function() {
-            imageUrl1(this);
-        });
-        $("#image2").change(function() {
-            imageUrl2(this);
-        });
-
-        $("#e_image").change(function() {
-            urlImage(this);
-        });
 
         $(document).ready(function () {
+            {{--  for(var instanceName in CKEDITOR.instances){ CKEDITOR.instances[instanceName].updateElement();}  --}}
+
             $('#addDemo').validate({
                 rules: {
                     category_id: {
@@ -608,6 +587,89 @@
                 }
             });
 
+        });
+
+
+
+
+        function imageUrl(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image-img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function imageUrl1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image-img1').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function imageUrl2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image-img2').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function urlImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#edit_img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function urlImage1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#edit_img1').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function urlImage2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#edit_img2').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#image").change(function() {
+            imageUrl(this);
+        });
+        $("#image1").change(function() {
+            imageUrl1(this);
+        });
+        $("#image2").change(function() {
+            imageUrl2(this);
+        });
+
+        $("#e_image").change(function() {
+            urlImage(this);
+        });
+        $("#e_image1").change(function() {
+            urlImage1(this);
+        });
+        $("#e_image2").change(function() {
+            urlImage2(this);
         });
 
     </script>

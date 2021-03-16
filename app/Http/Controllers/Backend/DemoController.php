@@ -15,7 +15,8 @@ class DemoController extends Controller
     public function index()
     {
         $data = auth()->user();
-        $demos = Demo::all();
+        $demos = Demo::with('get_panels')->get();
+        // dd($demos);
         $categories = Category::all();
         return view('layouts.backend.demo.demo',[
             'demos'=>$demos,

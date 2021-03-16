@@ -22,7 +22,7 @@ class CreateDemosTable extends Migration
             $table->string('image1');
             $table->string('image2');
             $table->string('link');
-            $table->string('description');
+            $table->text('description');
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
