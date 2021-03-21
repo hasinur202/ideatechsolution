@@ -20,38 +20,39 @@
         </section>
         <section class="content">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header text-center bg-warning">
+                        <div class="card-header bg-warning">
                             <h5>Add Services</h5>
                         </div>
-                        <div class="card-body">
-                            <form method="POST" action="#" enctype="multipart/form-data">
-                                @csrf
-                                <div class="col-md-7 float-left">
+                        <form method="POST" action="#" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+                                <div class="col-md-5 float-left">
                                     <div class="form-group">
-                                        <input name="title" placeholder="Title" type="text" required class="form-control"><br/>
+                                        <input name="title" placeholder="Title" type="text" required class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <input name="icon" type="file" required class="form-control"><br/>
+                                        <label>Icon </label>
+                                        <input name="icon" type="file" required class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <input name="image" type="file" required class="form-control"><br/>
+                                        <label>Image </label>
+                                        <input name="image" type="file" required class="form-control">
                                     </div>
-                                    <div class="form-group">
-                                        <input name="description" placeholder="Description" type="text" required class="form-control"><br/>
-                                    </div>
-                                    <div class="form-group">
-                                        <input name="short_description" placeholder="Short Description" type="text" required class="form-control"><br/>
-                                    </div>
-
                                 </div>
 
-                                <div class="col-md-5 float-right">
-
+                                <div class="col-md-7 float-right">
+                                    <div class="form-group">
+                                        <textarea name="description" placeholder="Description" required class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="short_description" placeholder="Short Description" required class="form-control"></textarea>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
+                                <button type="submit" class="btn btn-success col-12"></i> Save Changes</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -79,13 +80,13 @@
                                     {{--  @php $i=0; @endphp
                                     @foreach($documents as $doc)
                                         @php $i++; @endphp  --}}
-                                        <tr>
+                                        {{--  <tr>
                                             <td></td>
 
                                             <td style="display:inline-flex;">
                                                 <button style="margin-left: 5px" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                                             </td>
-                                        </tr>
+                                        </tr>  --}}
                                     {{--  @endforeach  --}}
                                 </tbody>
                             </table>

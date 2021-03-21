@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\AboutsController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Backend\SiteMetaController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -65,14 +66,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('save-settings', [SettingsController::Class, 'store'])->name('settings.save');
 
     //About route
-    Route::get('/about-setup}', [AboutsController::Class, 'index'])->name('setup.about');
+    Route::get('/about-setup', [AboutsController::Class, 'index'])->name('setup.about');
     Route::post('save/about', [AboutsController::Class, 'store'])->name('about.save');
-
 
 
     //meta routes...
     Route::get('/meta-list',[SiteMetaController::Class,'index'])->name('meta.list');
     Route::post('/meta-store',[SiteMetaController::Class,'store'])->name('meta.add');
     Route::post('/meta-update',[SiteMetaController::Class,'update'])->name('meta.update');
+
+
+    //Services
+    Route::get('/services-list', [ServicesController::Class, 'index'])->name('services.list');
+
 
 });
