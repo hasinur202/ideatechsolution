@@ -8,7 +8,6 @@
 
 
 @section('content')
-
 <div class="breadcromb-wrapper">
     <div class="breadcromb-overlay"></div>
     <div class="container">
@@ -31,73 +30,52 @@
     </div>
 </div>
 
-{{--  <section class="feature-title">
-    <div class="title">
-        <h2>Know Idea Tech Solution</h2>
-        <div><span></span></div>
-    </div>
-</section>  --}}
-
-<section>
-    <div class="container" style="margin-top: 2rem">
-        <div class="row service">
-            <div class="title-left">
-                <h2>About Idea Tech Solution</h2>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
-
-                            <div class="col-md-6 tab-content-part">
-                                <h2>Testing</h2>
-                                <p>Exactly like the original bootstrap tabs except you should use the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
+<div class="inner-page-wrapper about-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="about-text">
+            <div class="about-text">
+              <div class="about-inner">
+                <div class="since-year clearfix">
+                  <div class="work">5 Years of<strong>Successful</strong><span>Software Services Company</span></div>
                 </div>
-                <!-- nav-tabs-custom -->
-            </div>
-        </div>
-        <div class="row service">
-            <div class="title-right">
-                <h2>Mission & Vision</h2>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
+                <div class="text">
+                    Idea Tech Solution is a best website design and development company in DHAKA,
+              Bangladesh. We also deal in Software Development, Website Development, Graphic Design and SEO services
+              and provide top quality results within limited time bounds to make your brand visibility
+              to your online portal.
 
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif " alt=" ">
-                                </figure>
-                            </div>
-                            <div class="col-md-6 tab-content-part">
-                                <h2>Testing</h2>
-                                <p>Exactly like the original bootstrap tabs except you should use the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
-                            </div>
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
                 </div>
-                <!-- nav-tabs-custom -->
+                <div class="counter-section">
+                  <div class="counter-boxed">
+                    <div class="counter animated">35</div>
+                    <div class="offset-top-5">
+                      <p>Projects</p>
+                    </div>
+                  </div>
+                  <div class="counter-boxed">
+                    <div class="counter animated">24</div>
+                    <div class="offset-top-5">
+                      <p>Happy Clients</p>
+                    </div>
+                  </div>
+                  <div class="counter-boxed">
+                    <div class="counter animated">5</div>
+                    <div class="offset-top-5">
+                      <p>Years of Experience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </div>
+
+
 
 @section('js')
 
