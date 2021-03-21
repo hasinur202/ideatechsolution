@@ -99,15 +99,15 @@
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                   <div class="item active">
-                                    <img src="/images/{{ $details->image }}" alt="Los Angeles" style="width:100%;">
+                                    <img src="/images/{{ $details->image }}" alt="{{ optional($details)->image_alt }}" style="width:100%;">
                                   </div>
 
                                   <div class="item">
-                                    <img src="/images/{{ $details->image1 }}" alt="Chicago" style="width:100%;">
+                                    <img src="/images/{{ $details->image1 }}" alt="{{ optional($details)->image1_alt }}" style="width:100%;">
                                   </div>
 
                                   <div class="item">
-                                    <img src="/images/{{ $details->image2 }}" alt="New York" style="width:100%;">
+                                    <img src="/images/{{ $details->image2 }}" alt="{{ optional($details)->image2_alt }}" style="width:100%;">
                                   </div>
                                 </div>
 

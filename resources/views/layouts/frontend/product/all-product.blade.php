@@ -76,7 +76,7 @@
                         <div class="col-sm-6 col-md-4 {{ $cat->title }}">
                             <div class="item-work">
                                 <div class="hover">
-                                    <img src="{{ asset('/images/'.$demo->image) }}" alt="Image"/>
+                                    <img src="{{ asset('/images/'.$demo->image) }}" alt="{{ optional($demo)->image_alt }}"/>
                                     <div class="shadow">
                                         <dir class="myitem">
                                             <a href="{{ url('/'.$cat->title.'/'.$demo->slug) }}" class="btn btn-success btn-sm" style="margin:auto">Details</a>
