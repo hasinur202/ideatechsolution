@@ -15,7 +15,7 @@ class AboutsController extends Controller
         $data = auth()->user();
         $about = About::first() ?? '';
 
-        return view('layouts.backend.settings.about',[
+        return view('layouts.backend.about.about',[
             'about'=>$about,
             'data'=>$data
         ]);
