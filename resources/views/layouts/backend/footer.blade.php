@@ -46,6 +46,15 @@
 <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 
 <script src="{{ asset('/backend/dist/js/validate.js') }}"></script>
+<script>
+    window.onload = (function() {
+        setTimeout(() => {
+            $("#errorMessage").fadeOut("slow");
+        }, 3000);
+    });
+
+</script>
+
 
 <script>
   const Toast = Swal.mixin({
@@ -61,6 +70,7 @@
     })
 </script>
 @yield('js')
+@include('sweetalert::alert')
 </body>
 
 </html>

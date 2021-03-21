@@ -35,6 +35,14 @@
         .nav-treeview{
             background: #333 !important;
         }
+
+        .errorMessage{
+            width: 24%;
+            position: absolute; line-height:1.2rem;
+            right: 0px; opacity:0.7;
+            z-index: 9999;
+            padding: 10px 2px 0px 0px !important;
+        }
     </style>
 </head>
 <body class="hold-transition sidebar-mini">
