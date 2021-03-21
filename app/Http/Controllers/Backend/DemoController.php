@@ -6,9 +6,10 @@ use ArrayIterator;
 use App\Models\Demo;
 use MultipleIterator;
 use App\Models\Category;
+use App\Models\Demo_panel;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Demo_panel;
 
 class DemoController extends Controller
 {
@@ -45,7 +46,7 @@ class DemoController extends Controller
             Demo::create([
                 'category_id'=>$request->category_id,
                 'title'=>$request->title,
-                'slug'=>$request->slug,
+                'slug'=>Str::slug($request->slug),
                 'link'=>$request->link,
                 'image'=>$new_name,
                 'image1'=>$new_name1,
@@ -130,7 +131,7 @@ class DemoController extends Controller
         Demo::where('id',$request->id)->update([
             'category_id'=>$request->category_id,
             'title'=>$request->title,
-            'slug'=>$slugg,
+            'slug'=> Str::slug($slugg),
             'link'=>$request->link,
             'image'=>$new_name,
             'image1'=>$new_name1,
