@@ -125,18 +125,29 @@
                             </div>
 
                             <div class="col-md-6 float-right">
-                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel</label>
+                                <div class="form-group">
+                                    <input name="image_alt" type="text" class="form-control"
+                                        placeholder="Enter image alt *" />
+                                </div>
+                                <div class="form-group">
+                                    <input name="image1_alt" type="text" class="form-control"
+                                        placeholder="Enter image alt *" />
+                                </div><div class="form-group">
+                                    <input name="image2_alt" type="text" class="form-control"
+                                        placeholder="Enter image alt *" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel</label>
 
-                                <div class="row field_wrapper" style="margin-left: 2px">
-                                    <div class="form-group">
-                                        <input name="panel_name[]" type="text" placeholder="Panel Name " style="width: 31%;margin-right:0px"/>
-                                        <input name="username[]" type="text" placeholder="Username " style="width: 31%;margin-right:0px"/>
-                                        <input name="password[]" type="text" placeholder="Password " style="width: 31%"/>
-                                        <a href="javascript:void(0);" class="add_button" title="Add field" style="padding:6px;"><i class="fa fa-plus"></i></a>
+                                    <div class="row field_wrapper" style="margin-left: 2px">
+                                        <div class="form-group">
+                                            <input name="panel_name[]" type="text" placeholder="Panel Name " style="width: 31%;margin-right:0px"/>
+                                            <input name="username[]" type="text" placeholder="Username " style="width: 31%;margin-right:0px"/>
+                                            <input name="password[]" type="text" placeholder="Password " style="width: 31%"/>
+                                            <a href="javascript:void(0);" class="add_button" title="Add field" style="padding:6px;"><i class="fa fa-plus"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-
-
                             </div>
 
                             <div class="col-md-12 row" style="margin-left: 0 !important">
@@ -184,6 +195,7 @@
                                         placeholder="Enter demo link *" />
                                 </div>
 
+
                                 <div class="col-md-12">
                                     <div class="row">
                                         <label class="mr-sm-2" for="inlineFormCustomSelect" style="width: 100%">Demos Photos *</label>
@@ -205,10 +217,23 @@
                             </div>
 
                             <div class="col-md-6 float-right">
-                                <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel</label>
+                                <div class="form-group">
+                                    <input name="image_alt" id="image_alt" type="text" class="form-control"
+                                        placeholder="Enter image alt *" />
+                                </div>
+                                <div class="form-group">
+                                    <input name="image1_alt" id="image1_alt" type="text" class="form-control"
+                                        placeholder="Enter image alt *" />
+                                </div><div class="form-group">
+                                    <input name="image2_alt" id="image2_alt" type="text" class="form-control"
+                                        placeholder="Enter image alt *" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2" style="width: 100%" for="inlineFormCustomSelect">Demos Panel</label>
 
-                                <div class="row field_wrap" style="margin-left: 2px" id="edit_p">
+                                    <div class="row field_wrap" style="margin-left: 2px" id="edit_p">
 
+                                    </div>
                                 </div>
 
 
@@ -317,6 +342,9 @@ $(function () {
         $("#title").val(demo.title);
         $("#slug").val(demo.slug);
         $("#link").val(demo.link);
+        $("#image_alt").val(demo.image_alt);
+        $("#image1_alt").val(demo.image1_alt);
+        $("#image2_alt").val(demo.image2_alt);
         $("#username").val(demo.username);
         $("#password").val(demo.password);
         document.getElementById("edit_img").src = "{{ asset('/images/') }}/" + demo.image;

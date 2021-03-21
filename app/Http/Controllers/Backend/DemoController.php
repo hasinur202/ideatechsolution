@@ -28,8 +28,6 @@ class DemoController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
-
         $request->validate([
             'slug'  =>  'required|unique:demos',
         ]);
@@ -48,6 +46,9 @@ class DemoController extends Controller
                 'title'=>$request->title,
                 'slug'=>Str::slug($request->slug),
                 'link'=>$request->link,
+                'image_alt'=>$request->image_alt,
+                'image1_alt'=>$request->image1_alt,
+                'image2_alt'=>$request->image2_alt,
                 'image'=>$new_name,
                 'image1'=>$new_name1,
                 'image2'=>$new_name2,
@@ -131,8 +132,11 @@ class DemoController extends Controller
         Demo::where('id',$request->id)->update([
             'category_id'=>$request->category_id,
             'title'=>$request->title,
-            'slug'=> Str::slug($slugg),
+            'slug'=>Str::slug($slugg),
             'link'=>$request->link,
+            'image_alt'=>$request->image_alt,
+            'image1_alt'=>$request->image1_alt,
+            'image2_alt'=>$request->image2_alt,
             'image'=>$new_name,
             'image1'=>$new_name1,
             'image2'=>$new_name2,
