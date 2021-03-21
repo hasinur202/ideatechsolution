@@ -36,7 +36,6 @@
                                 also deal in Software Development, website Development, Graphic Design & SEO services
                                 and provide top quality results within limited time bounds to make your brand visibility
                                 to your online portal.</p>
-                            {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p> --}}
 
                             <ul class="footer-social-menu list-inline ">
                                 <li><a href="https://www.facebook.com/Ideatech.Solution"><i
