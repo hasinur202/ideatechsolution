@@ -19,8 +19,11 @@ class CreateDemosTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('image');
+            $table->string('image_alt');
             $table->string('image1');
+            $table->string('image1_alt');
             $table->string('image2');
+            $table->string('image2_alt');
             $table->string('link');
             $table->text('description');
             $table->boolean('status')->default(0);
