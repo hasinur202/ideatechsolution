@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -55,5 +56,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     //contact route
     Route::get('/contact-list',[MessageController::Class,'index'])->name('contact.list');
+
+
+    //Settings
+    Route::get('setup-settings', [SettingsController::Class, 'index'])->name('setup-settings');
+    Route::post('save-settings', [SettingsController::Class, 'store'])->name('settings.save');
 
 });
