@@ -24,7 +24,6 @@ class SettingsController extends Controller
     }
 
 
-
     public function store(Request $request){
         $SettingId = Setting::select('id')->first();
 
@@ -32,7 +31,9 @@ class SettingsController extends Controller
             $validator = Validator::make($request->all(), [
                 'logo' => 'required',
                 'title' =>'required',
-                'contact' =>'required'
+                'contact' =>'required',
+                'email' =>'required',
+                'description' =>'required'
             ]);
 
             if ($validator->fails()) {
@@ -42,25 +43,24 @@ class SettingsController extends Controller
             }elseif($request->file('logo') != null){
                 $logo = $request->file('logo');
                 $new_name = rand() . '.' . $logo->getClientOriginalExtension();
-                $img = Image::make($request->file('logo'))->fit(1349,375);
-                $upload_path = public_path()."/images/";
+                $upload_path = public_path()."/images/logo/";
 
                 if($new_name){
-                    $data = Settings::create([
+                    $data = Setting::create([
                         'title'=>$request->title,
                         'logo'=>$new_name,
-                        'short_description'=>$request->short_description,
                         'description'=>$request->description,
                         'email'=>$request->email,
                         'address'=>$request->address,
                         'contact'=>$request->contact,
+                        'contact2'=>$request->contact2,
                         'fb'=>$request->fb,
                         'linkedin'=>$request->linkedin,
                         'whatsapp'=>$request->whatsapp,
                         'skype'=>$request->skype
                     ]);
                     if($data){
-                        $img->save($upload_path.$new_name);
+                        $logo->move($upload_path, $new_name);
 
                        toast('Changes saved successfully','success')
                        ->padding('10px')->width('270px')->timerProgressBar()->hideCloseButton();
@@ -81,21 +81,22 @@ class SettingsController extends Controller
 
                 $logo = $request->file('logo');
                 $new_name = rand() . '.' . $logo->getClientOriginalExtension();
-                $img = Image::make($request->file('logo'))->fit(1349,375);
-                $upload_path = public_path()."/images/";
+                $upload_path = public_path()."/images/logo/";
 
 
-                \File::delete(public_path('images/' . $setting->logo));
+                $logoPhoto = public_path('images/logo/').$setting->logo;
+                if(file_exists($logoPhoto)){
+                    @unlink($logoPhoto);
+                }
 
-                if($new_name)
-                {
-                    $data = Settings::where('id',$request->id)->update([
+                if($new_name){
+                    $data = Setting::where('id',$request->id)->update([
                         'logo'=>$new_name,
                         'title'=>$request->title,
                         'contact'=>$request->contact,
+                        'contact2'=>$request->contact2,
                         'email'=>$request->email,
                         'address'=>$request->address,
-                        'short_description'=>$request->short_description,
                         'description'=>$request->description,
                         'fb'=>$request->fb,
                         'linkedin'=>$request->linkedin,
@@ -104,7 +105,7 @@ class SettingsController extends Controller
                     ]);
 
                     if($data){
-                        $img->save($upload_path.$new_name);
+                        $logo->move($upload_path, $new_name);
 
                         toast('Changes saved successfully','success')
                        ->padding('10px')->width('270px')->timerProgressBar()->hideCloseButton();
@@ -116,9 +117,9 @@ class SettingsController extends Controller
                 $data = Setting::where('id',$request->id)->update([
                     'title'=>$request->title,
                     'contact'=>$request->contact,
+                    'contact2'=>$request->contact2,
                     'email'=>$request->email,
                     'address'=>$request->address,
-                    'short_description'=>$request->short_description,
                     'description'=>$request->description,
                     'fb'=>$request->fb,
                     'linkedin'=>$request->linkedin,

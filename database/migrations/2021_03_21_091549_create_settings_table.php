@@ -17,11 +17,11 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('logo');
-            $table->text('short_description')->nullable();
             $table->text('description')->nullable();
             $table->string('email')->nullable();
-            $table->text('address')->nullable();
+            $table->string('address')->nullable();
             $table->string('contact')->nullable();
+            $table->string('contact2')->nullable();
             $table->string('fb')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('whatsapp')->nullable();

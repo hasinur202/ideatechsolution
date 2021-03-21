@@ -59,7 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     //Settings
-    Route::get('setup-settings', [SettingsController::Class, 'index'])->name('setup-settings');
+    Route::get('setup-settings', [SettingsController::Class, 'index'])->name('setup.settings');
     Route::post('save-settings', [SettingsController::Class, 'store'])->name('settings.save');
 
 });

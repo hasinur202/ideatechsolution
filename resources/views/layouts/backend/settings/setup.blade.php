@@ -34,13 +34,14 @@
                                 <input name="title" type="text" value="{{ optional($setting)->title }}" class="form-control" placeholder="Enter website title" />
                             </div>
                             <div class="form-group">
-                                <label>Contact No. *</label>
-                                <input name="contact" value="{{ optional($setting)->contact }}" type="text" class="form-control" placeholder=" Enter contact number" />
+                                <label>Contact No1. *</label>
+                                <input name="contact" value="{{ optional($setting)->contact }}" type="text" class="form-control" placeholder="Enter contact number" />
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input name="email" value="{{ optional($setting)->email }}" type="email" class="form-control" placeholder="Enter Email" />
+                                <label>Contact No2.</label>
+                                <input name="contact2" value="{{ optional($setting)->contact2 }}" type="text" class="form-control" placeholder="Enter contact number2" />
                             </div>
+
                         </div>
 
                         <div class="col-md-6" style="float: right; padding-right:0px !important">
@@ -50,14 +51,19 @@
                                 background-image: repeating-linear-gradient(45deg, black, transparent 100px);
                                 width: 100% !important; cursor: pointer;">
                                 <input id="image" type="file" class="form-control" name="logo" style="opacity: 0; height: 7.7rem; cursor: pointer; padding: 0px;">
-                                <img src="images/{{ optional($setting)->logo }}" id="image-img" style="height: 7.7rem; width: 100% !important; cursor: pointer;margin-top: -154px;" />
+                                <img src="images/logo/{{ optional($setting)->logo }}" id="image-img" style="height: 7.7rem; width: 100% !important; cursor: pointer;margin-top: -154px;" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" type="text" class="form-control" placeholder="Enter Address">{{ optional($setting)->address }}</textarea>
+                            <label>Email</label>
+                            <input name="email" value="{{ optional($setting)->email }}" type="email" class="form-control" placeholder="Enter Email" />
                         </div>
+
                     </div>
+                        <div class="form-group">
+                            <label style="width: 100%">Address</label>
+                            <input name="address" value="{{ optional($setting)->address }}" type="text" class="form-control" placeholder="Enter Address"/>
+                        </div>
                         <div class="form-group">
                             <label style="width: 100%">Website Description</label>
                             <textarea name="description" type="text" class="form-control" placeholder="Enter description">{{ optional($setting)->description }}</textarea>
