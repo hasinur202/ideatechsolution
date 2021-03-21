@@ -62,4 +62,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('setup-settings', [SettingsController::Class, 'index'])->name('setup.settings');
     Route::post('save-settings', [SettingsController::Class, 'store'])->name('settings.save');
 
+
+    //meta routes...
+    Route::get('/meta-list',[SiteMetaController::Class,'index'])->name('meta.list');
+    Route::post('/meta-store',[SiteMetaController::Class,'store'])->name('meta.add');
+    Route::post('/meta-update',[SiteMetaController::Class,'update'])->name('meta.update');
+
 });
