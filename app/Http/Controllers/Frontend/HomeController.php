@@ -6,12 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Demo;
 use App\Models\Category;
+use App\Models\SiteMeta;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('layouts.frontend.home');
+        $metas = SiteMeta::all();
+        return view('layouts.frontend.home',[
+            'metas'=>$metas ?? ''
+        ]);
     }
 
     public function all_product()

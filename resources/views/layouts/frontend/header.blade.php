@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @foreach ($metas as $item)
-        <meta name="{{optional($item)->name}}" content="{{optional($item)->meta_des}}">
+    <meta name="{{optional($item)->name}}" content="{{optional($item)->meta_des}}">
     @endforeach
 
     <title>Idea Tech Solution</title>
