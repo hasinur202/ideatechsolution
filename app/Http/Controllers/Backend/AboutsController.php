@@ -3,15 +3,21 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
+
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class AboutsController extends Controller
 {
     public function index(){
-        $confirm = ConfirmMessage::where('admin_id',auth()->user()->id)->first() ?? '';
+        $data = auth()->user();
+        $about = About::first() ?? '';
 
-        return view('layouts.backend.settings.confirm',[
-            'about'=>$about
-        ])
+        return view('layouts.backend.settings.about',[
+            'about'=>$about,
+            'data'=>$data
+        ]);
     }
 }

@@ -19,19 +19,18 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-            <form action="{{ route('confirm.save') }}" method="POST" role="form">
-                    @csrf
-                <input name="id" hidden type="text" hidden value="{{ optional($about)->id }}" class="form-control" />
+            <form action="{{ route('about.save') }}" method="POST" role="form">
+                @csrf
+            <input name="id" hidden type="text" hidden value="{{ optional($about)->id }}" class="form-control" />
 
             <div style="float: left" class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Content of About Pages</h3>
+                        <h3 class="card-title">Description of About Pages</h3>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <textarea name="message" class="textarea" placeholder="Place some text here"
-                                style="width: 100%; height: 200px !important; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                            <textarea name="message" id="description" placeholder="Place some text here">
                           {{ optional($about)->description }}
                         </textarea>
                         </div>
@@ -49,11 +48,10 @@
 
 @section('js')
 <script>
-    $(function () {
-      // Summernote
-      $('.textarea').summernote()
-    })
-  </script>
+    CKEDITOR.replace('description');
+</script>
+
+
 <script>
 
 
