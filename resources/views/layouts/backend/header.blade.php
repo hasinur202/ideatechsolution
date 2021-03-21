@@ -30,6 +30,12 @@
     <link rel="stylesheet" href="{{asset('backend/plugins/sweetalert2/sweetalert2.min.css')}}">
 
     @yield('css')
+
+    <style>
+        .nav-treeview{
+            background: #333 !important;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
 

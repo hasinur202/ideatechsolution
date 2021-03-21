@@ -74,6 +74,75 @@
             </a>
           </li>
 
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-cog"></i>
+              <p>
+                Website Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
+                  <p>Setup Website Info</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
+                    <p>Setup About</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
+                    <p>Setup Services</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
+                    <p>Setup Technologies</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
+                    <p>Setup Working Process</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
+                    <p>Setup Why Choose us</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
+                    <p>Setup Count overview</p>
+                  </a>
+                </li>
+            </ul>
+
+
+
+          </li>
+
         </ul>
       </nav>
     </div>
