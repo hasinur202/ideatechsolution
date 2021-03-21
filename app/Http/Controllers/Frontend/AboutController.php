@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\SiteMeta;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
     public function index(){
-        return view('layouts.frontend.about');
+        $metas = SiteMeta::all();
+
+        return view('layouts.frontend.about',[
+            'metas'=>$metas
+        ]);
     }
 }

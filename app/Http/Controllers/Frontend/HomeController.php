@@ -24,18 +24,23 @@ class HomeController extends Controller
             $q->where('status',1);
         }])->where('status',1)->get();
 
+        $metas = SiteMeta::all();
+
         return view('layouts.frontend.product.all-product',[
             'datas'=>$datas,
+            'metas'=>$metas ?? ''
         ]);
     }
 
     public function details(Request $request, $cat, $slug)
     {
         $details = Demo::where('slug',$slug)->first();
+        $metas = SiteMeta::all();
 
         return view('layouts.frontend.product.details',[
             'details'=>$details,
-            'category'=>$cat
+            'category'=>$cat,
+            'metas'=>$metas ?? ''
         ]);
     }
 

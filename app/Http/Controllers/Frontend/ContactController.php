@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\SiteMeta;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        return view('layouts.frontend.contact');
+        $metas = SiteMeta::all();
+        return view('layouts.frontend.contact',[
+            'metas'=>$metas
+        ]);
     }
 
     public function store(Request $request){
