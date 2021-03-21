@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <textarea name="message" id="description" placeholder="Place some text here">
+                            <textarea name="description" id="description" placeholder="Place some text here">
                           {{ optional($about)->description }}
                         </textarea>
                         </div>
