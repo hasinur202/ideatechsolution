@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DemoController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Backend\AboutsController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -62,6 +63,11 @@ Route::group(['middleware' => 'auth'], function () {
     //Settings
     Route::get('setup-settings', [SettingsController::Class, 'index'])->name('setup.settings');
     Route::post('save-settings', [SettingsController::Class, 'store'])->name('settings.save');
+
+    //About route
+    Route::get('/about-setup}', [AboutsController::Class, 'index'])->name('setup.about');
+    Route::post('save/about', [AboutsController::Class, 'store'])->name('about.save');
+
 
 
     //meta routes...
