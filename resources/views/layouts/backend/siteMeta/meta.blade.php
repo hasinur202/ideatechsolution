@@ -149,7 +149,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{ $meta->name }}</td>
                                         <td>
-                                            {{$meta->meta_des}}
+                                            {{ Str::limit($meta->meta_des,200) }}
                                         </td>
                                         <td>
                                             <button style="margin-right: 5px;" href="#"

@@ -75,6 +75,15 @@
           </li>
 
           <li class="nav-item has-treeview">
+            <a href="{{route('meta.list')}}" class="nav-link">
+              <i class="nav-icon fas fa-tag"></i>
+              <p>
+                Site Meta
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-cog"></i>
               <p>
