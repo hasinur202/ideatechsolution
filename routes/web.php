@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SettingsController;
+use App\Http\Controllers\Backend\SiteMetaController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Backend\DashboardController;
