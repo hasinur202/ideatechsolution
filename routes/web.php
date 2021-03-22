@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\DemoController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\AboutsController;
+use App\Http\Controllers\Backend\ChooseController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -96,6 +97,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('store-working-process', [WorkprocessController::Class, 'store'])->name('store.process');
     Route::post('update-working-process', [WorkprocessController::Class, 'update'])->name('process.update');
     Route::post('delete-working-process', [WorkprocessController::Class, 'destroy'])->name('process.delete');
+
+
+    //Choose Us route
+    Route::get('/choose-us-list', [ChooseController::Class, 'index'])->name('choose.list');
+    // Route::post('store-working-process', [ChooseController::Class, 'store'])->name('store.process');
+    // Route::post('update-working-process', [ChooseController::Class, 'update'])->name('process.update');
+    // Route::post('delete-working-process', [ChooseController::Class, 'destroy'])->name('process.delete');
 
 
 

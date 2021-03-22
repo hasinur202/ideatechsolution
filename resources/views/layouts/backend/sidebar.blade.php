@@ -133,7 +133,7 @@
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('choose.list') }}" class="nav-link">
                     <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
                     <p>Setup Why Choose us</p>
                   </a>
