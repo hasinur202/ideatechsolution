@@ -164,7 +164,7 @@
                                             <td>{{ Str::limit($process->description,150,'...') }}</td>
 
                                             <td style="display:inline-flex;">
-                                                <button onclick="edit_Service({{ $process }})" style="margin-right: 5px" class="btn btn-dark btn-xs"><i class="fa fa-edit"></i></button>
+                                                <button onclick="edit_Process({{ $process }})" style="margin-right: 5px" class="btn btn-dark btn-xs"><i class="fa fa-edit"></i></button>
                                                 <button onclick="deleteProcess({{ $process->id }})" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
@@ -218,7 +218,7 @@
         $("#editProcess").hide();
     }
 
-    function edit_Service(val){
+    function edit_Process(val){
         $("#newProcess").hide();
         $("#processList").hide();
         $("#editProcess").show();
@@ -277,7 +277,7 @@
             if (result.value) {
                 $('#lodingModal').modal('show');
                 $.ajax({
-                    url:"{{ route('services.delete') }}",
+                    url:"{{ route('process.delete') }}",
                     method:"POST",
                     dataType:"json",
                     data:{

@@ -95,7 +95,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/working-process-list', [WorkprocessController::Class, 'index'])->name('process.list');
     Route::post('store-working-process', [WorkprocessController::Class, 'store'])->name('store.process');
     Route::post('update-working-process', [WorkprocessController::Class, 'update'])->name('process.update');
-    // Route::post('delete-technologies', [TechnologiesController::Class, 'destroy'])->name('delete.tech');
+    Route::post('delete-working-process', [WorkprocessController::Class, 'destroy'])->name('process.delete');
 
 
 

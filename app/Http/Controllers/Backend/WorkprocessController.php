@@ -91,23 +91,21 @@ class WorkprocessController extends Controller
     }
 
 
-    // public function destroy(Request $request){
-    //     $serv = Service::where('id',$request->id)->first();
+    public function destroy(Request $request){
+        $serv = Work_process::where('id',$request->id)->first();
 
-    //     $icon_d = public_path('images/services/').$serv->icon;
-    //     $image_d = public_path('images/services/').$serv->image;
-    //     if(file_exists($icon_d) && file_exists($image_d)){
-    //         @unlink($icon_d);
-    //         @unlink($image_d);
+        $image_d = public_path('images/workprocess/').$serv->image;
+        if(file_exists($image_d)){
+            @unlink($image_d);
 
-    //         $serv->delete();
-    //     }
+            $serv->delete();
+        }
 
 
-    //     return response()->json([
-    //         'success'=>'success'
-    //      ],200);
-    // }
+        return response()->json([
+            'success'=>'success'
+         ],200);
+    }
 
 
 }
