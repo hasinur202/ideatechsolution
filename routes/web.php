@@ -78,6 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Services
     Route::get('/services-list', [ServicesController::Class, 'index'])->name('services.list');
+    Route::post('store-services', [ServicesController::Class, 'store'])->name('services.store');
 
 
 });

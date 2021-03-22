@@ -17,9 +17,12 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('icon');
+            $table->string('icon_alt')->nullable();
             $table->string('image');
-            $table->string('description');
-            $table->string('short_description');
+            $table->string('image_alt')->nullable();
+            $table->text('description');
+            $table->text('short_description');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
