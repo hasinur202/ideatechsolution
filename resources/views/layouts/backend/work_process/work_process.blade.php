@@ -45,7 +45,7 @@
                             <h5 class="float-left text-white">Add Working Process</h5>
                             <a href="javascript:void(0)" class="float-right" onclick="closeAddNew()"><i class="fa fa-times"></i></a>
                         </div>
-                        <form method="POST" action="{{ route('services.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.process') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -151,7 +151,7 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                {{--  <tbody>
+                                <tbody>
                                     @php $i=0; @endphp
                                     @foreach($processes as $process)
                                         @php $i++; @endphp
@@ -159,7 +159,7 @@
                                             <td>{{ $i }}</td>
                                             <td>{{ $process->title }}</td>
                                             <td>
-                                                <img src="/images/services/{{ $service->image }}" height="50px" width="80px">
+                                                <img src="/images/workprocess/{{ $process->image }}" height="50px" width="80px">
                                             </td>
                                             <td>{{ Str::limit($process->description,150,'...') }}</td>
 
@@ -169,7 +169,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tbody>  --}}
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
 
         $("#id").val(val.id);
         $("#title").val(val.title);
-        $("#edit_image_img").attr('src', "{{ asset('/images/services/') }}/" + val.image);
+        $("#edit_image_img").attr('src', "{{ asset('/images/workprocess/') }}/" + val.image);
 
         $("#description").val(val.description);
         $("#image_alt").val(val.image_alt);

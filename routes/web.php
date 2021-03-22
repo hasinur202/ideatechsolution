@@ -93,7 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Working Process route
     Route::get('/working-process-list', [WorkprocessController::Class, 'index'])->name('process.list');
-    // Route::post('store-technologies', [TechnologiesController::Class, 'store'])->name('store.tech');
+    Route::post('store-working-process', [WorkprocessController::Class, 'store'])->name('store.process');
     // Route::post('update-technologies', [TechnologiesController::Class, 'update'])->name('update.tech');
     // Route::post('delete-technologies', [TechnologiesController::Class, 'destroy'])->name('delete.tech');
 
