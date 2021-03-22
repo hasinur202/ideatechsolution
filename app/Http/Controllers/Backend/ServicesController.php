@@ -116,7 +116,17 @@ class ServicesController extends Controller
 
 
     public function destroy(Request $request){
-        Service::where('id',$request->id)->delete();
+        $serv = Service::where('id',$request->id)->first();
+
+        $icon_d = public_path('images/services/').$serv->icon;
+        $image_d = public_path('images/services/').$serv->image;
+        if(file_exists($icon_d) && file_exists($image_d)){
+            @unlink($icon_d);
+            @unlink($image_d);
+
+            $serv->delete();
+        }
+
 
         return response()->json([
             'success'=>'success'

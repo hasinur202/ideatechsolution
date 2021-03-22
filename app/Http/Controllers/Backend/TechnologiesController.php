@@ -83,7 +83,15 @@ class TechnologiesController extends Controller
 
 
     public function destroy(Request $request){
-        Technology::where('id',$request->id)->delete();
+        $tech = Technology::where('id',$request->id)->first();
+
+        $logo_d = public_path('images/technology/').$tech->logo;
+        if(file_exists($logo_d)){
+            @unlink($logo_d);
+
+            $tech->delete();
+        }
+
 
         return response()->json([
             'success'=>'success'
