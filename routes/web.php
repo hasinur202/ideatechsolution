@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\SiteMetaController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\WorkprocessController;
 use App\Http\Controllers\Backend\TechnologiesController;
 
 //frontend controller...
@@ -89,6 +90,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('store-technologies', [TechnologiesController::Class, 'store'])->name('store.tech');
     Route::post('update-technologies', [TechnologiesController::Class, 'update'])->name('update.tech');
     Route::post('delete-technologies', [TechnologiesController::Class, 'destroy'])->name('delete.tech');
+
+    //Working Process route
+    Route::get('/working-process-list', [WorkprocessController::Class, 'index'])->name('process.list');
+    // Route::post('store-technologies', [TechnologiesController::Class, 'store'])->name('store.tech');
+    // Route::post('update-technologies', [TechnologiesController::Class, 'update'])->name('update.tech');
+    // Route::post('delete-technologies', [TechnologiesController::Class, 'destroy'])->name('delete.tech');
 
 
 

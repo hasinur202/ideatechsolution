@@ -53,7 +53,7 @@
                                         <div class="form-group">
                                             <input name="title" placeholder="Title" type="text" required class="form-control">
                                         </div>
-                                        <div class="form-group float-right" style="width: 56%">
+                                        <div class="form-group" style="width: 76%">
                                             <label>Image </label>
                                             <div class="service-img" style="width: 70% !important">
                                                 <input id="image" type="file" class="form-control" name="image">
@@ -64,7 +64,7 @@
 
                                     <div class="col-md-7 float-right">
                                         <div class="form-group">
-                                            <textarea name="description" placeholder="Description" required class="form-control" style="min-height: 108px !important"></textarea>
+                                            <textarea name="description" placeholder="Description" required class="form-control" style="min-height: 195px !important"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                             <input name="title" id="title" placeholder="Title" type="text" required class="form-control">
                                             <input name="id" id="id" type="hidden" class="form-control">
                                         </div>
-                                        <div class="form-group float-right" style="width: 56%">
+                                        <div class="form-group" style="width: 76%">
                                             <label>Image </label>
                                             <div class="service-img" style="width: 70% !important">
                                                 <input id="edit_image" type="file" class="form-control" name="image">
@@ -110,7 +110,7 @@
 
                                     <div class="col-md-7 float-right">
                                         <div class="form-group">
-                                            <textarea name="description" id="description" placeholder="Description" required class="form-control" style="min-height: 108px !important"></textarea>
+                                            <textarea name="description" id="description" placeholder="Description" required class="form-control" style="min-height: 195px !important"></textarea>
                                         </div>
                                     </div>
                                 </div>
