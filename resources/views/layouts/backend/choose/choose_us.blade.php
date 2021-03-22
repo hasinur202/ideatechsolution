@@ -45,7 +45,7 @@
                             <h5 class="float-left text-white">Add Why People Choose Us</h5>
                             <a href="javascript:void(0)" class="float-right" onclick="closeAddNew()"><i class="fa fa-times"></i></a>
                         </div>
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.chooseUs') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -53,8 +53,8 @@
                                         <div class="form-group">
                                             <input name="title" placeholder="Title" type="text" required class="form-control">
                                         </div>
-                                        <div class="form-group" style="width: 76%">
-                                            <label>Image </label>
+                                        <div class="form-group" style="width: 56%">
+                                            <label>Icon </label>
                                             <div class="service-img" style="width: 70% !important">
                                                 <input id="image" type="file" class="form-control" name="image">
                                                 <img src="" id="image-img"/>
@@ -72,7 +72,7 @@
                                 <div class="col-md-12">
                                     <label style="width: 100%">SEO</label>
                                     <div class="form-group">
-                                        <input name="image_alt" placeholder="Image Alt" maxlength="100" size="100" type="text" class="form-control">
+                                        <input name="image_alt" placeholder="Icon Alt" maxlength="100" size="100" type="text" class="form-control">
                                     </div>
                                     <button type="submit" class="btn btn-success"></i> Save Changes</button>
                                 </div>
@@ -90,7 +90,7 @@
                             <h5 class="float-left text-white">Edit Why People Choose Us</h5>
                             <a href="javascript:void(0)" class="float-right" onclick="closeAddNew()"><i class="fa fa-times"></i></a>
                         </div>
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('chooseUs.update') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -99,8 +99,8 @@
                                             <input name="title" id="title" placeholder="Title" type="text" required class="form-control">
                                             <input name="id" id="id" type="hidden" class="form-control">
                                         </div>
-                                        <div class="form-group" style="width: 76%">
-                                            <label>Image </label>
+                                        <div class="form-group" style="width: 56%">
+                                            <label>Icon </label>
                                             <div class="service-img" style="width: 70% !important">
                                                 <input id="edit_image" type="file" class="form-control" name="image">
                                                 <img src="" id="edit_image_img"/>
@@ -118,7 +118,7 @@
                                 <div class="col-md-12">
                                     <label style="width: 100%">SEO</label>
                                     <div class="form-group">
-                                        <input name="image_alt" id="image_alt" placeholder="Image Alt" maxlength="100" size="100" type="text" class="form-control">
+                                        <input name="image_alt" id="image_alt" placeholder="Icon Alt" maxlength="100" size="100" type="text" class="form-control">
                                     </div>
                                     <button type="submit" class="btn btn-success"></i> Save Changes</button>
                                 </div>
@@ -277,7 +277,7 @@
             if (result.value) {
                 $('#lodingModal').modal('show');
                 $.ajax({
-                    url:"{{ route('process.delete') }}",
+                    url:"{{ route('chooseUs.delete') }}",
                     method:"POST",
                     dataType:"json",
                     data:{

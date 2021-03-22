@@ -101,9 +101,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Choose Us route
     Route::get('/choose-us-list', [ChooseController::Class, 'index'])->name('choose.list');
-    // Route::post('store-working-process', [ChooseController::Class, 'store'])->name('store.process');
-    // Route::post('update-working-process', [ChooseController::Class, 'update'])->name('process.update');
-    // Route::post('delete-working-process', [ChooseController::Class, 'destroy'])->name('process.delete');
+    Route::post('store-choose-us', [ChooseController::Class, 'store'])->name('store.chooseUs');
+    Route::post('update-choose-us', [ChooseController::Class, 'update'])->name('chooseUs.update');
+    Route::post('delete-choose-us', [ChooseController::Class, 'destroy'])->name('chooseUs.delete');
 
 
 
