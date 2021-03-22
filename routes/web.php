@@ -86,7 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Technology route
     Route::get('/technologies-list', [TechnologiesController::Class, 'index'])->name('tech.list');
-    // Route::post('store-services', [ServicesController::Class, 'store'])->name('services.store');
+    Route::post('store-technologies', [TechnologiesController::Class, 'store'])->name('store.tech');
     // Route::post('update-services', [ServicesController::Class, 'update'])->name('services.update');
     // Route::post('delete-services', [ServicesController::Class, 'destroy'])->name('services.delete');
 

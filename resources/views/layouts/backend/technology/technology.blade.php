@@ -40,12 +40,11 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-5 float-left">
-                    <div class="card">
+                    <div class="card" id="addTechnology">
                         <div class="card-header bg-warning">
                             <h5 class="float-left text-white">Add Technology</h5>
-                            <a href="javascript:void(0)" class="float-right" onclick="closeAddNew()"><i class="fa fa-times"></i></a>
                         </div>
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.tech') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
@@ -64,6 +63,33 @@
                             </div>
                         </form>
                     </div>
+
+
+                    <div class="card" id="editTechnology" style="display: none">
+                        <div class="card-header bg-warning">
+                            <h5 class="float-left text-white">Edit Technology</h5>
+                            <a href="javascript:void(0)" class="float-right" onclick="closeEdit()"><i class="fa fa-times"></i></a>
+                        </div>
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Technologies Logo </label>
+                                    <div class="service-img" style="width: 50% !important">
+                                        <input id="edit_image" type="file" class="form-control" name="logo">
+                                        <img src="" id="edit_image_img"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>SEO</label>
+                                    <input name="logo_alt" placeholder="Technologies Logo Alt" type="text" class="form-control" style="width:100%">
+                                </div>
+
+                                <button type="submit" class="btn btn-success"></i> Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
 
 
@@ -135,6 +161,10 @@
 </script>
 
 <script type="text/javascript">
+    function closeEdit(){
+        $("#editTechnology").hide();
+        $("#addTechnology").show();
+    }
 
     function editTech(service){
         $("#id").val(service.id);
@@ -156,19 +186,21 @@
         imageUrl(this);
     });
 
-    function editiconUrl(input) {
+
+    function editimageUrl(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                $('#edit_icon_img').attr('src', e.target.result);
+                $('#edit_image_img').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
 
-    $("#edit_icon").change(function() {
-        editiconUrl(this);
+    $("#edit_image").change(function() {
+        editimageUrl(this);
     });
+
 
 
 
