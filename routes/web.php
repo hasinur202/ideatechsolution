@@ -105,6 +105,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('update-choose-us', [ChooseController::Class, 'update'])->name('chooseUs.update');
     Route::post('delete-choose-us', [ChooseController::Class, 'destroy'])->name('chooseUs.delete');
 
+    //Count Overview
+    Route::get('/overview-count-page', function(){
+        return view('layouts.backend.settings.count_overview');
+    })->name('overview.count');
+
 
 
 });

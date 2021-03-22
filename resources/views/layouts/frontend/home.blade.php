@@ -351,12 +351,12 @@
 </section>
 
 <section>
-    <div class="counters-wrapper ">
-        <div class="container ">
-            <div class="row ">
+    <div class="counters-wrapper">
+        <div class="container">
+            <div class="row">
                 <div class="col-sm-3">
-                    <div class="single-counter-item ">
-                        <div class="stats-item-heading "> <img src="{{asset('/icon/increase.png')}}" alt="">
+                    <div class="single-counter-item">
+                        <div class="stats-item-heading"> <img src="{{asset('/icon/increase.png')}}" alt="">
                             <h4>Experience</h4>
                         </div>
                         <span class="counter">5</span>
@@ -364,22 +364,22 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="single-counter-item ">
-                        <div class="stats-item-heading "> <img src="{{asset('/icon/layers.png')}}" alt="">
+                    <div class="single-counter-item">
+                        <div class="stats-item-heading"> <img src="{{asset('/icon/layers.png')}}" alt="">
                             <h4>Total Project</h4>
                         </div>
-                        <span class="counter ">120</span> </div>
+                        <span class="counter">120</span> </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="single-counter-item ">
-                        <div class="stats-item-heading "> <img src="{{asset('/icon/happy.png')}}" alt="">
+                    <div class="single-counter-item">
+                        <div class="stats-item-heading"> <img src="{{asset('/icon/happy.png')}}" alt="">
                             <h4>Happy Clients</h4>
                         </div>
-                        <span class="counter ">85</span> </div>
+                        <span class="counter">85</span> </div>
                 </div>
                 <div class="col-sm-3 ">
-                    <div class="single-counter-item ">
-                        <div class="stats-item-heading "> <img src="{{asset('/icon/customer-service.png')}}" alt="">
+                    <div class="single-counter-item">
+                        <div class="stats-item-heading"> <img src="{{asset('/icon/customer-service.png')}}" alt="">
                             <h4>Support</h4>
                         </div>
                         <span class="counter">24</span>

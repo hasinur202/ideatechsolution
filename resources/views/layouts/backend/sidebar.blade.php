@@ -12,8 +12,8 @@
             <img src="/backend/dist/img/avatar5.png" style="width: 2.5rem !important;margin-top: 12px !important;" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block" style="text-transform: capitalize;">{{optional($data)->name}}</a>
-          <span class="badge badge-warning" style="text-transform: capitalize;">{{optional($data)->type}}</span>
+          <a href="#" class="d-block" style="text-transform: capitalize;">{{ auth()->user()->name }}</a>
+          <span class="badge badge-warning" style="text-transform: capitalize;">{{ auth()->user()->type }}</span>
         </div>
       </div>
 
@@ -141,7 +141,7 @@
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('overview.count') }}" class="nav-link">
                     <i class="fa fa-check-circle nav-icon" aria-hidden="true"></i>
                     <p>Setup Count overview</p>
                   </a>
