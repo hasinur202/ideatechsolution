@@ -201,7 +201,7 @@
 
                                             <td style="display:inline-flex;">
                                                 <button onclick="editService({{ $service }})" style="margin-right: 5px" class="btn btn-dark btn-xs"><i class="fa fa-edit"></i></button>
-                                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                                                <button onclick="deleteServices({{ $service->id }})" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -217,6 +217,14 @@
 
 </div>
 
+<div class="modal fade" id="lodingModal" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+    <div class="modal-dialog-centered" role="document">
+        <div class="fa-3x" id="loadingDoc" style="margin: auto;font-size: 4rem;color:#c3bcea;">
+            <i style="margin-left: 3rem;" class="fas fa-spinner fa-pulse"></i>
+            <p class="mt-2" style="color:#c5c5c5; font-size: 1rem !important">Processing! Please wait...</p>
+        </div>
+    </div>
+</div>
 @section('js')
 
 <script>
@@ -316,6 +324,52 @@
     $("#edit_image").change(function() {
         editimageUrl(this);
     });
+
+
+
+    function deleteServices(id){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.value) {
+                $('#lodingModal').modal('show');
+                $.ajax({
+                    url:"{{ route('services.delete') }}",
+                    method:"POST",
+                    dataType:"json",
+                    data:{
+                        "_token": "{{ csrf_token() }}",
+                        'id':id,
+                    },
+                    success: function(response) {
+                        $('#lodingModal').modal('hide');
+                        window.location.reload();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    },
+                    error: function() {
+                        $('#lodingModal').modal('hide');
+                        Swal.fire(
+                            'Oops...',
+                            'Something went wrong.',
+                            'warning'
+                        )
+                    }
+                })
+
+            }
+        })
+    }
+
 
 
 </script>

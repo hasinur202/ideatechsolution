@@ -115,6 +115,16 @@ class ServicesController extends Controller
     }
 
 
+    public function destroy(Request $request){
+        Service::where('id',$request->id)->delete();
+
+        return response()->json([
+            'success'=>'success'
+         ],200);
+
+    }
+
+
 
 
 }

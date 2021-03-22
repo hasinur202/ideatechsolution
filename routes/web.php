@@ -80,6 +80,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/services-list', [ServicesController::Class, 'index'])->name('services.list');
     Route::post('store-services', [ServicesController::Class, 'store'])->name('services.store');
     Route::post('update-services', [ServicesController::Class, 'update'])->name('services.update');
+    Route::post('delete-services', [ServicesController::Class, 'destroy'])->name('services.delete');
 
 
 });
