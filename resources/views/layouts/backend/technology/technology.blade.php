@@ -194,7 +194,7 @@
 
 
 
-    function deleteServices(id){
+    function deleteTech(id){
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -207,7 +207,7 @@
             if (result.value) {
                 $('#lodingModal').modal('show');
                 $.ajax({
-                    url:"{{ route('services.delete') }}",
+                    url:"{{ route('delete.tech') }}",
                     method:"POST",
                     dataType:"json",
                     data:{
