@@ -117,21 +117,33 @@
                                         <th>Title</th>
                                         <th>Icon</th>
                                         <th>Image</th>
+                                        <th>Description</th>
+                                        <th>Short Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{--  @php $i=0; @endphp
-                                    @foreach($documents as $doc)
-                                        @php $i++; @endphp  --}}
-                                        {{--  <tr>
-                                            <td></td>
+                                    @php $i=0; @endphp
+                                    @foreach($services as $service)
+                                        @php $i++; @endphp
+                                        <tr>
+                                            <td>{{ $i }}</td>
+                                            <td>{{ $service->title }}</td>
+                                            <td>
+                                                <img src="/images/services/{{ $service->icon }}" height="50px" width="50px">
+                                            </td>
+                                            <td>
+                                                <img src="/images/services/{{ $service->image }}" height="50px" width="80px">
+                                            </td>
+                                            <td>{{ Str::limit($service->description,150,'...') }}</td>
+                                            <td>{{ Str::limit($service->short_description,80,'...') }}</td>
 
                                             <td style="display:inline-flex;">
-                                                <button style="margin-left: 5px" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                                                <button style="margin-left: 5px" class="btn btn-dark btn-xs"><i class="fa fa-edit"></i></button>
                                             </td>
-                                        </tr>  --}}
-                                    {{--  @endforeach  --}}
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -11,10 +11,10 @@ class ServicesController extends Controller
 {
     public function index(){
         $data = auth()->user();
-        $services = Service::get() ?? '';
+        $services = Service::get();
 
         return view('layouts.backend.services.services',[
-            'services'=>$services,
+            'services'=>$services ?? '',
             'data'=>$data
         ]);
     }
@@ -34,7 +34,7 @@ class ServicesController extends Controller
             $image = $request->file('image');
             $new_name = rand() . '.' . $icon->getClientOriginalExtension();
             $new_name1 = rand() . '.' . $image->getClientOriginalExtension();
-            $upload_path = public_path()."/images/";
+            $upload_path = public_path()."/images/services/";
 
             $services = Service::create([
                 'title'=>$request->title,
