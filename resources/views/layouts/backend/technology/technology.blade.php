@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-5 float-left">
                     <div class="card" id="addTechnology">
-                        <div class="card-header bg-warning">
+                        <div class="card-header bg-primary">
                             <h5 class="float-left text-white">Add Technology</h5>
                         </div>
                         <form method="POST" action="{{ route('store.tech') }}" enctype="multipart/form-data">
@@ -56,10 +56,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label>SEO</label>
-                                    <input name="logo_alt" placeholder="Technologies Logo Alt" type="text" class="form-control" style="width:100%">
+                                    <input name="logo_alt" maxlength="100" placeholder="Technologies Logo Alt" type="text" class="form-control" style="width:100%">
                                 </div>
 
-                                <button type="submit" class="btn btn-success"></i> Save Changes</button>
+                                <button type="submit" class="btn btn-success"></i> Save</button>
                             </div>
                         </form>
                     </div>
@@ -70,7 +70,7 @@
                             <h5 class="float-left text-white">Edit Technology</h5>
                             <a href="javascript:void(0)" class="float-right" onclick="closeEdit()"><i class="fa fa-times"></i></a>
                         </div>
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('update.tech') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
@@ -82,7 +82,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>SEO</label>
-                                    <input name="logo_alt" placeholder="Technologies Logo Alt" type="text" class="form-control" style="width:100%">
+                                    <input name="logo_alt" id="logo_alt" maxlength="100" placeholder="Technologies Logo Alt" type="text" class="form-control" style="width:100%">
+                                    <input name="id" type="hidden" id="id">
                                 </div>
 
                                 <button type="submit" class="btn btn-success"></i> Save Changes</button>
@@ -100,7 +101,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>SI #</th>
@@ -108,22 +109,22 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                {{--  <tbody>
+                                <tbody>
                                     @php $i=0; @endphp
                                     @foreach($technologies as $tech)
                                         @php $i++; @endphp
                                         <tr>
                                             <td>{{ $i }}</td>
                                             <td>
-                                                <img src="/images/services/{{ $tech->logo }}" height="50px" width="50px">
+                                                <img src="/images/technology/{{ $tech->logo }}" height="40px" width="70px">
                                             </td>
-                                            <td style="display:inline-flex;">
+                                            <td>
                                                 <button onclick="editTech({{ $tech }})" style="margin-right: 5px" class="btn btn-dark btn-xs"><i class="fa fa-edit"></i></button>
                                                 <button onclick="deleteTech({{ $tech->id }})" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tbody>  --}}
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -145,30 +146,19 @@
 </div>
 @section('js')
 
-<script>
-    $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-        });
-    });
-
-</script>
-
 <script type="text/javascript">
     function closeEdit(){
         $("#editTechnology").hide();
         $("#addTechnology").show();
     }
 
-    function editTech(service){
-        $("#id").val(service.id);
-        $("#edit_image_img").attr('src', "{{ asset('/images/services/') }}/" + service.image);
+    function editTech(tech){
+        $("#addTechnology").hide();
+        $("#editTechnology").show();
+
+        $("#id").val(tech.id);
+        $("#logo_alt").val(tech.logo_alt);
+        $("#edit_image_img").attr('src', "{{ asset('/images/technology/') }}/" + tech.logo);
     }
 
 
