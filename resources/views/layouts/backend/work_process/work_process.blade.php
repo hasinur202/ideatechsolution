@@ -90,7 +90,7 @@
                             <h5 class="float-left text-white">Edit Working Process</h5>
                             <a href="javascript:void(0)" class="float-right" onclick="closeAddNew()"><i class="fa fa-times"></i></a>
                         </div>
-                        <form method="POST" action="{{ route('services.update') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('process.update') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
