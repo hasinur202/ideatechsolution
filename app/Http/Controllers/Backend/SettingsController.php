@@ -77,7 +77,6 @@ class SettingsController extends Controller
         }else{
             $setting = Setting::where('id',$request->id)->first();
             if($request->file('logo') != null){
-
                 $logo = $request->file('logo');
                 $new_name = rand() . '.' . $logo->getClientOriginalExtension();
                 $upload_path = public_path()."/images/logo/";
