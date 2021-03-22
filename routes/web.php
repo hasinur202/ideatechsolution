@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\SiteMetaController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\TechnologiesController;
 
 //frontend controller...
 Route::get('/',[HomeController::Class,'index'])->name('home');
@@ -81,6 +82,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('store-services', [ServicesController::Class, 'store'])->name('services.store');
     Route::post('update-services', [ServicesController::Class, 'update'])->name('services.update');
     Route::post('delete-services', [ServicesController::Class, 'destroy'])->name('services.delete');
+
+
+    //Technology route
+    Route::get('/technologies-list', [TechnologiesController::Class, 'index'])->name('tech.list');
+    // Route::post('store-services', [ServicesController::Class, 'store'])->name('services.store');
+    // Route::post('update-services', [ServicesController::Class, 'update'])->name('services.update');
+    // Route::post('delete-services', [ServicesController::Class, 'destroy'])->name('services.delete');
+
 
 
 });

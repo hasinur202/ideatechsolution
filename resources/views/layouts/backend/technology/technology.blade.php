@@ -48,26 +48,19 @@
                         <form method="POST" action="" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
-                                <div class="row">
-
-                                    <div class="form-group">
-                                        <label>Image </label>
-                                        <div class="service-img" style="width: 70% !important">
-                                            <input id="image" type="file" class="form-control" name="image">
-                                            <img src="" id="image-img"/>
-                                        </div>
+                                <div class="form-group">
+                                    <label>Technologies Logo </label>
+                                    <div class="service-img" style="width: 50% !important">
+                                        <input id="image" type="file" class="form-control" name="logo">
+                                        <img src="" id="image-img"/>
                                     </div>
-
+                                </div>
+                                <div class="form-group">
+                                    <label>SEO</label>
+                                    <input name="logo_alt" placeholder="Technologies Logo Alt" type="text" class="form-control" style="width:100%">
                                 </div>
 
-
-                                    <div class="form-group">
-                                        <label style="width:100%">SEO</label>
-                                        <input name="title" placeholder="Title" type="text" class="form-control">
-                                    </div>
-                                    <button type="submit" class="btn btn-success"></i> Save Changes</button>
-
-
+                                <button type="submit" class="btn btn-success"></i> Save Changes</button>
                             </div>
                         </form>
                     </div>
@@ -77,10 +70,7 @@
                 <div class="col-md-7 float-right">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Services List</h3>
-                            <button onclick="AddNew()" class="btn btn-primary float-right">
-                                <i class="fa fa-plus"></i> Add New
-                            </button>
+                            <h3 class="card-title">Technologies List</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -152,18 +142,18 @@
     }
 
 
-    function iconUrl(input) {
+    function imageUrl(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                $('#icon-image').attr('src', e.target.result);
+                $('#image-img').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
 
-    $("#icon").change(function() {
-        iconUrl(this);
+    $("#image").change(function() {
+        imageUrl(this);
     });
 
     function editiconUrl(input) {
