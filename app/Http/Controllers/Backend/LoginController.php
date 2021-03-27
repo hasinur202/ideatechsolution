@@ -46,7 +46,6 @@ class LoginController extends Controller
             ],500);
         };
 
-
     }
 
     public function logout(Request $request)
