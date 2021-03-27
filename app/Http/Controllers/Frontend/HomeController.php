@@ -17,10 +17,17 @@ class HomeController extends Controller
         $setting = Setting::first();
         $metas = SiteMeta::all();
         $technologies = Technology::where('status',1)->get();
+
+        $datas = Category::with(['get_demos'=>function($q){
+            $q->where('status',1);
+        }])->where('status',1)->get();
+
+
         return view('layouts.frontend.home',[
             'metas'=>$metas ?? '',
             'setting'=>$setting ?? '',
-            'technologies'=>$technologies ?? ''
+            'technologies'=>$technologies ?? '',
+            'datas'=>$datas
         ]);
     }
 
