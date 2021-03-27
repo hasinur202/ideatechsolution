@@ -189,52 +189,13 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-
+                @foreach($chooses as $choose)
                 <div class="col-md-4 common-features">
-                    <img width="60" height="60" src="{{asset('/images/handshake.png')}}" alt="Card image cap">
-                    <h5>Commitment</h5>
-                    <p style="color: #6D7278; font-size: 18px">
-                        We respect the given deadlines from each of our clients and we assure to deliver a premium service to you just on time.
-                    </p>
+                    <img width="60" height="60" src="{{ asset('/images/choose_us/'.$choose->image) }}" alt="{{ optional($choose)->image_alt }}">
+                    <h5>{{ $choose->title }}</h5>
+                    <p style="color: #6D7278; font-size: 18px">{{ $choose->description }}</p>
                 </div>
-                <div class="col-md-4 common-features">
-                    <img width="60" height="60" src="{{asset('/images/star.png')}}" alt="Card image cap">
-                    <h5>Expertise</h5>
-                    <p style="color: #6D7278; font-size: 18px">
-                        We work with a solid group of programmers, marketing experts and project managers.
-                        Our developers are highly knowledgeable.
-                    </p>
-                </div>
-                <div class="col-md-4 common-features">
-                    <img width="60" height="60" src="{{asset('/images/support.png')}}" alt="Card image cap">
-                    <h5>Supports</h5>
-                    <p style="color: #6D7278; font-size: 18px">
-                        Our customers can always expect our top notch assistance when it comes to website maintenance.
-                    </p>
-                </div>
-                <div class="col-md-4 common-features">
-                    <img width="60" height="60" src="{{asset('/images/money-back.png')}}" alt="Card image cap">
-                    <h5>Money back guarantee</h5>
-                    <p style="color: #6D7278; font-size: 18px">
-                        If you’re having difficulty installing our product, then let us know, and we’ll install it for
-                         you for free.
-                    </p>
-                </div>
-                <div class="col-md-4 common-features">
-                    <img width="60" height="60" src="{{asset('/images/official-documents.png')}}" alt="Card image cap">
-                    <h5>Well-documented</h5>
-                    <p style="color: #6D7278; font-size: 18px">
-                        This comforting finding presumably explains the well-documented Technical observation that confrontation is
-                         commoner in User than Technician is.
-                    </p>
-                </div>
-                <div class="col-md-4 common-features">
-                    <img width="60" height="60" src="{{asset('/images/cost.png')}}" alt="Card image cap">
-                    <h5>Affordable price</h5>
-                    <p style="color: #6D7278; font-size: 18px">
-                        One of the key issues here, indeed perhaps the key issue, will be offering that equipment at an affordable price.
-                    </p>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

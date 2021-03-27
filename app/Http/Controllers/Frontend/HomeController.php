@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Demo;
 use App\Models\Category;
+use App\Models\Choose;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\SiteMeta;
@@ -26,6 +27,7 @@ class HomeController extends Controller
 
         $services = Service::where('status',1)->get();
         $processes = Work_process::where('status',1)->get();
+        $chooses = Choose::where('status',1)->get();
 
 
         return view('layouts.frontend.home',[
@@ -34,7 +36,8 @@ class HomeController extends Controller
             'technologies'=>$technologies ?? '',
             'datas'=>$datas,
             'services'=>$services,
-            'processes'=>$processes
+            'processes'=>$processes,
+            'chooses'=>$chooses
         ]);
     }
 
