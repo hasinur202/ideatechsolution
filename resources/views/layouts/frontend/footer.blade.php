@@ -29,10 +29,10 @@
                             <p>{{ optional($setting)->description }}</p>
 
                             <ul class="footer-social-menu list-inline ">
-                                <li><a href="{{ optional($setting)->fb }}"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="{{ optional($setting)->linkedin }}"><i class="fa fa-linkedin-square"></i></a></li>
-                                <li><a href="{{ optional($setting)->whatsapp }}"><i class="fa fa-whatsapp "></i></a></li>
-                                <li><a href="{{ optional($setting)->skype }}"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="{{ optional($setting)->fb }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{ optional($setting)->linkedin }}" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                                <li><a href="{{ optional($setting)->whatsapp }}" target="_blank"><i class="fa fa-whatsapp "></i></a></li>
+                                <li><a href="{{ optional($setting)->skype }}" target="_blank"><i class="fa fa-skype"></i></a></li>
                             </ul>
                         </div>
                     </div>

@@ -139,7 +139,7 @@
                            Do you want to know more? <span style="color:#25D366">Get Started Now</span>
                         </h1>
                         <div style="text-align: center; margin-top:4rem; font-size:45px; font-weight:bold;color:red">
-                           <i style="color: #25AF73" class="fa fa-phone"></i> +8801711431232
+                           <i style="color: #25AF73" class="fa fa-phone"></i> {{ optional($setting)->contact }}
                         </div>
 
                     </div>
@@ -147,10 +147,10 @@
 
                 <div class="address" style="text-align: center;margin-top:5rem">
                     <ul class="social-icon-rounded contact-social-icon">
-                        <li><a href="https://www.facebook.com/Ideatech.Solution"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/idea-tech-solution-a86303199/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->fb }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->linkedin }}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->skype }}" target="_blank"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->whatsapp }}" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
