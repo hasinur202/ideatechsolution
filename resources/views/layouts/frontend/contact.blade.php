@@ -85,28 +85,26 @@
                     <ul class="contact-address">
                         <li>
                             <div class="contact-content">
-                                <p><i class="fa fa-map-o"></i> 61/1 Anawara Vila Metro Housing Bosila.</p>
+                                <p><i class="fa fa-map-o"></i> {{ optional($setting)->address }}</p>
                             </div>
                         </li>
                         <li>
                             <div class="contact-content">
-                                <p><i class="fa fa-phone"></i> +88 01711431232</p>
-                                <p><i class="fa fa-phone"></i> +88 01716039170</p>
+                                <p><i class="fa fa-phone"></i> {{ optional($setting)->contact }}</p>
+                                <p><i class="fa fa-phone"></i> {{ optional($setting)->contact2 }}</p>
                             </div>
                         </li>
                         <li>
                             <div class="contact-content">
-                                <p><i class="fa fa-envelope"></i> ideatechsolution.bd@gmail.com</p>
-                                {{--  <p>support@sbtechnosoft.com</p>  --}}
+                                <p><i class="fa fa-envelope"></i> {{ optional($setting)->email }}</p>
                             </div>
                         </li>
                     </ul>
                     <ul class="social-icon-rounded contact-social-icon">
-                        <li><a href="https://www.facebook.com/Ideatech.Solution"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="https://twitter.com/IdeaTech_BD"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/idea-tech-solution-a86303199/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->fb }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->linkedin }}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->skype }}" target="_blank"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ optional($setting)->whatsapp }}" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
