@@ -39,173 +39,64 @@
 
 <section>
     <div class="container" style="margin-top: 2rem">
-
-        <div class="row service" style="margin-top: 2rem">
-            <div class="service-title">
-                <h3>Website Development</h3>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
-                            <div class="col-md-6 tab-content-align">
-                                <p>Exactly like the original bootstrap tabs except you should use_ the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend Exactly like the original bootstrap tabs except you should use_ the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
+        @php $i=0; @endphp
+        @foreach($services as $service)
+        @php $i++; @endphp
+            @if($i % 2 != 0)
+            <div class="row service" style="margin-top: 2rem">
+                <div class="service-title">
+                    <h3>{{ $service->title }}</h3>
                 </div>
-                <!-- nav-tabs-custom -->
-            </div>
-        </div>
-
-        <div class="row service" style="margin-top: 2rem">
-            <div class="service-title">
-                <h3 style="text-align: right">Software Development</h3>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif " alt=" ">
-                                </figure>
+                <div class="col-md-12">
+                    <!-- Custom Tabs -->
+                    <div class="nav-tabs-custom">
+                        <div class="tab-content row">
+                            <div class="col-md-12">
+                                <div class="col-md-6 tab-content-align">
+                                    <p>{{ $service->description }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img class="tab-figure" src="{{ asset('/images/services/'.$service->image) }}" alt="{{ optional($service)->image_alt }}">
+                                    </figure>
+                                </div>
                             </div>
-                            <div class="col-md-6 tab-content-align">
-                                <p>Exactly like the original bootstrap tabs except you should _use the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
-                            </div>
+                            <!-- /.tab-pane -->
                         </div>
-                        <!-- /.tab-pane -->
+                        <!-- /.tab-content -->
                     </div>
-                    <!-- /.tab-content -->
+                    <!-- nav-tabs-custom -->
                 </div>
-                <!-- nav-tabs-custom -->
             </div>
-        </div>
-        <div class="row service" style="margin-top: 2rem">
-            <div class="service-title">
-                <h3>Graphics Design</h3>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
-                            <div class="col-md-6 tab-content-align">
-                                <p>Exactly like the original bootstrap tabs except you should use_ the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
+            @else
+
+            <div class="row service" style="margin-top: 2rem">
+                <div class="service-title">
+                    <h3 style="text-align: right">{{ $service->title }}</h3>
+                </div>
+                <div class="col-md-12">
+                    <!-- Custom Tabs -->
+                    <div class="nav-tabs-custom">
+                        <div class="tab-content row">
+                            <div class="col-md-12">
+                                <div class="col-md-6 tab-content-align">
+                                    <p>{{ $service->description }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img class="tab-figure" src="{{ asset('/images/services/'.$service->image) }}" alt="{{ optional($service)->image_alt }}">
+                                    </figure>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif" alt=" ">
-                                </figure>
-                            </div>
+                            <!-- /.tab-pane -->
                         </div>
-                        <!-- /.tab-pane -->
+                        <!-- /.tab-content -->
                     </div>
-                    <!-- /.tab-content -->
+                    <!-- nav-tabs-custom -->
                 </div>
-                <!-- nav-tabs-custom -->
             </div>
-        </div>
-
-        <div class="row service" style="margin-top: 2rem">
-            <div class="service-title">
-                <h3 style="text-align: right">Digital Marketing</h3>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif " alt=" ">
-                                </figure>
-                            </div>
-                            <div class="col-md-6 tab-content-align">
-                                <p>Exactly like the original bootstrap tabs except you should _use the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
-                            </div>
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
-                </div>
-                <!-- nav-tabs-custom -->
-            </div>
-        </div>
-        <div class="row service" style="margin-top: 2rem">
-            <div class="service-title">
-                <h3>E-Commerce</h3>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
-                            <div class="col-md-6 tab-content-align">
-                                <p>Exactly like the original bootstrap tabs except you should use_ the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
-                </div>
-                <!-- nav-tabs-custom -->
-            </div>
-        </div>
-
-        <div class="row service" style="margin-top: 2rem">
-            <div class="service-title pull-right">
-                <h3 style="text-align: right">Hosting & Domain</h3>
-            </div>
-            <div class="col-md-12">
-                <!-- Custom Tabs -->
-                <div class="nav-tabs-custom">
-                    <div class="tab-content row">
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="/images/Customized-Software-Development.gif " alt=" ">
-                                </figure>
-                            </div>
-                            <div class="col-md-6 tab-content-align">
-                                <p>Exactly like the original bootstrap tabs except you should _use the custom wrapper. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend</p>
-                            </div>
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
-                </div>
-                <!-- nav-tabs-custom -->
-            </div>
-        </div>
-
-
-
-
-
-
+            @endif
+        @endforeach
     </div>
 </section>
 
