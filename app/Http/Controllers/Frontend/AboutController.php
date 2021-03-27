@@ -8,6 +8,7 @@ use App\Models\SiteMeta;
 use App\Models\Technology;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\About;
 
 class AboutController extends Controller
 {
@@ -19,11 +20,14 @@ class AboutController extends Controller
             $q->where('status',1);
         }])->where('status',1)->get();
 
+        $about = About::first();
+
         return view('layouts.frontend.about',[
             'metas'=>$metas,
             'setting'=>$setting,
             'technologies'=>$technologies,
-            'datas'=>$datas
+            'datas'=>$datas,
+            'about'=>$about
         ]);
     }
 }

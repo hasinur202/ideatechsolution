@@ -40,12 +40,8 @@
                 <div class="since-year clearfix">
                   <div class="work">5 Years of<strong>Successful</strong><span>Software Services Company</span></div>
                 </div>
-                <div class="text">
-                    Idea Tech Solution is a best website design and development company in DHAKA,
-              Bangladesh. We also deal in Software Development, Website Development, Graphic Design and SEO services
-              and provide top quality results within limited time bounds to make your brand visibility
-              to your online portal.
-
+                <div class="text" style="text-align: justify">
+                    {!! htmlspecialchars_decode(optional($about)->description) !!}
                 </div>
                 <div class="counter-section">
                   <div class="counter-boxed">
