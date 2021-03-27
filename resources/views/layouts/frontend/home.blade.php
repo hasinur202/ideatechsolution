@@ -91,87 +91,36 @@
                         <li><a href="#tab_6" data-toggle="tab">Maintenance</a></li>
                     </ul>
                     <div class="tab-content row">
-                        <div class="col-md-12 tab-pane active" id="tab_1">
+                        @php $i=0; @endphp
+                        @foreach($processes as $process)
+                        @php $i++; @endphp
+                            @if($i == 1)
+                            <div class="col-md-12 tab-pane active" id="tab_{{ $i }}">
+                                <div class=" col-md-6 tab-content-part">
+                                    <h2>{{ $process->title }}</h2>
+                                    <p>{{ $process->description }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img class="tab-figure" src="{{ asset('/images/workprocess/'.$process->image) }}" alt="{{ optional($process)->image_alt }}">
+                                    </figure>
+                                </div>
+                            </div>
+                            @else
+                            <div class="col-md-12 tab-pane" id="tab_{{ $i }}">
+                                <div class=" col-md-6 tab-content-part">
+                                    <h2>{{ $process->title }}</h2>
+                                    <p>{{ $process->description }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img class="tab-figure" src="{{ asset('/images/workprocess/'.$process->image) }}" alt="{{ optional($process)->image_alt }}">
+                                    </figure>
+                                </div>
+                            </div>
+                            @endif
+                        @endforeach
 
-                            <div class=" col-md-6 tab-content-part">
-                                <h2>Information Gathering</h2>
-
-                                <p>All possible requirements of the system to be developed are
-                                    captured in this phase and documented in a requirement specification document.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="{{ asset('/images/Analysis.png') }}" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="col-md-12 tab-pane" id="tab_2">
-
-                            <div class="col-md-6 tab-content-part">
-                                <h2>System Design</h2>
-                                <p>The requirement specifications from first phase are studied in this phase and the system design is prepared.
-                                    This system design helps in specifying hardware and system requirements and helps in defining the overall system architecture.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="{{ asset('/images/system-design.png') }}" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="col-md-12 tab-pane" id="tab_3">
-
-                            <div class="col-md-6 tab-content-part">
-                                <h2>Implementation</h2>
-                                <p>With inputs from the system design, the system is first developed in small programs called units, which are integrated in the next phase.
-                                    Each unit is developed and tested for its functionality, which is referred to as Unit Testing.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="{{ asset('/images/implement.jpg') }}" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="col-md-12 tab-pane" id="tab_5">
-
-                            <div class="col-md-6 tab-content-part">
-                                <h2>Deployment of system</h2>
-                                <p>Once the functional and non-functional testing is done.
-                                    the product is deployed in the customer environment or released into the market.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="{{ asset('/images/software.png') }}" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="col-md-12 tab-pane" id="tab_4">
-
-                            <div class="col-md-6 tab-content-part">
-                                <h2>Integration and Testing</h2>
-                                <p>All the units developed in the implementation phase are integrated into a system after testing of each unit.
-                                    Post integration the entire system is tested for any faults and failures.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="{{ asset('/images/testing.png') }}" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 tab-pane" id="tab_6">
-
-                            <div class="col-md-6 tab-content-part">
-                                <h2>Maintenance</h2>
-                                <p>There are some issues which come up in the client environment.
-                                    To fix those issues, patches are released. Also to enhance the product some better versions are released.
-                                    Maintenance is done to deliver these changes in the customer environment.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <figure>
-                                    <img class="tab-figure" src="{{ asset('/images/maintenance.png') }}" alt=" ">
-                                </figure>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,8 @@ use App\Models\Service;
 use App\Models\Setting;
 use App\Models\SiteMeta;
 use App\Models\Technology;
+use App\Models\Work_process;
+use Symfony\Component\Process\Process;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,7 @@ class HomeController extends Controller
         }])->where('status',1)->get();
 
         $services = Service::where('status',1)->get();
+        $processes = Work_process::where('status',1)->get();
 
 
         return view('layouts.frontend.home',[
@@ -30,7 +33,8 @@ class HomeController extends Controller
             'setting'=>$setting ?? '',
             'technologies'=>$technologies ?? '',
             'datas'=>$datas,
-            'services'=>$services
+            'services'=>$services,
+            'processes'=>$processes
         ]);
     }
 
