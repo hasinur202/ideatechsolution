@@ -8,15 +8,9 @@
     </div>
     <div class="container-fluid">
         <div id="home-gallery" class="owl-carousel">
-            <div class="item"><img src="{{ asset('/images/lang/laravel.png') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/vuejs.png') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/php.png') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/html.png') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/css.png') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/bootstrap.jpg') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/java.png') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/jquery.png') }}" alt=""> </div>
-            <div class="item"><img src="{{ asset('/images/lang/mysql.png') }}" alt=""> </div>
+            @foreach ($technologies as $tech)
+                <div class="item"><img src="{{ asset('/images/technology/'.$tech->logo) }}" alt="{{ optional($tech)->logo_alt }}"> </div>
+            @endforeach
         </div>
     </div>
 </section>

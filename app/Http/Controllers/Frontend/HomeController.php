@@ -8,6 +8,7 @@ use App\Models\Demo;
 use App\Models\Category;
 use App\Models\Setting;
 use App\Models\SiteMeta;
+use App\Models\Technology;
 
 class HomeController extends Controller
 {
@@ -15,9 +16,11 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         $metas = SiteMeta::all();
+        $technologies = Technology::where('status',1)->get();
         return view('layouts.frontend.home',[
             'metas'=>$metas ?? '',
-            'setting'=>$setting
+            'setting'=>$setting ?? '',
+            'technologies'=>$technologies ?? ''
         ]);
     }
 
