@@ -38,10 +38,7 @@
         <span class="word">SOLUTION</span>
     </h1>
 
-    <p style="width:960px; margin:auto; margin-top:4rem">Idea Tech Solution is a best website design and development company in DHAKA,
-              Bangladesh. We also deal in Software Development, Website Development, Graphic Design and SEO services
-              and provide top quality results within limited time bounds to make your brand visibility
-              to your online portal.
+    <p style="width:960px; margin:auto; margin-top:4rem">{{ $setting->description }}
     </p>
 
 </div>
@@ -56,75 +53,19 @@
             <div><span></span></div>
         </div>
         <div class="row">
+            @foreach($services as $service)
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-services">
                     <div class="services-inner">
-                        <div class="our-services-icon"> <img src="{{asset('/icon/world-wide-web.png')}}" alt=""> </div>
+                        <div class="our-services-icon"> <img src="{{ asset('/images/services/'.$service->icon) }}" alt="{{ optional($service)->icon_all }}"> </div>
                         <div class="our-services-text">
-                            <h4>Website Development</h4>
-                            <p>We offer the standard & excellent interactive website Design & Development services to our clients.</p>
+                            <h4>{{ $service->title }}</h4>
+                            <p>{{ $service->short_description }}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services">
-                    <div class="services-inner">
-                        <div class="our-services-icon"> <img src="{{asset('/icon/setting.png')}}" alt=""> </div>
-                        <div class="our-services-text">
-                            <h4>Software Development</h4>
-                            <p>Specific software is needed in almost every industry, in every business.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services">
-                    <div class="services-inner">
-                        <div class="our-services-icon"> <img src="{{asset('/icon/design.png')}}" alt=""> </div>
-                        <div class="our-services-text">
-                            <h4>Graphics Design</h4>
-                            <p>A picture is worth a thousand words, and for that our expertise are always give an extra attention
-                                to each shape, layout, and rhythm, Color, Texture, and Images While implementing Graphic design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services">
-                    <div class="services-inner">
-                        <div class="our-services-icon"> <img src="{{asset('/icon/bullhorn.png')}}" alt=""> </div>
-                        <div class="our-services-text">
-                            <h4>Digital Marketing</h4>
-                            <p>Digital marketing is the marketing of products or services using digital technologies,
-                                mainly on the Internet</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services">
-                    <div class="services-inner">
-                        <div class="our-services-icon"> <img src="{{asset('/icon/online-shopping.png')}}" alt=""> </div>
-                        <div class="our-services-text">
-                            <h4>E-Commerce</h4>
-                            <p>E-commerce activity of buying or selling of products over the Internet,
-                                or the transmitting of data, over an electronic network</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services">
-                    <div class="services-inner">
-                        <div class="our-services-icon"> <img src="{{ asset('/icon/hosting.png') }}" alt=""> </div>
-                        <div class="our-services-text">
-                            <h4>Hosting & Domain</h4>
-                            <p>Internet hosting service that allows individuals and organizations to make their website accessible via the Worldwide Webhosting & Domain.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
